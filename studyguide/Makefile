@@ -1,93 +1,125 @@
 # $Id$
 
-DOCUMENTS=	studyguide.pdf studyguide-slides.pdf
-CATEGORY=	security/infosakb
-FILES=		studyguide.tex literature.bib
-FILES+=		${LABS} ${SEMINARS} ${PM} ${PROJECT} ${LECTURES}
-PACKAGE=	studyguide-src
-PACKAGE_FILES=	${FILES} Makefile
-PUB_FILES=	${DOCUMENTS} ${PACKAGE}.tar.gz
+.PHONY: all
+all: studyguide.pdf studyguide-slides.pdf
 
-LABS=		passwd-aim.tex passwd-lit.tex
-LABS+= 		privacy-aim.tex privacy-lit.tex
-LABS+= 		privcomm-aim.tex privcomm-lit.tex
+SRC=		studyguide.tex
+SRC+=		${MODULE_FILES}
 
-SEMINARS=	pwdpol-aim.tex pwdpol-lit.tex
-SEMINARS+= 	review-aim.tex review-lit.tex
+MODULE_FILES+= 	pricomlab-aim.tex pricomlab-lit.tex pricomlab.bib
 
-PM=			lis-aim.tex lis-lit.tex vranalys-aim.tex vranalys-lit.tex
+pricomlab-aim.tex: ../pricomlab/aims.tex
+pricomlab-lit.tex: ../pricomlab/literature.tex
+pricomlab.bib: ../pricomlab/pricomlab.bib
 
-PROJECT=	project-aim.tex
+MODULE_FILES+= 	ismsmemo-aim.tex ismsmemo-lit.tex ismsmemo.bib
+MODULE_FILES+= 	risksem-aim.tex risksem-lit.tex risksem.bib
 
-LECTURES=	intro-lit.tex
-LECTURES+= 	foundations-lit.tex
-LECTURES+= 	msbintro-lit.tex msbforts-lit.tex
-LECTURES+= 	auth-lit.tex
-LECTURES+= 	accessctrl-lit.tex
-LECTURES+=	proto-lit.tex
-LECTURES+=	usability-lit.tex
-LECTURES+=	infotheory-lit.tex
-LECTURES+=	crypto-lit.tex
-LECTURES+=	accountability-lit.tex
-LECTURES+= 	software-lit.tex
-LECTURES+= 	trustcomp-lit.tex
-LECTURES+=	sidechannels-lit.tex
-LECTURES+=	bitcoin-lit.tex
+ismsmemo-aim.tex: ../ism/ismsmemo/aims.tex
+ismsmemo-lit.tex: ../ism/ismsmemo/literature.tex
+ismsmemo.bib: ../ism/ismsmemo/ismsmemo.bib
+risksem-aim.tex: ../ism/risksem/aims.tex
+risksem-lit.tex: ../ism/risksem/literature.tex
+risksem.bib: ../ism/risksem/risksem.bib
+
+MODULE_FILES+= 	msbintro-lit.tex msbintro.bib
+MODULE_FILES+= 	msbforts-lit.tex msbforts.bib
+
+msbintro-lit.tex: ../ism/msbframework/msbintro/literature.tex
+msbintro.bib: ../ism/msbframework/msbintro/msbintro.bib
+msbforts-lit.tex: ../ism/msbframework/msbforts/literature.tex
+msbforts.bib: ../ism/msbframework/msbforts/msbforts.bib
+
+MODULE_FILES+= 	project-aim.tex
+
+project-aim.tex: ../ism/gapproject/aims.tex
+
+MODULE_FILES+= 	crypto-lit.tex crypto.bib
+
+crypto-lit.tex: ../appliedcrypto/crypto/abstract.tex
+crypto.bib: ../appliedcrypto/crypto/crypto.bib
+
+MODULE_FILES+= 	software-lit.tex software.bib
+
+software-lit.tex: ../software/overview/abstract.tex
+software.bib: ../software/overview/overview.bib
+
+MODULE_FILES+= 	usability-lit.tex usability.bib
+
+usability-lit.tex: ../usability/overview/abstract.tex
+usability.bib: ../usability/overview/overview.bib
+
+MODULE_FILES+= 	infotheory-lit.tex infotheory.bib
+
+infotheory-lit.tex: ../infotheory/basics/abstract.tex
+infotheory.bib: ../infotheory/basics/basics.bib
+
+MODULE_FILES+= 	trustcomp-lit.tex trustcomp.bib
+
+trustcomp-lit.tex: ../trustcomp/overview/abstract.tex
+trustcomp.bib: ../trustcomp/overview/overview.bib
+
+MODULE_FILES+= 	proto-lit.tex fverif.bib
+
+proto-lit.tex: ../fverif/intro/abstract.tex
+fverif.bib: ../fverif/intro/intro.bib
+
+MODULE_FILES+= 	sidechannels-lit.tex sidechannels.bib
+
+sidechannels-lit.tex: ../sidechannels/overview/abstract.tex
+sidechannels.bib: ../sidechannels/overview/overview.bib
+
+MODULE_FILES+= 	auth-lit.tex auth.bib
+
+auth-lit.tex: ../auth/overview/abstract.tex
+auth.bib: ../auth/overview/overview.bib
+
+MODULE_FILES+= 	pwdguess-aim.tex pwdguess-lit.tex pwdguess.bib
+
+pwdguess-aim.tex: ../auth/passwd/pwdguess/aims.tex
+pwdguess-lit.tex: ../auth/passwd/pwdguess/literature.tex
+pwdguess.bib: ../auth/passwd/pwdguess/pwdguess.bib
+
+MODULE_FILES+= 	pwdpolicies-aim.tex pwdpolicies-lit.tex pwdpolicies.bib
+
+pwdpolicies-aim.tex: ../auth/passwd/pwdpolicies/aims.tex
+pwdpolicies-lit.tex: ../auth/passwd/pwdpolicies/literature.tex
+pwdpolicies.bib: ../auth/passwd/pwdpolicies/pwdpolicies.bib
+
+MODULE_FILES+= 	accessctrl-lit.tex ac.bib
+#MODULE_FILES+= 	lvlltrl-lit.tex lvlltrl.bib
+
+accessctrl-lit.tex: ../ac/overview/abstract.tex
+ac.bib: ../ac/overview/overview.bib
+#lvlltrl-lit.tex: ../ac/lvlltrl/abstract.tex
+
+MODULE_FILES+= 	foundations-lit.tex foundations.bib
+
+foundations-lit.tex: ../foundations/overview/abstract.tex
+foundations.bib: ../foundations/overview/overview.bib
+
+MODULE_FILES+= 	accountability-lit.tex
+
+accountability-lit.tex: ../accountability/overview/abstract.tex
+accountability.bib: ../accountability/overview/overview.bib
 
 
-studyguide.pdf: ${FILES} miunart miunmisc
-infosakb.pdf: infosakb.tex literature.bib miunmisc
-
-literature.bib: ../../infosec.bib
-
-passwd-aim.tex: ../../labs/passwd/aims.tex
-sda-aim.tex: ../../labs/sda/aims.tex
-lis-aim.tex: ../../memos/lis/aims.tex
-vranalys-aim.tex: ../../memos/vranalys/aims.tex
-project-aim.tex: ../../projects/research/aims.tex
-pwdpol-aim.tex: ../../seminars/pwdpolicies/aims.tex
-privacy-aim.tex: ../../labs/privacy/aims.tex
-review-aim.tex: ../../seminars/review/aims.tex
-privcomm-aim.tex: ../../labs/privcomm/aims.tex
-
-passwd-lit.tex: ../../labs/passwd/literature.tex
-sda-lit.tex: ../../labs/sda/literature.tex
-lis-lit.tex: ../../memos/lis/literature.tex
-vranalys-lit.tex: ../../memos/vranalys/literature.tex
-pwdpol-lit.tex: ../../seminars/pwdpolicies/literature.tex
-privacy-lit.tex: ../../labs/privacy/literature.tex
-review-lit.tex: ../../seminars/review/literature.tex
-privcomm-lit.tex: ../../labs/privcomm/literature.tex
-
-intro-lit.tex: ../../lectures/infosak/literature.tex
-foundations-lit.tex: ../../lectures/foundations/literature.tex
-msbintro-lit.tex: ../../lectures/msbintro/literature.tex
-msbforts-lit.tex: ../../lectures/msbforts/literature.tex
-auth-lit.tex: ../../lectures/auth/literature.tex
-accessctrl-lit.tex: ../../lectures/accessctrl/literature.tex
-proto-lit.tex: ../../lectures/proto/literature.tex
-usability-lit.tex: ../../lectures/usability/literature.tex
-infotheory-lit.tex: ../../lectures/infotheory/literature.tex
-crypto-lit.tex: ../../lectures/crypto/literature.tex
-bitcoin-lit.tex: ../../lectures/bitcoin/literature.tex
-lvlltrl-lit.tex: ../../lectures/lvlltrl/literature.tex
-accountability-lit.tex: ../../lectures/accountability/literature.tex
-software-lit.tex: ../../lectures/software/literature.tex
-trustcomp-lit.tex: ../../lectures/trustcomp/literature.tex
-sidechannels-lit.tex: ../../lectures/sidechannels/literature.tex
-
-${LABS} ${PM} ${SEMINARS} ${PROJECT} ${LECTURES} literature.bib:
+${MODULE_FILES}:
 	ln -s $^ $@
 
-.PHONY: clean
-clean:
-	${RM} literature.bib ${LABS} ${PM} ${SEMINARS} ${PROJECT} ${LECTURES}
+
+studyguide.pdf: ${SRC}
+studyguide.pdf: llncs biblatex-lncs libbib.sty
+
+
+.PHONY: clean-depends
+clean-depends:
+	${RM} ${MODULE_FILES}
 
 
 ### INCLUDES ###
 
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/tex.mk
-include ${INCLUDE_MAKEFILES}/package.mk
-include ${INCLUDE_MAKEFILES}/miun.course.mk
-
+INCLUDE_LIBBIB=../libbib
+include ${INCLUDE_LIBBIB}/libbib.mk

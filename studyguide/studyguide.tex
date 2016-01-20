@@ -1,44 +1,64 @@
-% $Id$
-\documentclass[a4paper,logo]{miunart}
+\documentclass[a4paper]{llncs}
 \usepackage[utf8]{inputenc}
 \usepackage[swedish,english]{babel}
-\usepackage{prettyref,varioref}
+\usepackage{varioref}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
-\usepackage[today,nofancy]{svninfo}
+\usepackage{cleveref}
 \usepackage{booktabs}
-\usepackage{SIunits}
+\usepackage[binary,squaren]{SIunits}
 \usepackage[strict]{csquotes}
-\usepackage[natbib,style=numeric-comp,maxbibnames=99,sorting=none,%
-  backend=bibtexu]{biblatex}
-\addbibresource{literature.bib}
-\usepackage[varioref,prettyref]{miunmisc}
+\usepackage{acro}
 
-\svnInfo $Id$
+\usepackage[std]{libbib}
+
+\usepackage[natbib,style=numeric-comp,maxbibnames=99,sorting=none]{biblatex}
+\addbibresource{pricomlab.bib}
+\addbibresource{pwdguess.bib}
+\addbibresource{pwdpolicies.bib}
+\addbibresource{ismsmemo.bib}
+\addbibresource{risksem.bib}
+\addbibresource{msbintro.bib}
+\addbibresource{msbforts.bib}
+\addbibresource{software.bib}
+\addbibresource{usability.bib}
+\addbibresource{infotheory.bib}
+\addbibresource{trustcomp.bib}
+\addbibresource{fverif.bib}
+\addbibresource{sidechannels.bib}
+\addbibresource{auth.bib}
+\addbibresource{ac.bib}
+\addbibresource{accountability.bib}
+\addbibresource{foundations.bib}
+
+\pagestyle{plain}
 
 \title{%
   The Complete Study Guide for\\
   DV026G Information Security
 }
-\author{Daniel Bosk\footnote{%
-  This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 
-  Unported license.
-	To view a copy of this license, visit 
-	\url{http://creativecommons.org/licenses/by-sa/3.0/}.
-}}
-\date{\svnId}
+\author{%
+  Daniel Bosk\inst{1,2}
+}
+\institute{%
+  Department of Information and Communication Systems\\
+  Mid Sweden University, Sundsvall\\
+  \and
+  School of Computer Science and Communication\\
+  KTH Royal Institute of Technology, Stockholm\\
+}
+\date{\today}
 
 \begin{document}
 \maketitle
-\tableofcontents
 
 
 \section{Scope and Aims}
 \label{sec:aim}
-The course treats information security from a user, organisation and 
+The course treats information security from a user, organization and 
 technological perspective.
 The first part of the course concerns security on a strategic level, 
-i.e.~working with security in general within an organisation.
+i.e.~working with security in general within an organization.
 The second part of the course focuses on the operative parts, i.e.~security 
 mechanisms and principles for design of secure systems.
 In full, the course aims at giving you an understanding for threats to security 
@@ -48,17 +68,17 @@ A more concrete summary of the course achievements are the following, after
 completing the course you should be able to:
 \begin{itemize}
 %  \input{privacy-aim.tex}
-%  \input{lis-aim.tex}
-%  \input{vranalys-aim.tex}
-%  \input{passwd-aim.tex}
-%  \input{pwdpol-aim.tex}
+%  \input{ismsmemo-aim.tex}
+%  \input{risksem-aim.tex}
+%  \input{pwdguess-aim.tex}
+%  \input{pwdpolicies-aim.tex}
 %  \input{review-aim.tex}
 %  \input{project-aim.tex}
   \item Explain basic concepts and models in information security.
   \item Analyse threats and possible protection mechanisms.
   \item Apply the Swedish Civil Contingency Agency's Framework for Information 
     Security Management Systems to analyse, assess and improve the information 
-    security in an organisation.
+    security in an organization.
 \end{itemize}
 
 
@@ -76,10 +96,10 @@ completing the course you should be able to:
 % informationssäkerhet.
 
 The first part of the course, the one covering information security on 
-a strategic level, concerns organisational management systems for information 
+a strategic level, concerns organizational management systems for information 
 security; how to implement these and how to continuously run them in an 
-organisation.
-The main material used for this part \cite{%
+organization.
+The main material used for this part~\cite{%
   MSB2011itm,MSB2011sle,MSB2011p,%
 	MSB2011v,MSB2011r,MSB2011gap,MSB2011gb,%
 	MSB2011vs,MSB2011us,MSB2011upo,%
@@ -90,20 +110,20 @@ The main material used for this part \cite{%
 the ISO 27000 standard documents.
 
 The second part of the course will focus on the content of Anderson's book 
-\citetitle{Anderson2008sea} \cite{Anderson2008sea}.
-Gollmann's book \citetitle{Gollmann2011cs} \cite{Gollmann2011cs} is also 
-useful, it has more technical details than \cite{Anderson2008sea}.
-Although references to \cite{Gollmann2011cs} is provided in the reading 
+\citetitle{Anderson2008sea}~\cite{Anderson2008sea}.
+Gollmann's book \citetitle{Gollmann2011cs}~\cite{Gollmann2011cs} is also 
+useful, it has more technical details than~\cite{Anderson2008sea}.
+Although references to~\cite{Gollmann2011cs} is provided in the reading 
 instructions, those are not necessary for this course.
 
 The focus of the second part is on actual attacks, security mechanisms, and how 
 to use these in secure protocols.
 There are also some additional material for this part of the course, 
-e.g.~research papers \cite{%
+e.g.~research papers~\cite{%
   Juels2012sha,%
   Komanduri2011opa%
-} and some other material \cite{Bosk2013gl,Bosk2013itn}.
-In addition to these there will also be some news articles \cite{%
+} and some other material~\cite{Bosk2013gl,Bosk2013itn}.
+In addition to these there will also be some news articles~\cite{%
   Honan2012haa,%
   Zetter2012hnt,%
   Fisher2011rsa,%
@@ -113,7 +133,7 @@ In addition to these there will also be some news articles \cite{%
   Cubrilovic2009rhf%
 } which has documented some of the major security incidents during the past few 
 years.
-MSB also has the website CERT-SE \cite{CERT-SE} which has some interesting 
+MSB also has the website CERT-SE~\cite{CERT-SE} which has some interesting 
 references and security news, e.g.~virus epidemics in Sweden.
 
 \subsection{Teaching}
@@ -126,7 +146,7 @@ All assignments are numbered consecutively prefixed with an \enquote{L} for
 laboratory assignments, \enquote{S} for a seminar assignment, and \enquote{M} 
 for memos.
 For details on the examination of these and more information about deadlines, 
-see \prettyref{sec:exam}.
+see \cref{Examination}.
 
 \subsection{Course Schedule}
 \label{sec:schedule}
@@ -134,12 +154,17 @@ To make your reading of the course easier you are presented with a suggested
 schedule in this section.
 You are free to follow this schedule or any schedule you make for yourself, but 
 the deadlines, laboratory sessions, and lectures will follow this schedule.
-You will find a short summary of schedule in Table \ref{tbl:schedule}.
+You will find a short summary of schedule in \cref{Schedule}.
 The detailed reading instructions for each item in the schedule can be found in 
 the following sections.
 
 \begin{table}
 	\centering
+  \caption{%
+    A summary of the parts of the course and when they will (or should) be 
+    done.
+    The table is adapted to taking this course on half-time study rate.
+  }\label{Schedule}
   \begin{tabular}{rp{9cm}}
     \textbf{Course Week}	& \textbf{Work} \\
     \toprule
@@ -206,12 +231,6 @@ the following sections.
       & Final grading of project\\
     \bottomrule
   \end{tabular}
-  \caption{%
-    A summary of the parts of the course and when they will (or should) be 
-    done.
-    The table is adapted to taking this course on half-time study rate.
-  }
-  \label{tbl:schedule}
 \end{table}
 
 
@@ -228,13 +247,13 @@ It is divided by topics and ordered according to progression of the course.
 \input{msbintro-lit.tex}
 
 \subsection{M1 Information Security Management System}
-\input{lis-lit.tex}
+\input{ismsmemo-lit.tex}
 
 \subsection{MSB's Framework, Part II}
 \input{msbforts-lit.tex}
 
 \subsection{M2 and S3 Assessment and Risk Analysis}
-\input{vranalys-lit.tex}
+\input{risksem-lit.tex}
 
 \subsection{Information Theory}
 \input{infotheory-lit.tex}
@@ -258,16 +277,16 @@ It is divided by topics and ordered according to progression of the course.
 \input{proto-lit.tex}
 
 \subsection{L4 Password Cracking and Social Engineering}
-\input{passwd-lit.tex}
+\input{pwdguess-lit.tex}
 
 \subsection{S5 Password Policies}
-\input{pwdpol-lit.tex}
+\input{pwdpolicies-lit.tex}
 
 \subsection{Accountability and Non-Repudiation}
 \input{accountability-lit.tex}
 
 \subsection{L6 Privacy of Communication}
-\input{privcomm-lit.tex}
+\input{pricomlab-lit.tex}
 
 \subsection{Software Security}
 \input{software-lit.tex}
@@ -281,7 +300,7 @@ It is divided by topics and ordered according to progression of the course.
 \subsection{P7 A Short Gap Analysis}
 
 The project consists of doing a short gap analysis.
-As such you must have read MSB's material \cite{%
+As such you must have read MSB's material~\cite{%
   MSB2011itm,MSB2011sle,MSB2011p,MSB2011v,MSB2011r,%
   MSB2011gap,MSB2011vs,MSB2011us,MSB2011upo,%
 	MSB2011pg,MSB2011koa,MSB2011i,MSB2011o,MSB2011g,%
@@ -290,15 +309,21 @@ As such you must have read MSB's material \cite{%
 
 
 \section{Examination}
-\label{sec:exam}
-This section explains how the course modules are graded and mapped to Ladok.
-Table \ref{tbl:ladok} visualizes the relations between modules, credits, grades 
-and Ladok.
+\label{Examination}
+
+This section explains how the course modules are graded and mapped to LADOK\@.
+\Cref{LADOKTable} visualizes the relations between modules, credits, grades and 
+LADOK\@.
 
 \begin{table}
   \centering
+  \caption{%
+    Table summarizing course modules and their mapping to LADOK\@.
+    P means pass, F means fail.
+    A--E are also passing grades, where A is the best.
+  }\label{LADOKTable}
   \begin{tabular}{rrll}
-    Ladok & Credits (ECTS)  & Grade       & Course Assignments\\
+    LADOK & Credits (ECTS)  & Grade       & Course Assignments\\
     \toprule
     X104  & 0.0             & P, F        & M1\\
     I104  & 1.5             & P, F        & M2, S3, S5\\
@@ -309,12 +334,6 @@ and Ladok.
     Total & 7.5             & A--F        & Average of P7 and exam\\
     \bottomrule
   \end{tabular}
-  \caption{%
-    Table summarizing course modules and their mapping to Ladok.
-    P means pass, F means fail.
-    A--E are also passing grades, where A is the best.
-  }
-  \label{tbl:ladok}
 \end{table}
 
 The project report is graded from A, C, or E for for passing or F or Fx for 
@@ -328,8 +347,8 @@ get a B as the course total.
 
 In general, all hand-ins in the course must be in a \enquote{passable} 
 condition; i.e.~they must be well-written, grammatically correct and without 
-spelling errors, have citations and references according to \cite{IEEEcitation} 
-(see also \cite{PurdueCitation} for a tutorial), and finally fulfil all 
+spelling errors, have citations and references according to~\cite{IEEEcitation} 
+(see also~\cite{PurdueCitation} for a tutorial), and finally fulfil all 
 requirements from the assignment instruction.
 If you hand something in which is not in this condition, you will receive an 
 F without further comment.
@@ -395,5 +414,5 @@ the higher priority class of applicants the next time you apply for the course.
 You can register such a break yourself in the Student Portal.
 
 
-\printbibliography
+\printbibliography{}
 \end{document}
