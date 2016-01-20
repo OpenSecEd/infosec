@@ -1,0 +1,189 @@
+% $Id$
+%\documentclass[handout]{beamer}
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish,british]{babel}
+\usepackage{url}
+\usepackage{varioref,prettyref}
+\usepackage{graphicx}
+\usepackage[today,nofancy]{svninfo}
+\usepackage{color}
+\usepackage{keystroke}
+\usepackage[natbib,style=alphabetic,maxbibnames=99,backend=bibtexu]{biblatex}
+\addbibresource{literature.bib}
+\setbeamertemplate{bibliography item}[text]
+\usepackage[varioref,prettyref]{miunmisc}
+
+\svnInfo $Id$
+
+\mode<presentation>
+{
+  \usetheme{Frankfurt}
+  \setbeamercovered{transparent}
+  \usecolortheme{seagull}
+}
+\setbeamertemplate{footline}{\insertframenumber}
+
+\title[Intro infosakb]{%
+  Introduction to\\
+  DV026G Information Security
+}
+\author{Daniel Bosk}
+\institute[MIUN IKS]{%
+  Department of Information and Communication Systems (ICS),\\
+  Mid Sweden University, Sundsvall.
+}
+\date{\svnId}
+
+\pgfdeclareimage[height=0.65cm]{university-logo}{MU_logotyp_int_CMYK.pdf}
+\logo{\pgfuseimage{university-logo}}
+
+\AtBeginSection[]{%
+  \begin{frame}<beamer>{Overview}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Overview}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Since this a solution template for a generic talk, very little can
+% be said about how it should be structured. However, the talk length
+% of between 15min and 45min and the theme suggest that you stick to
+% the following rules:  
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+
+\section[What's infosec?]{What is information security?}
+
+\subsection{Information Security}
+
+\begin{frame}{What's infosec?}
+  \begin{itemize}
+    \item Interdisciplinary area.
+    \item Uses cryptography, psychology, economy, among others.
+    \item It's goal is: the security policy must not be broken.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Some terminology}
+  \begin{description}
+    \item[Policy] Specifies what we want to achieve; e.g.~students shouldn't 
+      read the exam before taking the exam, no other student should be able to 
+      read another student's submission to Moodle.
+
+    \item[Mechanisms] The tools we have at our disposal to ensure the policy is 
+      not broken.
+      E.g.~cryptography, access control in the OS.
+
+    \item[Trust] How much can we trust each mechanism?
+
+    \item[Incentives] How can we get our users to behave well?
+      How much can we trust the users?
+
+  \end{description}
+
+  \begin{center}
+    All of these interacts!
+  \end{center}
+\end{frame}
+
+\subsection{In a nutshell}
+
+\begin{frame}{\insertsubsectionhead}
+  \begin{itemize}
+    \item We have an idea of what we want to accomplish---the policy.
+    \item We have some tools to do it---the mechanisms.
+    \item Hopefully we have an idea of how trustworthy the parts of the system 
+      are.
+  \end{itemize}
+\end{frame}
+
+
+\section{This course}
+
+\subsection{Overview}
+
+\begin{frame}{\insertsubsectionhead}
+  \begin{itemize}
+    \item The aim of this course is to provide an overview of the field.
+    \item We need to cover:
+      \begin{itemize}
+        \item how to find out what to put in our policy, and
+        \item how to implement and enforce our policy.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\subsection{The first part}
+
+\begin{frame}{\insertsubsectionhead}
+  \begin{itemize}
+    \item The first part of the course is based on MSB's material.
+    \item This covers everything about the work with policies.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{\insertsubsectionhead}[Assignments]
+  \begin{itemize}
+    \item M1 Information Systems Management System
+    \item M2 Risk Analysis
+    \item S3 Risk Analysis
+    \item S5 Password Policies
+  \end{itemize}
+\end{frame}
+
+\subsection{The second part}
+
+\begin{frame}{\insertsubsectionhead}
+  \begin{itemize}
+    \item This part covers different mechanisms.
+    \item This is the implementation part, e.g.:
+      \begin{itemize}
+        \item cryptography,
+        \item authentication and access control,
+        \item accountability and non-repudiation.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{\insertsubsectionhead}
+  \begin{itemize}
+    \item L4 Password Cracking and Social Engineering
+    \item L6 Privacy of Communication
+  \end{itemize}
+\end{frame}
+
+\subsection{Concluding the course}
+
+\begin{frame}{\insertsubsectionhead}
+  \begin{itemize}
+    \item P7 A Short Gap Analysis
+    \item Written exam
+  \end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[allowframebreaks]{Referenser}
+  \small
+  \printbibliography
+\end{frame}
+
+\end{document}
+
