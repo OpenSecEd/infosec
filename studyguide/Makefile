@@ -1,7 +1,7 @@
 # $Id$
 
 .PHONY: all
-all: studyguide.pdf studyguide-slides.pdf
+all: studyguide.pdf
 
 SRC=		studyguide.tex
 SRC+=		${MODULE_FILES}
