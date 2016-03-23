@@ -27,7 +27,7 @@ each maintained in a branch of this repository:
 [Second Cycle]: https://github.com/OpenSecEd/infosec/tree/second
 
 
-Information Security on First Cycle
+Information Security on Second Cycle
 ===============================================================================
 
 The main document is the study guide, found in the `studyguide/` directory.  
@@ -61,7 +61,8 @@ seminars, and prefixed with P are project assignments.
  L3: Password Cracking and Social Engineering (`passwd/pwdguess`)
  S4: Password Policies (`passwd/pwdpolicies`)
  L5: Privacy of Communication (`pricomlab`)
- P6: A Short Gap Analysis (`ism/gapproject`)
+ S6: Review of Research Literature (`research/review`)
+ P6: A Short Study in Security (`research/prestudy`)
 
 
 File Structure and Building
