@@ -35,7 +35,7 @@
 
 \title{%
   The Complete Study Guide for\\
-  DV026G Information Security
+  IG036G Information Security
 }
 \author{%
   Daniel Bosk\inst{1,2}
@@ -79,6 +79,8 @@ completing the course you should be able to:
   \item Apply the Swedish Civil Contingency Agency's Framework for Information 
     Security Management Systems to analyse, assess and improve the information 
     security in an organization.
+  \item Review and apply the results of published research in the security 
+    field.
 \end{itemize}
 
 
@@ -110,36 +112,21 @@ The main material used for this part~\cite{%
 the ISO 27000 standard documents.
 
 The second part of the course will focus on the content of Anderson's book 
-\citetitle{Anderson2008sea}~\cite{Anderson2008sea}.
-Gollmann's book \citetitle{Gollmann2011cs}~\cite{Gollmann2011cs} is also 
-useful, it has more technical details than~\cite{Anderson2008sea}.
-Although references to~\cite{Gollmann2011cs} is provided in the reading 
-instructions, those are not necessary for this course.
-
-The focus of the second part is on actual attacks, security mechanisms, and how 
-to use these in secure protocols.
-There are also some additional material for this part of the course, 
-e.g.~research papers~\cite{%
-  Juels2012sha,%
-  Komanduri2011opa%
-} and some other material~\cite{Bosk2013gl,Bosk2013itn}.
-In addition to these there will also be some news articles~\cite{%
-  Honan2012haa,%
-  Zetter2012hnt,%
-  Fisher2011rsa,%
-  Hunt2011abs,%
-  Cluley2012twp,%
-  Oberheide2010bao,%
-  Cubrilovic2009rhf%
-} which has documented some of the major security incidents during the past few 
-years.
+\citetitle{Anderson2008sea}~\cite{Anderson2008sea} and Gollmann's book 
+\citetitle{Gollmann2011cs}~\cite{Gollmann2011cs}.
+The focus in the second part of the course is on security mechanisms and how to 
+use these in secure systems.
+There is also some additional material for this part of the course, 
+e.g.~research papers and some other material.
+In addition to these there will also be some news articles which has documented 
+some of the major security incidents during the past few years.
 MSB also has the website CERT-SE~\cite{CERT-SE} which has some interesting 
 references and security news, e.g.~virus epidemics in Sweden.
 
 \subsection{Teaching}
 
 The course is taught using lectures, individual laboratory assignments, 
-seminars, a project, and finally an exam.
+seminars, and finally a project.
 You can find a more detailed timetable, containing lab sessions etc., in the 
 following section.
 All assignments are numbered consecutively prefixed with an \enquote{L} for 
@@ -171,6 +158,7 @@ the following sections.
     \midrule
     1
       & Course Start/Foundations of Security\\
+      %& Start working on L0 (privacy)\\
       & Lecture on MSB's Framework, Part I\\
       & Start working on M1 (isms)\\
       & Lecture on MSB's Framework, Part II\\
@@ -185,51 +173,54 @@ the following sections.
     3
       & Lecture on Identification and Authentication\\
       & Lecture on Security Usability\\
-      & Seminar session S3 (risk)\\
+      & First seminar session S3 (risk)\\
     \midrule
     4
       & Lecture on Access Control\\
       & Lecture on Secure Protocols\\
       & Lecture on Accountability and Non-Repudiation\\
-      & Seminar session S5 (pwdpolicies)\\
-      & Lab session L4 (passwd), L6 (privcomm)\\
+      & Lab session L4 (passwd)\\
+      & Lab session L6 (privcomm)\\
+      & First seminar session S5 (pwdpolicies)\\
     \midrule
     5
       & Lecture on Software Security\\
-      & Lecture on DRM and Trusted Computing\\
+      & Lecture on Trusted Computing\\
       & Lecture on Side-Channels\\
-      & Lab session L4 (passwd), L6 (privcomm)\\
+      & Lab session L4 (passwd)\\
+      & Lab session L6 (privcomm)\\
     \midrule
     6
-      & Tutoring session for project, L4 (passwd), L6 (privcomm)\\
-      & First grading of L4 (passwd), L6 (privcomm)\\
+      & Tutoring session for project\\
+      & Lab session L4 (passwd)\\
+      & Lab session L6 (privcomm)\\
     \midrule
     7
-      & Tutoring session for project, L4 (passwd), L6 (privcomm)\\
+      & Tutoring session for project\\
+      & Presentation for S7 (review)\\
+      & Lab session L4 (passwd)\\
+      & Lab session L6 (privcomm)\\
     \midrule
     8
-      & Tutoring session for project, L4 (passwd), L6 (privcomm)\\
+      %& Presentation for L0 (privacy)\\
+      & Tutoring session for project\\
     \midrule
     9
-      & Tutoring session for project, L4 (passwd), L6 (privcomm)\\
+      & Tutoring session for project\\
     \midrule
     10
-      & First exam\\
-      & First grading of project\\
+      & Presentation P8 (research)\\
       & Second grading of M1 (isms), M2 (risk)\\
-      & Second seminar session for S3 (risk), S5 (pwdpolicies)\\
-      & Second grading of L4 (passwd), L6 (privcomm)\\
+      & Second seminar session for S3 (risk), S5 (pwdpolicies), S7 (review)\\
+      & Final lab session L4 (passwd), L6 (privcomm)\\
     \midrule
     +3 months
-      & Second exam\\
-      & Second grading of project\\
+      & Second presentation P8 (research)\\
       & Final grading of M1 (isms), M2 (risk)\\
-      & Final seminar session for S3 (risk), S5 (pwdpolicies)\\
-      & Final grading of L4 (passwd), L6 (privcomm)\\
+      & Final seminar session for S3 (risk), S5 (pwdpolicies), S7 (review)\\
     \midrule
     +6 months
-      & Final exam\\
-      & Final grading of project\\
+      & Final presentation P8 (research)\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -244,6 +235,9 @@ It is divided by topics and ordered according to progression of the course.
 \subsection{Foundations of Security}
 \input{foundations-lit.tex}
 
+%\subsection{L0 Privacy is Dead}
+%\input{privacy-lit.tex}
+%
 \subsection{MSB's Framework, Part I}
 \input{msbintro-lit.tex}
 
@@ -298,15 +292,15 @@ It is divided by topics and ordered according to progression of the course.
 \subsection{Side-Channels}
 \input{sidechannels-lit.tex}
 
-\subsection{P7 A Short Gap Analysis}
+\subsection{S7 Current Research Literature in Security}
+\input{review-lit.tex}
 
-The project consists of doing a short gap analysis.
-As such you must have read MSB's material~\cite{%
-  MSB2011itm,MSB2011sle,MSB2011p,MSB2011v,MSB2011r,%
-  MSB2011gap,MSB2011vs,MSB2011us,MSB2011upo,%
-	MSB2011pg,MSB2011koa,MSB2011i,MSB2011o,MSB2011g,%
-	MSB2011lg,MSB2011ulo,MSB2011kf,MSB2011fa%
-}.
+\subsection{P8 A Short Study in Information Security}
+
+The project aims at a smaller \enquote{pre-study} within the area of 
+information security.
+As such, the seminar S7 above, is a part of this project too, intending to get 
+you started in reading papers.
 
 
 \section{Examination}
@@ -327,23 +321,21 @@ LADOK\@.
     \toprule
     LADOK & Credits (ECTS)  & Grade       & Course Assignments\\
     \midrule
-    X104  & 0.0             & P, F        & M1\\
-    I104  & 1.5             & P, F        & M2, S3, S5\\
+    I104  & 1.5             & P, F        & M1, M2, S3, S5\\
     L104  & 1.5             & P, F        & L4, L6\\
-    P104  & 3.0             & A, C, E, F  & P7\\
-    T104  & 1.5             & A, C, E, F  & Exam\\
+    R104  & 4.5             & A--F        & P8 (and S7)\\
     \midrule
-    Total & 7.5             & A--F        & Average of P7 and exam\\
+    Total & 7.5             & A--F        & P8\\
     \bottomrule
   \end{tabular}
 \end{table}
 
-The project report is graded from A, C, or E for for passing or F or Fx for 
-failing.
-The exam is also graded A, C, or E for passing or F or Fx for failing.
-The final grade for the course is the average of the exam and the project.
-For example, if you have an A on the exam but a C on the project, then you will 
-get a B as the course total.
+The project report is graded from A to F, where A--E are for passing and F and 
+Fx are for failing.
+The project also includes an oral presentation and a seminar (S7).
+These are both graded pass (P) or fail (F), and are reported with the project 
+to LADOK\@.
+The grade of the project will also be the grade of the course total.
 
 \subsection{Handed-In Assignments}
 

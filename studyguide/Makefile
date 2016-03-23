@@ -30,10 +30,6 @@ msbintro.bib: ../modules/ism/msbframework/msbintro/msbintro.bib
 msbforts-lit.tex: ../modules/ism/msbframework/msbforts/literature.tex
 msbforts.bib: ../modules/ism/msbframework/msbforts/msbforts.bib
 
-MODULE_FILES+= 	project-aim.tex
-
-project-aim.tex: ../modules/ism/gapproject/aims.tex
-
 MODULE_FILES+= 	crypto-lit.tex crypto.bib
 
 crypto-lit.tex: ../modules/appliedcrypto/crypto/abstract.tex
@@ -102,6 +98,15 @@ MODULE_FILES+= 	accountability-lit.tex
 
 accountability-lit.tex: ../modules/accountability/overview/abstract.tex
 accountability.bib: ../modules/accountability/overview/overview.bib
+
+MODULE_FILES+=	review-aim.tex review-lit.tex
+
+review-aim.tex: ../modules/research/review/aims.tex
+review-lit.tex: ../modules/research/review/literature.tex
+
+MODULE_FILES+= 	project-aim.tex
+
+project-aim.tex: ../modules/research/prestudy/aims.tex
 
 
 ${MODULE_FILES}:
