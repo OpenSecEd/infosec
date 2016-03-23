@@ -58,3 +58,6 @@
 	path = libbib
 	url = https://github.com/dbosk/libbib.git
 	branch = master
+[submodule "modules/research"]
+	path = modules/research
+	url = https://github.com/OpenSecEd/research.git
