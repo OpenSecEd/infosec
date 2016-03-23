@@ -27,6 +27,48 @@ each maintained in a branch of this repository:
 [Second Cycle]: https://github.com/OpenSecEd/infosec/tree/second
 
 
+Information Security on First Cycle
+===============================================================================
+
+The main document is the study guide, found in the `studyguide/` directory.  
+This guide covers the entire course: intended learning outcomes, reading 
+instructions with a suggested schedule, assignments and abstracts for the 
+material, among other things.
+
+The study guide ties together a set of learning modules.  Each learning module 
+contains lectures, assignments etc.  Currently the course comprises the 
+following topics:
+
+ - Foundations of Security (`foundations`)
+ - Framework for Information Security Management (`ism`)
+ - Information Theory (`infotheory`)
+ - Cryptography (`appliedcrypto`)
+ - Secure Protocols (`fverif`)
+ - Identification and Authentication (`auth`)
+ - Security Usability (`usability`)
+ - Access Control (`ac`)
+ - Accountability and Non-Repudiation (`accountability`)
+ - Software Security (`software`)
+ - Trusted Computing (`trustcomp`)
+ - Side-Channels (`sidechannels`)
+
+These topics are examined using the following assignments.  The assignments 
+prefixed with L are laboratory assignments, prefixed with M are memos, S for 
+seminars, and prefixed with P are project assignments.
+
+ M1: Information Security Management Systems (`ism/ismsmemo`)
+
+ S2: Risk Analysis (`ism/risksem`)
+
+ L3: Password Cracking and Social Engineering (`passwd/pwdguess`)
+
+ S4: Password Policies (`passwd/pwdpolicies`)
+
+ L5: Privacy of Communication (`pricomlab`)
+
+ P6: A Short Gap Analysis (`ism/gapproject`)
+
+
 Information Security on Second Cycle
 ===============================================================================
 
@@ -57,11 +99,17 @@ prefixed with L are laboratory assignments, prefixed with M are memos, S for
 seminars, and prefixed with P are project assignments.
 
  M1: Information Security Management Systems (`ism/ismsmemo`)
+
  S2: Risk Analysis (`ism/risksem`)
+
  L3: Password Cracking and Social Engineering (`passwd/pwdguess`)
+
  S4: Password Policies (`passwd/pwdpolicies`)
+
  L5: Privacy of Communication (`pricomlab`)
+
  S6: Review of Research Literature (`research/review`)
+
  P6: A Short Study in Security (`research/prestudy`)
 
 
