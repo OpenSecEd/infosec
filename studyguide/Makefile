@@ -1,5 +1,3 @@
-# $Id$
-
 .PHONY: all
 all: studyguide.pdf
 
