@@ -58,3 +58,6 @@
 	path = libbib
 	url = https://github.com/dbosk/libbib.git
 	branch = master
+[submodule "miuntex"]
+	path = miuntex
+	url = https://github.com/dbosk/miuntex.git
