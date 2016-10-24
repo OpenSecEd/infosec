@@ -1,0 +1,416 @@
+% $iD$
+% Author:   Daniel Bosk <daniel.bosk@miun.se>
+\documentclass[a4paper,addpoints]{miunexam}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,swedish]{babel}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{varioref,prettyref}
+\usepackage{SIunits}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage[style=alphabetic,natbib=true]{biblatex}
+\addbibresource{literature.bib}
+\addbibresource{rfc.bib}
+\usepackage[today,nofancy]{svninfo}
+\usepackage[varioref,prettyref]{miunmisc}
+
+\svnInfo $Id$
+
+\author{%
+  Daniel Bosk\\
+  \small\texttt{\href{mailto:daniel.bosk@miun.se}{daniel.bosk@miun.se}}\\
+  \small Telefon: 060-14\,8709
+}
+\courseid{DT012G}
+\course{Informationssäkerhet och riskanalys}
+\date{2013-06-03}
+\examtype{Tentamen}
+
+%\printanswers
+
+\begin{document}
+
+\maketitle
+\thispagestyle{foot}
+
+\section*{Instruktioner}
+\noindent
+Läs uppgifterna noggrant innan du börjar att lösa dem.
+Läs igenom samtliga uppgifter innan du börjar att lösa den första.
+Planera din skrivning utifrån den tidsbegränsning som anges nedan.
+Besvara endast frågan, skriv inte svar som ej är relaterad till frågan.
+
+Tänk på att skriva med ett korrekt språk; grammatik och meningsbyggnad är 
+viktigt.
+Svaret ska tydligt framgå.
+Dina svar ska visa att du förstått, tänk på att utforma dem för att visa just 
+detta.
+
+Frågorna är \emph{ej} sorterade efter svårighetsgrad.
+
+Lärare finns tillgänglig via telefon under tentan.
+Svar på frågor som läraren anser berör samtliga kommer att publiceras i kursens
+diskussionsforum.
+Notera att diskussionsforumet ej kommer att övervakas under denna tentamen, 
+ställ därför inga frågor där.
+
+\begin{description}
+  \item[Skrivtid] 3 juni 2013 kl.\ 13:00 till kl.\ 19:00.
+    (6 timmar, inkl.\ kortare paus).
+	\item[Hjälpmedel] Kurslitteratur, egna anteckningar och referensmaterial på
+		webben.
+	\item[Antal uppgifter] \numquestions
+	\item[Antal poäng] \numpoints
+\end{description}
+
+
+\subsection*{Betygssättning}
+\noindent
+Denna tentamen betygsätts med betygen A, B och F.
+För slutbetygen E, D och C krävs inte denna tentamen, då räcker att du är 
+godkänd på samtliga obligatoriska inlämningsuppgifter samt projekt.
+
+Slutbetyget baserar sig på medelbetyget från de obligatoriska momenten.
+Om du får ett B på denna tentamen ökas ditt slutbetyg med ett betygsteg.
+På samma sätt om du får ett A ökas ditt slutbetyg med två betygsteg.
+
+Preliminära betygsgränser för B är minst \unit{50}{\%} och för A krävs minst 
+\unit{90}{\%}.
+
+
+\clearpage
+\section*{Uppgifter}
+Nedan följer uppgifterna, glöm inte att de är givna utan inbördes ordning.
+
+\begin{questions}
+  \question\label{q:pwdpolicy}
+  Universitetets lösenordspolicy kräver minst åtta tecken.
+  Dessa tecken ska vara minst tre gemener, tre versaler och två siffror -- 
+  dessutom måste dessa finnas bland de första åtta tecknen i lösenordet.
+  Detta ger \( 26^3 26^3 10^2 = 26^6 10^2 \approx 2^{35} \) antal möjliga 
+  lösenord.
+  Lösenordet måste dessutom bytas var tredje månad, vilket i sin tur ger risken 
+  för lösenordssystem där användaren baserar det nya lösenordet på det gamla.
+
+  Den något enklare lösenordspolicyn minst åtta tecken med gemener, versaler 
+  och siffror -- utan krav på något antal inom de olika kategorierna -- ger \( 
+  (26 + 26 + 10)^8 = 62^8 \approx 2^{48} \) antal lösenord.
+  Denna policy har inga krav på giltighetstid hos ett lösenord.
+
+  Resultatet av detta är en reduktion av komplexiteten från \( 62^8 \) ned till 
+  \( 26^6 10^2 \).
+  Detta utgör en relativ minskning av komplexiteten med \( 1-\frac{26^6 
+  10^2}{62^8} = 0.99986 \), alltså 99.99 procent.
+
+  Oavsett vilken av ovan givna policyer som används får användarna (sannolikt) 
+  svaga lösenord.
+
+  \begin{parts}
+    \part[4] Förklara hur dessa lösenordspolicyer kan angripas.
+
+    \begin{solution}
+      De kan naturligtvis angripas genom en ordlisteattack.
+      Eftersom att den första policyn har den givna utformningen behöver 
+      ordlistan inte innehålla några gissningsförslag som innehåller 
+      specialtecken.
+      (Den bör inte innehålla specialtecken inom de första åtta tecknen för att 
+      öka hastigheten för gissningarna, det är ju onödigt att gissa på något 
+      som ändå inte tillåts enligt policyn.)
+
+      Ett annat angreppssätt är råstyrkemetoden.
+      Här kan tas hänsyn till att lösenordet är minst åtta tecken, och 
+      sannolikt inte är särskilt mycket längre; att antalet versaler, gemener 
+      och siffror är av givna antal.
+      Om vi har ett system som klarar av \( 10^6\approx 2^{20} \) gissningar 
+      per sekund och lösenordsrymden är cirka \( 2^{35} \), då har vi gått 
+      igenom hela lösenordsrymden på \( 2^{15} \) sekunder, tillika nio timmar.
+      Antar vi det mycket långsammare systemet med \( 10^3\approx 2^{10} \), 
+      tar det istället 388 dagar.
+
+      Båda angreppsmetoderna kan förfinas ytterligare genom att anta att 
+      användarna använder någon form av system för utformandet av sina 
+      lösenord, detta antagande baserar sig på det påtvingade lösenordsbytet 
+      var tredje månad.
+      (Detta gäller naturligtvis enbart den första policyn, då den andra inte 
+      har några krav på lösenordsbyten.)
+      Ordlistemetoden kan utökas med tillägg av diverse prefix eller suffix på 
+      varje ord i ordlistan.
+      På liknande sätt kan råstyrkeattacken anpassas för att testa lösenord 
+      i en bättre ordning och förhoppningsvis avsluta innan sökrymden är 
+      uttömd.
+    \end{solution}
+
+    \part[4] Ge ett förslag på en riktigt bra lösenordspolicy.
+    Förslag utan motivering ger noll poäng.
+
+    \begin{solution}
+      De problem som uppstår med ovan givna lösenordspolicyer är dels att 
+      lösenordsrymden inskränks, speciellt av den första policyn.
+      Det andra problemet är lösenordsbytet, vilket kan få användarna att 
+      tillämpa system för lösenordsbytena; exempelvis att öka på en siffra 
+      i slutet av lösenordet.
+      Anledningen till detta är minnesbarhet.
+      Användarna vill ha ett lösenord som är enkelt att komma ihåg, har de lärt 
+      sig ett lösenord och sedan gör en liten modifiering då blir det enklare 
+      att komma ihåg än att lära sig ett helt nytt lösenord.
+
+      I en undersökning av \citet{Komanduri2011opa} visar det sig att den 
+      lösenordspolicy som ger högst entropi är den som enbart kräver minst 16 
+      tecken.
+      Entropin används här för att beteckna den faktiska lösenordsrymden, många 
+      lösenordskombinationer kommer aldrig att användas och entropin är ett 
+      mått på just hur många som faktiskt kommer att användas.
+      Denna lösenordspolicy ger också en av de högsta minnesbarheterna 
+      i undersökningen.
+
+      Om vi antar att användare kommer att välja en väldigt enkelt lösenord 
+      enligt denna policy, exempelvis bara 16 gemener, då kommer sökrymden för 
+      en råstyrkeattack att bli \( 26^{16}\approx 2^{75} \).
+      Med vår snabbaste angripar ovan kommer det alltså att ta \( 10^{15} \) år 
+      att gå igenom hela sökrymden.
+      Notera att detta är ett minimum då medellängden för lösenorden enligt 
+      denna policy var längre än 16 tecken \cite{Komanduri2011opa}.
+
+      Låt oss anta att medellängden för ord i SAOL \cite{SAOL} är fyra tecken.
+      För att kunna ha en svensk mening som lösenord måste vi då ha en mening 
+      beståendes av minst fyra svenska ord.
+      Om vi då använder SAOL för att angripa dessa lösenord, då har vi att 
+      sökrymden är \( 125000^4\approx 2^{67} \) och det skulle fortfarande ta 
+      den snabbaste angriparen ovan \( 10^{12} \) år att gå igenom alla 
+      gissningarna.
+
+      Utifrån detta kan vi konstatera att vi egentligen inte skulle behöva 
+      någon livslängd för lösenord.
+      Problemen som kan uppstå är om någon iaktar när lösenordet skrivs in 
+      eller dylika problem.
+      Därför kan det vara bra att införa en livslängd för lösenord på ett till 
+      fem år, då blir det mindre frustration för användarna men ändå viss 
+      förnyelse av lösenorden.
+    \end{solution}
+  \end{parts}
+
+  \question\label{q:terminologi}
+  Definiera följande begrepp:
+  \begin{parts}
+    \part[1] pålitlighet (trust),
+    \part[1] pålitlig (trustworthy),
+    \part[1] sekretess (secrecy),
+    \part[1] konfidentialitet (confidentiality),
+    \part[1] personlig integritet (privacy),
+    \part[1] integritet (integrity), och
+    \part[1] autenticitet (authenticity).
+  \end{parts}
+
+  \begin{solution}
+    \citet[ss.\ 13--14]{Anderson2008sea} definierar begreppen enligt följande:
+    \begin{description}
+      \item[Pålitlighet] Ett system eller principal som innehar pålitlighet 
+        (\foreignlanguage{english}{is trusted}) är ett system eller principal 
+        som kan bryta din säkerhetspolicy.
+
+      \item[Pålitlig] Ett system eller principal som är pålitlig 
+        (\foreignlanguage{english}{is trustworthy}) är ett system eller 
+        principal som inte kommer att misslyckas.
+        (Den kommer alltså inte att bryta din säkerhetspolicy.)
+
+        Ett exempel för att illustrera skillnaden ges av följande citat: 
+        \begin{quote}
+          \foreignlanguage{english}{
+          ''if an NSA employee is observed in a toilet stall at Baltimore 
+          Washington airport selling key material to a Chinese diplomat, then 
+          (assuming his operation was not authorized) we can describe him as 
+          `trusted but not trustworthy''' \cite[s.\  13]{Anderson2008sea}.
+          }
+        \end{quote}
+
+      \item[Sekretess] Sekretess är en teknisk term för effekten av en mekanism 
+        som begränsar antalet principals som kan ta del av information.
+
+      \item[Konfidentialitet] Konfidentialitet syftar till att tillhandahålla 
+        sekretess för andra principals hemliga information.
+
+      \item[Personlig integritet] Detta är förmågan eller rätten att kunna 
+        skydda sin personliga information.
+        Det gäller alltså bara individer, exempelvis företag har ingen 
+        personlig integritet.
+
+      \item[Integritet] Detta är en teknisk term för egenskapen att data 
+        förblir oförändrat, eller, om förändring sker ska den inte förbli 
+        obemärkt.
+
+      \item[Autenticitet] Detta begrepp innefattar integritet och fräshhet.
+        Om kommunikation spelas in och sedan spelas upp vid ett annat 
+        tillfälle, då kommer integriteten att ha bevarats men inte fräshheten 
+        -- alltså är en återuppspelning inte autentisk.
+    \end{description}
+    Dessa definitioner stämmer även överens med RFC 4949 \cite{rfc4949}.
+  \end{solution}
+
+  \question\label{q:psykologi}
+  Människans psykologi spelar en stor roll för säkerheten hos olika system.
+  \begin{parts}
+    \part[2] Förklara översiktligt varför psykologin är viktig inom 
+    säkerhetsområdet.
+    
+    \begin{solution}
+      Då systemen vi är beroende av och som ska upprätthålla vår säkerhet 
+      handhas av människor blir psykologin genast viktig.
+      Vi behöver psykologin inom säkerhetsområdet för att kunna ta hänsyn till 
+      hur människor fungerar när vi konstruerar säkerhetssystem.
+      Exempelvis, om vi gör ett system för komplext och användaren tycker att 
+      komplexiteten är onödig, då kommer denne användare att aktivt försöka att 
+      ta sig runt systemet -- kanske genom att skriva upp långa lösenord 
+      istället för att lära sig dem utantill.
+
+      Om vi däremot tar hänsyn till användarnas kognitiva begränsningar, då kan 
+      vi konstruera system som både är säkra och enkla att använda.
+    \end{solution}
+
+    \part[4] Analysera en psykologibaserad attack och förklara varför den 
+    fungerar.
+
+    \begin{solution}
+      En psykologibaserad attack utnyttjar svagheter hos användarna för att ta 
+      sig runt ett säkerhetssystem, det är alltså inte säkerhetssystemen som 
+      angrips.
+
+      Ett exempel på en sådan attack kan vara att en användare får ett e-brev 
+      som till synes är från banken och som innehåller en länk till en 
+      inloggningssida, kallat nätfiske.
+      Brevet kan be användaren att uppdatera någonting hos banken via internet.
+      Ett förfarande beskrivs och sedan läggs till ''eller klicka på länken''.
+      Med en förfarande som låter som att det kan ta fem till tio klick kommer 
+      användaren sannolikt att välja enklicksalternativet.
+      Notera att förfarandet måste vara korrekt för banken medan länken är till 
+      en phishingsida.
+      Utformandet kan leda till vad litteraturen \cite[s. 23]{Anderson2008sea} 
+      kallar \emph{\foreignlanguage{english}{capture errors}}, att användaren 
+      använder ett invant beteende: i detta fall att användaren klickar på 
+      direktlänkar.
+
+      Därutöver försöker nätfiskaren att få användaren att tillämpa fel regler 
+      i situationen.
+      Exempelvis, användaren kanske (omedvetet) lägger större vikt vid att ett 
+      hänglås syns i webbläsaren för säker anslutning än att bankens namn är 
+      rätt stavat i URL:en.
+      Även att bankens namn finns med någonstans i URL:en kan vara en 
+      tillräckligt stark regel för att användaren ska undvika att detektera den 
+      felaktiga fiske-URL:en.
+    \end{solution}
+  \end{parts}
+
+  \question[4]\label{q:mitm}
+  Definiera begreppet mannen-i-mitten-attack 
+  (\foreignlanguage{english}{man-in-the-middle attack}) och illustrera 
+  begreppet med ett exempel.
+  \begin{solution}
+    Mannen-i-mitten-attack är enligt \citet[kap.\ 3]{Anderson2008sea} och 
+    \citet{rfc4949} en aktiv avlyssning där angriparen fångar upp och 
+    modifierar utvald information för att maskera sig som en eller flera av de 
+    riktiga användarna.
+
+    Ett exempel är en användare som ska logga in på banken.
+    Användaren ansluter till angriparen som i sin tur ansluter till banken.
+    Angriparen skickare vidare all data från banken till användaren.
+    När användaren försöker att logga in skickar angriparen vidare 
+    inloggningsinformationen till banken och angriparen är nu inloggad.
+    Istället för att skicka den riktiga sidan för användaren denna gång kan 
+    angriparen skicka en sidan som säger att inloggningen misslyckades.
+    När användaren försöker logga in igen kan angriparen använda dessa 
+    säkerhetskoder för att autentisera överföringar.
+  \end{solution}
+
+  \question\label{q:multilevel}
+  Flernivåsäkerhet (\foreignlanguage{english}{multi-level security}) och 
+  multilateral säkerhet (\foreignlanguage{english}{multi-lateral security}) är 
+  två relaterade begrepp.
+
+  \begin{parts}
+    \part[2] Vad innebär flernivåsäkerhet?
+    Förklara vad som ämnas med detta.
+
+    \part[2] Vad innebär multilateral säkerhet?
+    Förklara vad som ämnas med detta.
+
+    \part[2] Beskriv fördelarna med att kombinera de båda metoderna.
+  \end{parts}
+
+  \begin{solution}
+    Begreppet \emph{flernivåsäkerhet} innebär att information eller åtkomst 
+    därutav värderas olika i en hierarkisk modell \cite[kap.\ 
+    8]{Anderson2008sea}.
+    Två välkända exempel är Bell--LaPadula-modellen (BLP) och Bibamodellen.
+    BLP fokuserar på konfidentialitet och information värderas som mer eller 
+    mindre konfidentiell.
+    Den går ut på att en principal som har en given åtkomstbehörighet kan läsa 
+    allt från sin egen nivå och alla nivåer nedan.
+    Däremot kan samma användare enbart skriva på sin egen nivå eller på övre 
+    nivåer.
+    Detta är för att hindra informationsflöde från högre nivåer till lägre.
+
+    Bibamodellen fungerar tvärt om då den fokuserar på att bibehålla 
+    integriteten hos information istället för konfidentialiteten.
+
+    \emph{Multilateral säkerhet}, å andra sidan, är inte hierarkisk.
+    Den delar upp information horisontellt i olika avdelningar och det ska vara 
+    omöjligt att information flödar från en avdelning till en annan.
+    Välkända modeller inom multilateral säkerhet är Kinesiska muren och 
+    Separation av uppgifter (\foreignlanguage{english}{Separation of duty}).
+
+    Kinesiska muren innebär att det mellan varje avdelning skapas en ''mur'' 
+    för att information inte ska kunna flöda emellan.
+    Den innebär att om en anställd arbetar med en kund får den anställde inte 
+    arbeta med kunder som är konkurrerande.
+
+    Separation av uppgifter innebär exempelvis att det inte får vara samma 
+    personer som driftar ett system som de som utvecklar det.
+    Anledningen till detta är för att utvecklarna inte ska medvetet kunna bygga 
+    in svagheter i systemet och sedan utnyttja dessa.
+    Ett annat exempel är att en systemadministratör inte ska ha 
+    skrivrättigheter till loggfilerna för ett system denne själv administrerar, 
+    då denne i sådant fall skulle kunna göra vadhelst och sedan ta bort det 
+    från loggarna.
+
+    Fördelarna med att kombinera flernivå- och multilateral säkerhet är att ett 
+    sådant system ger möjlighet till mer finskaliga säkerhetspolicyer.
+    Exempelvis ska en läkare ha tillgång till patientjournaler, men enbart för 
+    de patienter som denne ansvarar för.
+    På samma sätt ska receptionisten kunna komma åt besökstider för alla 
+    patienter (vid en given vårdinrättning), men inte journalerna.
+  \end{solution}
+
+  \question[4]\label{q:biometrics}
+  Beskriv problemen som kan uppstå med biometriska system och förklara hur 
+  dessa kan användas trots dessa begränsningar.
+
+  \begin{solution}
+    \citet{Anderson2008sea} anger några problem med biometriska system, 
+    sammanfattningsvis är de
+    \begin{itemize}
+      \item att systemen fungerar dåligt eller inte alls för personer med 
+        kroppskador, då systemen är anpassade för mycket begränsad naturlig 
+        variation;
+      \item att många system går att lura med hjälp av inspelningsattacker, 
+        exempelvis att ett gammalt fingeravtryck visas upp för 
+        fingeravtrycksläsaren eller att en inspelning spelas upp för ett 
+        röstigenkänningsystem;
+      \item att det är svårt för en mänsklig operatör att verifiera eller 
+        falsifiera biometriska data;
+      \item att precisionen i det biometriska systemet är för dålig för att 
+        kunna skilja en användare från en annan.
+    \end{itemize}
+
+    En anledning till att de ändå kan användas är för att de kan ha en 
+    avskräckande effekt, alltså en ren psykologisk effekt hos angripare (och 
+    hos användare generellt).
+    De kan även användas i kombination med en annan säkerhetsmekanism, 
+    exempelvis ett lösenord, för att åstadkomma tvåfaktorautentisering.
+  \end{solution}
+
+\end{questions}
+
+\printbibliography
+\end{document}

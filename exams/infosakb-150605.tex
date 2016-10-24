@@ -1,0 +1,284 @@
+% $Id$
+% Author:  Daniel Bosk <daniel.bosk@miun.se>
+\documentclass[svv,addpoints]{miunexam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish,english]{babel}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{prettyref,varioref}
+\usepackage{subfigure}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage{authblk}
+
+\usepackage{csquotes}
+\MakeBlockQuote{<}{|}{>}
+\EnableQuotes
+
+\usepackage[natbib,style=alphabetic,maxbibnames=99,backend=bibtexu]{biblatex}
+\addbibresource{literature.bib}
+
+\usepackage[varioref,prettyref,listings]{miunmisc}
+
+\printanswers
+
+\examtype{Final exam}
+\courseid{DV026G}
+\course{Information Security}
+\date{2015-06-05}
+\author{%
+  Daniel Bosk
+}
+\affil{%
+  Department of Information and Communication Systems,\\
+  Mid Sweden University, SE-851\,70 Sundsvall\\
+  Email: \href{mailto:daniel.bosk@miun.se}{daniel.bosk@miun.se}\\
+  Phone: 010-142\,8709
+}
+
+\DeclareMathOperator{\hmac}{HMAC}
+\DeclareMathOperator{\xor}{\oplus}
+\DeclareMathOperator{\concat}{||}
+
+\begin{document}
+\maketitle
+\thispagestyle{foot}
+
+\section*{Instructions}
+\label{sec:Instructions}
+Carefully read the questions before you start answering them.
+Note the time limit of the exam and plan your answers accordingly.
+Only answer the question, do not write about subjects remotely related to the
+question.
+
+Write your answers on separate sheets, not on the exam paper.
+Only write on one side of the sheets.
+Start each question on a new sheet.
+Do not forget to \emph{motivate your answers.}
+
+Make sure you write your answers clearly, if I cannot read an answer the answer
+will be awarded no points---even if the answer is correct.
+The questions are \emph{not} sorted by difficulty.
+
+\begin{description}
+  \item[Time] 5 hours.
+  \item[Aids] Dictionary, course material and notes.
+  \item[Maximum points] \numpoints
+  \item[Questions] \numquestions
+\end{description}
+
+\subsection*{Preliminary grades}
+The following grading criteria applies:
+E \(\geq 50\%\),
+D \(\geq 60\%\),
+C \(\geq 70\%\), 
+B \(\geq 80\%\),
+A \(\geq 90\%\).
+No question must be awarded zero points.
+
+
+\clearpage
+\section*{Questions}
+The questions are given below.
+They are not given in any particular order.
+
+\begin{questions}
+  \question\label{q:passwd:auth:E}
+  Explain the following terms:
+  \begin{parts}
+    \part[1] Brute force
+    \part[1] Dictionary attack
+    \part[1] Hash table
+    \part[1] Social engineering
+    \part[1] Two-factor authentication
+    \part[1] Phishing
+  \end{parts}
+
+
+  \question\label{q:passwd:infotheory:E:C:A}
+  You are asked to estimate some password policies.
+  The policies are the following:
+  \begin{description}
+    \item[comprehensive8]
+      At least 8 characters consisting of upper and lower case, numbers and 
+      special characters (assume the ones common with the numbers on 
+      a keyboard).
+    \item[randswedict3]
+      Randomly choose three words from the Dictionary of the Swedish Language 
+      (SAOL).
+      This dictionary contains approximately 125\,000 words.
+  \end{description}
+  You should answer the following:
+  \begin{parts}
+    \part[4] Estimate the entropy for the passsword policies.
+    (You may rely on the results in certain published research papers discussed 
+    in the course for certain estimates.)
+    \part[2] Decide how suitable they are for use in the home environment.
+    \part[2] Decide how suitable they are for use in a web application.
+  \end{parts}
+  Note that you will not get any points without a motivation.
+
+
+  \question[5]\label{q:msb:E:C}
+  When you start in the company you realize that there is no Information 
+  Security Management System (ISMS, Swe.~`ledningssystem för 
+  informationssäkerhet').
+  You go into your boss's office: persuade him and the management that you need 
+  an ISMS.
+
+
+  \question[5]\label{q:msb:E:C}
+  Your boss is finally convinced that the company needs an Information Security 
+  Management System (ISMS, Swe.~`ledningssystem för informationssäkerhet').
+  He comes to ask you how an ISMS is best implemented, explain how that is 
+  done.
+
+
+  \question\label{q:foundations:E}
+  Define the following terms:
+  \begin{parts}
+    \part[1] Trusted
+    \part[1] Trustworthy
+    \part[1] Secrecy
+    \part[1] Confidentiality
+    \part[1] Privacy
+    \part[1] Integrity
+    \part[1] Authenticity
+  \end{parts}
+
+  \begin{solution}
+    \citet[ss.\ 13--14]{Anderson2008sea} definierar begreppen enligt följande:
+    \begin{description}
+      \item[Pålitlighet] Ett system eller principal som innehar pålitlighet 
+        (\foreignlanguage{english}{is trusted}) är ett system eller principal 
+        som kan bryta din säkerhetspolicy.
+
+      \item[Pålitlig] Ett system eller principal som är pålitlig 
+        (\foreignlanguage{english}{is trustworthy}) är ett system eller 
+        principal som inte kommer att misslyckas.
+        (Den kommer alltså inte att bryta din säkerhetspolicy.)
+
+        Ett exempel för att illustrera skillnaden ges av följande citat: 
+        \begin{quote}
+          \foreignlanguage{english}{
+            ''if an NSA employee is observed in a toilet stall at Baltimore 
+            Washington airport selling key material to a Chinese diplomat, then 
+            (assuming his operation was not authorized) we can describe him as 
+            `trusted but not trustworthy''' \cite[s.\  13]{Anderson2008sea}.
+          }
+        \end{quote}
+
+      \item[Sekretess] Sekretess är en teknisk term för effekten av en mekanism 
+        som begränsar antalet principals som kan ta del av information.
+
+      \item[Konfidentialitet] Konfidentialitet syftar till att tillhandahålla 
+        sekretess för andra principals hemliga information.
+
+      \item[Personlig integritet] Detta är förmågan eller rätten att kunna 
+        skydda sin personliga information.
+        Det gäller alltså bara individer, exempelvis företag har ingen 
+        personlig integritet.
+
+      \item[Integritet] Detta är en teknisk term för egenskapen att data 
+        förblir oförändrat, eller, om förändring sker ska den inte förbli 
+        obemärkt.
+
+      \item[Autenticitet] Detta begrepp innefattar integritet och fräshhet.
+        Om kommunikation spelas in och sedan spelas upp vid ett annat 
+        tillfälle, då kommer integriteten att ha bevarats men inte fräshheten 
+        -- alltså är en återuppspelning inte autentisk.
+    \end{description}
+    Dessa definitioner stämmer även överens med RFC 4949 \cite{rfc4949}.
+  \end{solution}
+
+
+  \question\label{q:usability:E:C:A}
+  Human psychology is important in security.
+  It is used in both security usability and social engineering.
+  \begin{parts}
+    \part[2] Give an overview of why psychology is important in 
+    security.
+
+    \begin{solution}
+      Då systemen vi är beroende av och som ska upprätthålla vår säkerhet 
+      handhas av människor blir psykologin genast viktig.
+      Vi behöver psykologin inom säkerhetsområdet för att kunna ta hänsyn till 
+      hur människor fungerar när vi konstruerar säkerhetssystem.
+      Exempelvis, om vi gör ett system för komplext och användaren tycker att 
+      komplexiteten är onödig, då kommer denne användare att aktivt försöka att 
+      ta sig runt systemet -- kanske genom att skriva upp långa lösenord 
+      istället för att lära sig dem utantill.
+
+      Om vi däremot tar hänsyn till användarnas kognitiva begränsningar, då kan 
+      vi konstruera system som både är säkra och enkla att använda.
+    \end{solution}
+
+    \part[4] Give an example of an attack which exploits weaknesses in human 
+    psychology.
+    Also explain why it works.
+
+    \begin{solution}
+      En psykologibaserad attack utnyttjar svagheter hos användarna för att ta 
+      sig runt ett säkerhetssystem, det är alltså inte säkerhetssystemen som 
+      angrips.
+
+      Ett exempel på en sådan attack kan vara att en användare får ett e-brev 
+      som till synes är från banken och som innehåller en länk till en 
+      inloggningssida, kallat nätfiske.
+      Brevet kan be användaren att uppdatera någonting hos banken via internet.
+      Ett förfarande beskrivs och sedan läggs till ''eller klicka på länken''.
+      Med en förfarande som låter som att det kan ta fem till tio klick kommer 
+      användaren sannolikt att välja enklicksalternativet.
+      Notera att förfarandet måste vara korrekt för banken medan länken är till 
+      en phishingsida.
+      Utformandet kan leda till vad litteraturen \cite[s. 23]{Anderson2008sea} 
+      kallar \emph{\foreignlanguage{english}{capture errors}}, att användaren 
+      använder ett invant beteende: i detta fall att användaren klickar på 
+      direktlänkar.
+
+      Därutöver försöker nätfiskaren att få användaren att tillämpa fel regler 
+      i situationen.
+      Exempelvis, användaren kanske (omedvetet) lägger större vikt vid att ett 
+      hänglås syns i webbläsaren för säker anslutning än att bankens namn är 
+      rätt stavat i URL:en.
+      Även att bankens namn finns med någonstans i URL:en kan vara en 
+      tillräckligt stark regel för att användaren ska undvika att detektera den 
+      felaktiga fiske-URL:en.
+    \end{solution}
+  \end{parts}
+
+
+  \question[5]\label{q:biometrics:E:C:A}
+  Describe what problems can arise when using biometrical systems.
+  Explain why they still can be used if employed properly.
+
+  \begin{solution}
+    \citet{Anderson2008sea} anger några problem med biometriska system, 
+    sammanfattningsvis är de
+    \begin{itemize}
+      \item att systemen fungerar dåligt eller inte alls för personer med 
+        kroppskador, då systemen är anpassade för mycket begränsad naturlig 
+        variation;
+      \item att många system går att lura med hjälp av inspelningsattacker, 
+        exempelvis att ett gammalt fingeravtryck visas upp för 
+        fingeravtrycksläsaren eller att en inspelning spelas upp för ett 
+        röstigenkänningsystem;
+      \item att det är svårt för en mänsklig operatör att verifiera eller 
+        falsifiera biometriska data;
+      \item att precisionen i det biometriska systemet är för dålig för att 
+        kunna skilja en användare från en annan.
+    \end{itemize}
+
+    En anledning till att de ändå kan användas är för att de kan ha en 
+    avskräckande effekt, alltså en ren psykologisk effekt hos angripare (och 
+    hos användare generellt).
+    De kan även användas i kombination med en annan säkerhetsmekanism, 
+    exempelvis ett lösenord, för att åstadkomma tvåfaktorautentisering.
+  \end{solution}
+\end{questions}
+
+
+\printbibliography
+\end{document}

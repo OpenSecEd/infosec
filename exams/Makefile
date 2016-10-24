@@ -1,19 +1,3 @@
-exam-160601.pdf: exam-160601.tex miunexam
-
-.PHONY: all
-all: exam-160601.pdf
-
-infosakb-150827.pdf: infosakb-150827.tex miunexam
-infosakb-150605.pdf: infosakb-150605.tex miunexam
-infosakb-150601.pdf: infosakb-150601.tex miunexam
-
-all: infosakb-150601.pdf infosakb-150605.pdf infosakb-150827.pdf
-
-infosak-questions.pdf: infosak-questions.tex
-
-
-### Setting for examgen ###
-
 EXAM_TAGS+= A C E
 
 MODULE_QUESTION_DBs+=	infosak-questions.tex
@@ -39,13 +23,30 @@ EXAM_TAGS+=				sidechannels
 
 EXAM_TAGS+=				passwd
 
-questions.tex: ${MODULE_QUESTION_DBs}
-	examgen -d ${MODULE_QUESTION_DBs} -t ${EXAM_TAGS} > $@
+
+.PHONY: all
+all: 2016 2015
+
+.PHONY: 2016
+2016: exam-160601.pdf exam-160816.pdf exam-161027.pdf
+
+exam-160601.pdf: exam-160601.tex miunexam
+exam-160816.pdf: exam-160816.tex miunexam
+exam-161027.pdf: exam-161027.tex questions-161027.tex miunexam
+
+questions-161027.tex: ${MODULE_QUESTION_DBs}
+	examgen -NCE -d ${MODULE_QUESTION_DBs} -t ${EXAM_TAGS} > $@
 
 
-.PHONY: clean
-clean:
-	${RM} questions.tex
+.PHONY: 2015
+2015: infosakb-150601.pdf infosakb-150605.pdf infosakb-150827.pdf
+
+infosakb-150827.pdf: infosakb-150827.tex miunexam
+infosakb-150605.pdf: infosakb-150605.tex miunexam
+infosakb-150601.pdf: infosakb-150601.tex miunexam
+
+
+infosak-questions.pdf: infosak-questions.tex
 
 
 INCLUDE_MIUNTEX=../miuntex

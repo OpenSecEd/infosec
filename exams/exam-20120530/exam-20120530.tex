@@ -1,0 +1,152 @@
+\documentclass[a4paper,11pt,addpoints]{miunexam}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{varioref,prettyref}
+\usepackage{SIunits}
+\usepackage{pdfpages}
+\usepackage{natbib}
+\usepackage[today,nofancy]{svninfo}
+\usepackage[varioref,prettyref,natbib]{miunmisc}
+
+\svnInfo $Id$
+
+\author{%
+	Daniel Bosk\footnote{%
+		E-post: \protect\url{daniel.bosk@miun.se},
+		telefon: 060\,-14\,87\,09.
+	} och
+	Lennart Franked\footnote{%
+		E-post: \protect\url{lennart.franked@miun.se},
+		telefon: 060\,-\,14\,83\,86.
+	}
+}
+\courseid{DT012G}
+\course{Informationssäkerhet och riskanalys}
+\date{2012-05-30}
+\examtype{Tentamen}
+
+%\printanswers
+
+\begin{document}
+
+\maketitle
+\thispagestyle{foot}
+
+\section*{Instruktioner}
+\noindent
+Läs uppgifterna noggrant innan du börjar att lösa dem.
+Läs igenom samtliga uppgifter innan du börjar att lösa den första.
+Planera din skrivning utifrån den tidsbegränsning som givits.
+Besvara endast frågan, skriv inte svar som ej är relaterad till frågan.
+
+Tänk på att skriva med ett korrekt språk, grammatik och meningsbyggnad är 
+viktigt.
+Svaret ska tydligt framgå.
+Dina svar ska visa att du förstått, tänk på att utforma dem för att visa just 
+detta.
+
+Frågorna är \emph{ej} sorterade efter svårighetsgrad.
+
+Lärare finns tillgänglig via telefon under tentan.
+Svar på frågor som läraren anser berör samtliga kommer att publiceras i kursens
+diskussionsforum.
+Notera att diskussionsforumet ej kommer att övervakas under denna tentamen, 
+ställ därför inga frågor här.
+
+\begin{description}
+	\item[Skrivtid] 30 maj 2012 kl. 13:00 till kl. 17:00.
+		(4 timmar).
+	\item[Hjälpmedel] Kurslitteratur, egna anteckningar och referensmaterial på
+		webben.
+	\item[Antal uppgifter] \numquestions
+	\item[Antal poäng] \numpoints
+\end{description}
+
+
+\subsection*{Betygssättning}
+\noindent
+Denna tentamen betygsätts med betygen A, B och F.
+För betygen E, D och C krävs inte denna tentamen, då räcker att du är godkänd 
+på samtliga obligatoriska inlämningsuppgifter samt projekt.
+
+Slutbetyget baserar sig på medelbetyget från de obligatoriska momenten.
+Om du får ett B på denna tentamen ökas ditt slutbetyg med ett betygsteg.
+På samma sätt om du får ett A ökas ditt slutbetyg med två betygsteg.
+
+Preliminära betygsgränser för B är minst \unit{50}{\%} och för A krävs minst 
+\unit{90}{\%}.
+
+
+\clearpage
+\section*{Uppgifter}
+\noindent
+Tentamen är uppdelad i delarna \emph{Terminologi} och \emph{Teori}.
+
+\begin{questions}
+	\uplevel{
+		\subsection*{Terminologi}
+		\noindent
+	}
+	\question\label{xrc:Terminologi}
+		Förklara följande termer:
+		\begin{parts}
+			\part[1] NTLM
+			\part[1] råstyrkemetoden (brute force)
+			\part[1] ordlistemetoden (dictionary attack)
+			\part[1] regnbågstabell (rainbow table)
+			\part[1] spionprogram (spyware)
+			\part[1] man-in-the-middle (MITM)
+			\part[1] social engineering
+			\part[1] Service Denial Attacks (SDA)
+			\part[1] Distributed Denial of Service (DDoS)
+			\part[1] hashvärde (hash value)
+			\part[1] GAP-analys
+			\part[1] LIS
+			\part[1] säkerhetspolicy
+			\part[1] nulägesanalys
+			\part[1] FRAAP
+			\part[1] ISO 27000
+			\part[1] white hat
+			\part[1] gray hat
+			\part[1] black hat
+			\part[1] sårbarhetsanalys
+			\part[1] Advanced Persistent Threat (APT)
+			\part[1] brandvägg
+			\part[1] IDS
+			\part[1] leetspeak
+			\part[1] tvåfaktorsautentisiering (two-factor authentication)
+			\part[1] phishing
+		\end{parts}
+
+	\uplevel{
+		\subsection*{Teori}
+		\noindent
+	}
+
+	\question[24]\label{xrc:Passwords}
+		Beräkna och avgör genom olika avväganden vilken av följande 
+		lösenordspolicyer du finner säkrast för hemmet,
+		vilken du finner säkrast för en organisation med minst 500 medarbetare,
+		samt vilken du finner säkrast för användning på webben.
+		\begin{parts}
+			\part Minst åtta tecken beståendes av versaler, gemener, siffror och 
+			specialtecken (antag de tio som finns på siffrorna 0-9 på ett svenskt 
+			tangentbord).
+			\part Tre slumpmässigt valda ord ur Svenska Akademins ordlista (SAOL) 
+			\citep{SAOL}.
+			SAOL innehåller cirka 125000 ord.
+		\end{parts}
+		Notera att avsaknad av motivering ger noll poäng, motivera väl!
+
+	\question[24]\label{xrc:PDCA}
+		Redogör grundligt för alla stegen i PDCA.
+
+\end{questions}
+
+\bibliography{literature}
+
+\end{document}

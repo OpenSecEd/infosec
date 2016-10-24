@@ -1,0 +1,217 @@
+% $Id$
+% Author:  Daniel Bosk <daniel.bosk@miun.se>
+\documentclass[svv,addpoints]{miunexam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[swedish,english]{babel}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{prettyref,varioref}
+\usepackage{subfigure}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage{authblk}
+
+\usepackage[autopunct]{csquotes}
+\MakeBlockQuote{<}{|}{>}
+\EnableQuotes{}
+
+\usepackage[natbib,style=alphabetic,maxbibnames=99,backend=bibtexu]{biblatex}
+
+\printanswers{}
+
+\examtype{Final exam}
+\courseid{DV026G}
+\course{Information Security}
+\date{2016-08-16}
+\author{%
+  Daniel Bosk
+}
+\affil{%
+  Department of Information and Communication Systems,\\
+  Mid Sweden University, SE-851\,70 Sundsvall\\
+  Email: \href{mailto:daniel.bosk@miun.se}{daniel.bosk@miun.se}\\
+  Phone: 010-142\,8709
+}
+
+\DeclareMathOperator{\hmac}{HMAC}
+\DeclareMathOperator{\xor}{\oplus}
+\DeclareMathOperator{\concat}{||}
+
+\begin{document}
+\maketitle
+\thispagestyle{foot}
+
+\section*{Instructions}
+\label{sec:Instructions}
+Carefully read the questions before you start answering them.
+Note the time limit of the exam and plan your answers accordingly.
+Only answer the question, do not write about subjects remotely related to the
+question.
+
+Write your answers on separate sheets, not on the exam paper.
+Only write on one side of the sheets.
+Start each question on a new sheet.
+Do not forget to \emph{motivate your answers.}
+
+Make sure you write your answers clearly, if I cannot read an answer the answer
+will be awarded no points---even if the answer is correct.
+The questions are \emph{not} sorted by difficulty.
+
+\begin{description}
+  \item[Time] 5 hours.
+  \item[Aids] Dictionary, course material and notes.
+  \item[Maximum points] \numpoints{}
+  \item[Questions] \numquestions{}
+\end{description}
+
+\subsection*{Preliminary grades}
+The following grading criteria applies:
+E \(\geq 50\%\),
+D \(\geq 60\%\),
+C \(\geq 70\%\), 
+B \(\geq 80\%\),
+A \(\geq 90\%\).
+No question must be awarded zero points.
+
+
+\clearpage
+\section*{Questions}
+The questions are given below.
+They are not given in any particular order.
+
+\begin{questions}
+\question[3]\label{q:trustcomp}
+% examgen: trustcomp:E:C:A
+Describe the requirements for a process to be able to assess the integrity of 
+itself and its execution environment.
+
+\begin{solution}
+  If the process can trust its environment (i.e.\ the operating system), then 
+  it can rely on the environment to assess its own integrity.
+  Thus the process relies on the integrity of the operating system.
+  The oerating system in turn relies on the integrity of the hardware and must 
+  rely on the hardware to assess its own integrity.
+  Hence the process needs hardware that will not allow a modified version of 
+  the operating system to run.
+\end{solution}
+
+
+
+\question\label{q:crypto:foundations:E}
+  Explain the following terms:
+  \begin{parts}
+    \part[1] Confidentiality
+    \part[1] Integrity
+    \part[1] Availability
+    \part[1] Accountability
+    \part[1] Non-Repudiation
+  \end{parts}
+
+  \begin{solution}
+    See~\cite{Gollmann2011cs} and~\cite{Anderson2008sea} for definitions.
+  \end{solution}
+
+
+  
+\question\label{q:software}
+% examgen: software:E:C
+Describe the three malware reproduction techniques
+\begin{parts}
+  \part[1] virus,
+  \begin{solution}
+    The virus inserts its own code into other programs code.
+    When the other programs are run the virus' payload is run too and the 
+    infection can spread further.
+  \end{solution}
+
+  \part[1] worm,
+  \begin{solution}
+    The worm spreads by its own means, e.g.\ by utilizing networks (shared file 
+    systems, remote executions bugs in network services) or emailing itself 
+    using available programs on the computer.
+  \end{solution}
+
+  \part[1] trojan horse.
+  \begin{solution}
+    The trojan horse is a legitimate-looking program which contains unwanted 
+    functionality.
+    E.g.\ it is a flash-light app, but in the background it uploads the contact 
+    list to the app's developer.
+  \end{solution}
+\end{parts}
+
+
+
+\question\label{q:infotheory:passwd:E:C}
+  Explain how information theory can be used to estimate the strength of 
+  passwords chosen under a given password composition policy:
+  \begin{parts}
+    \part[2] How can you estimate the upper bound, i.e.~the maximum possible 
+    entropy?
+
+    \part[2] Why can't you estimate any (useful) lower bound, i.e.~the minimum 
+    possible entropy?
+
+    \part[2] How can you estimate the average case, i.e.~what is usually the 
+    case when users choose the passwords?
+  \end{parts}
+
+  \begin{solution}
+    You assume that every part of the password is chosen uniformly randomly.
+    This gives the maximum entropy, i.e.~it is an upper bound.
+    You have to account for all choices the password composition policy allows.
+    Or rather, all choices the policy removes.
+
+    This is hard because a user can choose a very easy to guess password, which 
+    has almost no entropy.
+    Similarly, if all users choose the same password, then the entropy would be 
+    zero.
+
+    The average case can be estimated as in~\cite{Komanduri2011opa}.
+    You have to \emph{sample a lot of user-generated passwords}, then you can 
+    perform a frequency analysis to find the probabilities and compute the 
+    entropy.
+    The users are the stochastic variable (random output) and you must get 
+    a large enough sample to estimate the probability distribution.
+  \end{solution}
+
+
+  
+\question[4]\label{q:sidechannels}
+% examgen: sidechannels:E
+Describe a scenario where a covert channel is used.
+
+\begin{solution}
+  A server is anonymous (e.g.\ a Tor hidden service), i.e.\ you may access the 
+  server but not know its location.
+  Part of the server's service is giving the time.
+  It has been shown that the variations in the system clock depend on the 
+  ambient temperature.
+  This means that by studying how the time on the server varies over day and 
+  night and over the seasons, we can eventually figure out the ambient 
+  temperature.
+  From the ambient temperature we can later deduce the geographical location of 
+  the server.
+\end{solution}
+
+
+
+\question\label{q:passwd:auth:E}
+  Explain the following terms:
+  \begin{parts}
+    \part[1] Brute force
+    \part[1] Dictionary attack
+    \part[1] Social engineering
+    \part[1] Two-factor authentication
+    \part[1] Phishing
+  \end{parts}
+
+
+ 
+\end{questions}
+
+
+\printbibliography{}
+\end{document}
