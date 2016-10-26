@@ -1,27 +1,26 @@
 EXAM_TAGS+= A C E
 
-MODULE_QUESTION_DBs+=	infosak-questions.tex
-EXAM_TAGS+=				foundations
-EXAM_TAGS+=				infotheory
-EXAM_TAGS+=				crypto
-EXAM_TAGS+=				auth
-#EXAM_TAGS+=				ac refmon
-EXAM_TAGS+=				usability
-#EXAM_TAGS+=				fverif
+EXAM_DBS+=		infosak-questions.tex
+EXAM_TAGS+=		foundations
+EXAM_TAGS+=		infotheory crypto
+EXAM_TAGS+=		auth
+#EXAM_TAGS+=		ac refmon
+EXAM_TAGS+=		usability
+#EXAM_TAGS+=		fverif
 
-MODULE_QUESTION_DBs+= 	../modules/accountability/overview/questions.tex
-EXAM_TAGS+= 			accountability
+EXAM_DBS+= 		../modules/accountability/overview/questions.tex
+EXAM_TAGS+= 	accountability
 
-MODULE_QUESTION_DBs+= 	../modules/software/overview/questions.tex
-EXAM_TAGS+= 			software
+EXAM_DBS+= 		../modules/software/overview/questions.tex
+EXAM_TAGS+= 	software
 
-MODULE_QUESTION_DBs+= 	../modules/trustcomp/overview/questions.tex
-EXAM_TAGS+= 			trustcomp
+EXAM_DBS+= 		../modules/trustcomp/overview/questions.tex
+EXAM_TAGS+= 	trustcomp
 
-MODULE_QUESTION_DBs+=	../modules/sidechannels/overview/questions.tex
-EXAM_TAGS+=				sidechannels
+EXAM_DBS+=		../modules/sidechannels/overview/questions.tex
+EXAM_TAGS+=		sidechannels
 
-EXAM_TAGS+=				passwd
+EXAM_TAGS+=		passwd
 
 
 .PHONY: all
@@ -34,8 +33,10 @@ exam-160601.pdf: exam-160601.tex miunexam
 exam-160816.pdf: exam-160816.tex miunexam
 exam-161027.pdf: exam-161027.tex questions-161027.tex miunexam
 
-questions-161027.tex: ${MODULE_QUESTION_DBs}
-	examgen -NCE -d ${MODULE_QUESTION_DBs} -t ${EXAM_TAGS} > $@
+EXAM_DBS += exam-160601.tex exam-160816.tex questions-161027.tex
+
+questions-161027.tex: ${EXAM_DBS}
+	examgen -i -NCE -d ${EXAM_DBS} -t ${EXAM_TAGS} > $@
 
 
 .PHONY: 2015
