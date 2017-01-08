@@ -55,8 +55,8 @@
 	url = https://github.com/OpenSecEd/foundations.git
 	branch = master
 [submodule "libbib"]
-	path = libbib
-	url = https://github.com/dbosk/libbib.git
+	path = bibsp
+	url = https://github.com/dbosk/bibsp.git
 	branch = master
 [submodule "miuntex"]
 	path = miuntex
