@@ -1,9 +1,11 @@
-# $Id$
-
 .PHONY: all
 all: studyguide.pdf
 
-SRC=		studyguide.tex
+.PHONY: print
+print: studyguide.ps
+
+
+SRC=		studyguide.tex preamble.tex contents.tex
 SRC+=		${MODULE_FILES}
 
 MODULE_FILES+= 	pricomlab-aim.tex pricomlab-lit.tex pricomlab.bib
@@ -109,7 +111,7 @@ ${MODULE_FILES}:
 
 
 studyguide.pdf: ${SRC}
-studyguide.pdf: llncs biblatex-lncs libbib.sty
+studyguide.pdf: llncs biblatex-lncs bibsp.sty
 
 
 .PHONY: clean-depends
@@ -121,5 +123,6 @@ clean-depends:
 
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/tex.mk
+include ${INCLUDE_MAKEFILES}/doc.mk
 INCLUDE_BIBSP=../bibsp
 include ${INCLUDE_BIBSP}/bibsp.mk
