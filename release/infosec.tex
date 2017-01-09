@@ -1,0 +1,47 @@
+\documentclass[a4paper,runningheads]{llncs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{newclude}
+\usepackage{import}
+%\usepackage{standalone}
+
+\input{preamble-studyguide.tex}
+\input{preamble-software.tex}
+
+\usepackage[noxcolor,noamsthm,notheorems,nokeywords]{beamerarticle}
+
+\title{Information Security: A basic-level course}
+\author{Daniel Bosk}
+\institute{%
+  Department of Information Technology and Society\\
+  Mid Sweden University, SE-851\,70 Sundsvall
+}
+
+\begin{document}
+\frontmatter
+
+\thispagestyle{empty}
+\vspace*{0.1\textheight}
+\begin{center}
+  \LARGE{Information Security}
+\end{center}
+\begin{center}
+  \Large{A basic-level course}
+\end{center}
+\vspace*{0.5em}
+\begin{center}
+  \large{%
+    Daniel Bosk\footnote{%
+      Department of Information Technology and Society,
+      Mid Sweden Univeristy, SE-851\,70 Sundsvall.
+    }
+  }
+\end{center}
+
+\tableofcontents
+
+\mainmatter
+\subincludefrom{../studyguide/}{contents}
+\subincludefrom{../modules/software/overview/}{overview-content}
+
+\end{document}
