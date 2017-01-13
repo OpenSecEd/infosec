@@ -66,6 +66,8 @@ ${RELEASE_DOCS}:
 .PHONY: clean
 clean:
 	${RM} ${RELEASE_DOCS}
+	${RM} -R _minted-infosec
+
 
 MODULE_DOCS+=		../studyguide/studyguide.pdf
 MODULE_DOCS+=		../modules/foundations/overview/overview.pdf
@@ -91,6 +93,15 @@ MODULE_DOCS+=		../modules/sidechannels/overview/overview.pdf
 
 ${MODULE_DOCS}::
 	${MAKE} -C $(dir $@) $(notdir $@)
+
+.PHONY: clean-modules
+clean: clean-modules
+clean-modules:
+	$(foreach dir,$(dir ${MODULE_DOCS}),${MAKE} -C ${dir} clean;)
+
+.PHONY: distclean
+distclean:
+	$(foreach dir,$(dir ${MODULE_DOCS}),${MAKE} -C ${dir} distclean;)
 
 
 INCLUDE_MAKEFILES=	../makefiles
