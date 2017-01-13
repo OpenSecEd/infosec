@@ -38,8 +38,8 @@ project-aim.tex: ../modules/ism/gapproject/aims.tex
 
 MODULE_FILES+= 	crypto-lit.tex crypto.bib
 
-crypto-lit.tex: ../modules/appliedcrypto/crypto/abstract.tex
-crypto.bib: ../modules/appliedcrypto/crypto/crypto.bib
+crypto-lit.tex: ../modules/appliedcrypto/overview/abstract.tex
+crypto.bib: ../modules/appliedcrypto/overview/overview.bib
 
 MODULE_FILES+= 	software-lit.tex software.bib
 

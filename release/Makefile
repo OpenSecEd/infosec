@@ -46,8 +46,7 @@ ismsmemo.pdf: ../modules/ism/ismsmemo/ismsmemo.pdf
 risksem.pdf: ../modules/ism/risksem/risksem.pdf
 gapproject.pdf: ../modules/ism/gapproject/gapproject.pdf
 infotheory-slides.pdf: ../modules/infotheory/basics/basics.pdf
-appliedcrypto-slides.pdf: ../modules/appliedcrypto/crypto/crypto.pdf
-hashsign-slides.pdf: ../modules/appliedcrypto/hashsign/hashsign.pdf
+appliedcrypto-slides.pdf: ../modules/appliedcrypto/overview/overview.pdf
 fverif-slides.pdf: ../modules/fverif/intro/intro.pdf
 auth-slides.pdf: ../modules/auth/overview/overview.pdf
 pwdguess.pdf: ../modules/auth/passwd/pwdguess/pwdguess.pdf
@@ -76,8 +75,7 @@ MODULE_DOCS+=		../modules/ism/ismsmemo/ismsmemo.pdf
 MODULE_DOCS+=		../modules/ism/risksem/risksem.pdf
 MODULE_DOCS+=		../modules/ism/gapproject/gapproject.pdf
 MODULE_DOCS+=		../modules/infotheory/basics/basics.pdf
-MODULE_DOCS+=		../modules/appliedcrypto/crypto/crypto.pdf
-MODULE_DOCS+=		../modules/appliedcrypto/hashsign/hashsign.pdf
+MODULE_DOCS+=		../modules/appliedcrypto/overview/overview.pdf
 MODULE_DOCS+=		../modules/fverif/intro/intro.pdf
 MODULE_DOCS+=		../modules/auth/overview/overview.pdf
 MODULE_DOCS+=		../modules/auth/passwd/pwdguess/pwdguess.pdf
