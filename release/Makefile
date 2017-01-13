@@ -99,9 +99,9 @@ clean: clean-modules
 clean-modules:
 	$(foreach dir,$(dir ${MODULE_DOCS}),${MAKE} -C ${dir} clean;)
 
-.PHONY: distclean
-distclean:
-	$(foreach dir,$(dir ${MODULE_DOCS}),${MAKE} -C ${dir} distclean;)
+.PHONY: distclean clean-depends
+distclean clean-depends:
+	$(foreach dir,$(dir ${MODULE_DOCS}),${MAKE} -C ${dir} clean-depends;)
 
 
 INCLUDE_MAKEFILES=	../makefiles
