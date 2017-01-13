@@ -7,7 +7,7 @@ infosec.pdf: preamble-studyguide.tex
 infosec.pdf: ../studyguide/contents.tex
 infosec.pdf: ../studyguide/studyguide.pdf
 
-LATEXFLAGS+=	-shell-escape
+LATEXFLAGS+=		-shell-escape
 
 infosec.pdf: preamble-software.tex
 infosec.pdf: ../modules/software/overview/overview-content.tex
