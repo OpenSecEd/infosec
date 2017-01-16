@@ -36,6 +36,11 @@ MODULE_FILES+= 	project-aim.tex
 
 project-aim.tex: ../modules/ism/gapproject/aims.tex
 
+MODULE_FILES+=	recmgmt-abstract.tex recmgmt.bib
+
+recmgmt-abstract.tex: ../modules/ism/recmgmt/abstract.tex
+recmgmt.bib: ../modules/ism/recmgmt/recmgmt.bib
+
 MODULE_FILES+= 	crypto-lit.tex crypto.bib
 
 crypto-lit.tex: ../modules/appliedcrypto/overview/abstract.tex
