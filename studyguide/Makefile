@@ -105,7 +105,7 @@ MODULE_FILES+= 	foundations-lit.tex foundations.bib
 foundations-lit.tex: ../modules/foundations/overview/abstract.tex
 foundations.bib: ../modules/foundations/overview/overview.bib
 
-MODULE_FILES+= 	accountability-lit.tex
+MODULE_FILES+= 	accountability-lit.tex accountability.bib
 
 accountability-lit.tex: ../modules/accountability/overview/abstract.tex
 accountability.bib: ../modules/accountability/overview/overview.bib
