@@ -28,10 +28,15 @@ msbintro.bib: ../modules/ism/msbframework/msbintro/msbintro.bib
 msbforts-lit.tex: ../modules/ism/msbframework/msbforts/literature.tex
 msbforts.bib: ../modules/ism/msbframework/msbforts/msbforts.bib
 
+MODULE_FILES+=	recmgmt-abstract.tex recmgmt.bib
+
+recmgmt-abstract.tex: ../modules/ism/recmgmt/abstract.tex
+recmgmt.bib: ../modules/ism/recmgmt/recmgmt.bib
+
 MODULE_FILES+= 	crypto-lit.tex crypto.bib
 
-crypto-lit.tex: ../modules/appliedcrypto/crypto/abstract.tex
-crypto.bib: ../modules/appliedcrypto/crypto/crypto.bib
+crypto-lit.tex: ../modules/appliedcrypto/overview/abstract.tex
+crypto.bib: ../modules/appliedcrypto/overview/overview.bib
 
 MODULE_FILES+= 	software-lit.tex software.bib
 
