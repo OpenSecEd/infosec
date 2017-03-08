@@ -60,3 +60,6 @@
 [submodule "modules/research"]
 	path = modules/research
 	url = https://github.com/OpenSecEd/research.git
+[submodule "bibedu"]
+	path = bibedu
+	url = https://github.com/dbosk/bibedu.git
