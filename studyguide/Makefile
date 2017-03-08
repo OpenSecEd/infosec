@@ -4,107 +4,101 @@ all: studyguide.pdf
 SRC=		studyguide.tex preamble.tex contents.tex
 SRC+=		${MODULE_FILES}
 
-MODULE_FILES+= 	pricomlab-aim.tex pricomlab-lit.tex pricomlab.bib
+MODULE_FILES+= 	pricomlab-abstract.tex pricomlab.bib
 
-pricomlab-aim.tex: ../modules/pricomlab/aims.tex
-pricomlab-lit.tex: ../modules/pricomlab/literature.tex
+pricomlab-abstract.tex: ../modules/pricomlab/abstract.tex
 pricomlab.bib: ../modules/pricomlab/pricomlab.bib
 
-MODULE_FILES+= 	ismsmemo-aim.tex ismsmemo-lit.tex ismsmemo.bib
-MODULE_FILES+= 	risksem-aim.tex risksem-lit.tex risksem.bib
+MODULE_FILES+= 	ismsmemo-abstract.tex ismsmemo.bib
+MODULE_FILES+= 	risksem-abstract.tex risksem.bib
 
-ismsmemo-aim.tex: ../modules/ism/ismsmemo/aims.tex
-ismsmemo-lit.tex: ../modules/ism/ismsmemo/literature.tex
+ismsmemo-abstract.tex: ../modules/ism/ismsmemo/abstract.tex
 ismsmemo.bib: ../modules/ism/ismsmemo/ismsmemo.bib
-risksem-aim.tex: ../modules/ism/risksem/aims.tex
-risksem-lit.tex: ../modules/ism/risksem/literature.tex
+risksem-abstract.tex: ../modules/ism/risksem/abstract.tex
 risksem.bib: ../modules/ism/risksem/risksem.bib
 
-MODULE_FILES+= 	msbintro-lit.tex msbintro.bib
-MODULE_FILES+= 	msbforts-lit.tex msbforts.bib
+MODULE_FILES+= 	msbintro-abstract.tex msbintro.bib
+MODULE_FILES+= 	msbforts-abstract.tex msbforts.bib
 
-msbintro-lit.tex: ../modules/ism/msbframework/msbintro/literature.tex
+msbintro-abstract.tex: ../modules/ism/msbframework/msbintro/abstract.tex
 msbintro.bib: ../modules/ism/msbframework/msbintro/msbintro.bib
-msbforts-lit.tex: ../modules/ism/msbframework/msbforts/literature.tex
+msbforts-abstract.tex: ../modules/ism/msbframework/msbforts/abstract.tex
 msbforts.bib: ../modules/ism/msbframework/msbforts/msbforts.bib
 
-MODULE_FILES+= 	crypto-lit.tex crypto.bib
+MODULE_FILES+= 	crypto-abstract.tex crypto.bib
 
-crypto-lit.tex: ../modules/appliedcrypto/crypto/abstract.tex
+crypto-abstract.tex: ../modules/appliedcrypto/crypto/abstract.tex
 crypto.bib: ../modules/appliedcrypto/crypto/crypto.bib
 
-MODULE_FILES+= 	software-lit.tex software.bib
+MODULE_FILES+= 	software-abstract.tex software.bib
 
-software-lit.tex: ../modules/software/overview/abstract.tex
+software-abstract.tex: ../modules/software/overview/abstract.tex
 software.bib: ../modules/software/overview/overview.bib
 
-MODULE_FILES+= 	usability-lit.tex usability.bib
+MODULE_FILES+= 	usability-abstract.tex usability.bib
 
-usability-lit.tex: ../modules/usability/overview/abstract.tex
+usability-abstract.tex: ../modules/usability/overview/abstract.tex
 usability.bib: ../modules/usability/overview/overview.bib
 
-MODULE_FILES+= 	infotheory-lit.tex infotheory.bib
+MODULE_FILES+= 	infotheory-abstract.tex infotheory.bib
 
-infotheory-lit.tex: ../modules/infotheory/basics/abstract.tex
+infotheory-abstract.tex: ../modules/infotheory/basics/abstract.tex
 infotheory.bib: ../modules/infotheory/basics/basics.bib
 
-MODULE_FILES+= 	trustcomp-lit.tex trustcomp.bib
+MODULE_FILES+= 	trustcomp-abstract.tex trustcomp.bib
 
-trustcomp-lit.tex: ../modules/trustcomp/overview/abstract.tex
+trustcomp-abstract.tex: ../modules/trustcomp/overview/abstract.tex
 trustcomp.bib: ../modules/trustcomp/overview/overview.bib
 
-MODULE_FILES+= 	proto-lit.tex fverif.bib
+MODULE_FILES+= 	proto-abstract.tex fverif.bib
 
-proto-lit.tex: ../modules/fverif/intro/abstract.tex
+proto-abstract.tex: ../modules/fverif/intro/abstract.tex
 fverif.bib: ../modules/fverif/intro/intro.bib
 
-MODULE_FILES+= 	sidechannels-lit.tex sidechannels.bib
+MODULE_FILES+= 	sidechannels-abstract.tex sidechannels.bib
 
-sidechannels-lit.tex: ../modules/sidechannels/overview/abstract.tex
+sidechannels-abstract.tex: ../modules/sidechannels/overview/abstract.tex
 sidechannels.bib: ../modules/sidechannels/overview/overview.bib
 
-MODULE_FILES+= 	auth-lit.tex auth.bib
+MODULE_FILES+= 	auth-abstract.tex auth.bib
 
-auth-lit.tex: ../modules/auth/overview/abstract.tex
+auth-abstract.tex: ../modules/auth/overview/abstract.tex
 auth.bib: ../modules/auth/overview/overview.bib
 
-MODULE_FILES+= 	pwdguess-aim.tex pwdguess-lit.tex pwdguess.bib
+MODULE_FILES+= 	pwdguess-abstract.tex pwdguess.bib
 
-pwdguess-aim.tex: ../modules/auth/passwd/pwdguess/aims.tex
-pwdguess-lit.tex: ../modules/auth/passwd/pwdguess/literature.tex
+pwdguess-abstract.tex: ../modules/auth/passwd/pwdguess/abstract.tex
 pwdguess.bib: ../modules/auth/passwd/pwdguess/pwdguess.bib
 
-MODULE_FILES+= 	pwdpolicies-aim.tex pwdpolicies-lit.tex pwdpolicies.bib
+MODULE_FILES+= 	pwdpolicies-abstract.tex pwdpolicies.bib
 
-pwdpolicies-aim.tex: ../modules/auth/passwd/pwdpolicies/aims.tex
-pwdpolicies-lit.tex: ../modules/auth/passwd/pwdpolicies/literature.tex
+pwdpolicies-abstract.tex: ../modules/auth/passwd/pwdpolicies/abstract.tex
 pwdpolicies.bib: ../modules/auth/passwd/pwdpolicies/pwdpolicies.bib
 
-MODULE_FILES+= 	accessctrl-lit.tex ac.bib
-#MODULE_FILES+= 	lvlltrl-lit.tex lvlltrl.bib
+MODULE_FILES+= 	accessctrl-abstract.tex accessctrl.bib
+#MODULE_FILES+= 	lvlltrl-abstract.tex lvlltrl.bib
 
-accessctrl-lit.tex: ../modules/ac/overview/abstract.tex
-ac.bib: ../modules/ac/overview/overview.bib
-#lvlltrl-lit.tex: ../modules/ac/lvlltrl/abstract.tex
+accessctrl-abstract.tex: ../modules/ac/overview/abstract.tex
+accessctrl.bib: ../modules/ac/overview/overview.bib
+#lvlltrl-abstract.tex: ../modules/ac/lvlltrl/abstract.tex
 
-MODULE_FILES+= 	foundations-lit.tex foundations.bib
+MODULE_FILES+= 	foundations-abstract.tex foundations.bib
 
-foundations-lit.tex: ../modules/foundations/overview/abstract.tex
+foundations-abstract.tex: ../modules/foundations/overview/abstract.tex
 foundations.bib: ../modules/foundations/overview/overview.bib
 
-MODULE_FILES+= 	accountability-lit.tex
+MODULE_FILES+= 	accountability-abstract.tex
 
-accountability-lit.tex: ../modules/accountability/overview/abstract.tex
+accountability-abstract.tex: ../modules/accountability/overview/abstract.tex
 accountability.bib: ../modules/accountability/overview/overview.bib
 
-MODULE_FILES+=	review-aim.tex review-lit.tex
+MODULE_FILES+=	review-abstract.tex
 
-review-aim.tex: ../modules/research/review/aims.tex
-review-lit.tex: ../modules/research/review/literature.tex
+review-abstract.tex: ../modules/research/review/abstract.tex
 
-MODULE_FILES+= 	project-aim.tex
+MODULE_FILES+= 	project-abstract.tex
 
-project-aim.tex: ../modules/research/prestudy/aims.tex
+project-abstract.tex: ../modules/research/prestudy/abstract.tex
 
 
 ${MODULE_FILES}:
