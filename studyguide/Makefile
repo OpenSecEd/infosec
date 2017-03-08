@@ -115,9 +115,16 @@ studyguide.pdf: ${SRC}
 studyguide.pdf: lncs biblatex-lncs bibsp.sty
 
 
+.PHONY: clean
+clean:
+	${RM} studyguide.pdf
+
 .PHONY: clean-depends distclean
 clean-depends distclean:
 	${RM} ${MODULE_FILES}
+	${RM} llncs2e.zip
+	${RM} bibsp.sty
+	${RM} -R biblatex-lncs-src
 
 
 ### INCLUDES ###
