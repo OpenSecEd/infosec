@@ -93,8 +93,8 @@ project-abstract.tex: ../modules/research/devel/abstract.tex
 
 MODULE_FILES+=	diffpriv-abstract.tex diffpriv.bib
 
-diffpriv-abstract.tex: ../modules/appliedcrypto/diffpriv/abstract.tex
-diffpriv.bib: ../modules/appliedcrypto/diffpriv/diffpriv.bib
+diffpriv-abstract.tex: ../modules/privacy/diffpriv/abstract.tex
+diffpriv.bib: ../modules/privacy/diffpriv/diffpriv.bib
 
 
 ${MODULE_FILES}:
