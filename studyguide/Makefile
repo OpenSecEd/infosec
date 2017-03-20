@@ -17,7 +17,7 @@ ismsmemo.bib: ../modules/ism/ismsmemo/ismsmemo.bib
 risksem-abstract.tex: ../modules/ism/risksem/abstract.tex
 risksem.bib: ../modules/ism/risksem/risksem.bib
 
-MODULE_FILES+=	msbiframework-abstract.tex
+MODULE_FILES+=	msbframework-abstract.tex
 MODULE_FILES+=	msbintro.bib
 MODULE_FILES+=	msbforts.bib
 
