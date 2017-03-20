@@ -63,3 +63,6 @@
 [submodule "bibedu"]
 	path = bibedu
 	url = https://github.com/dbosk/bibedu.git
+[submodule "modules/privacy"]
+	path = modules/privacy
+	url = https://github.com/OpenSecEd/privacy.git
