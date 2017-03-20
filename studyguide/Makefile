@@ -87,13 +87,11 @@ MODULE_FILES+= 	accountability-abstract.tex
 accountability-abstract.tex: ../modules/accountability/overview/abstract.tex
 accountability.bib: ../modules/accountability/overview/overview.bib
 
-MODULE_FILES+=	review-abstract.tex
-
-review-abstract.tex: ../modules/research/review/abstract.tex
-
 MODULE_FILES+= 	project-abstract.tex
 
-project-abstract.tex: ../modules/research/prestudy/abstract.tex
+project-abstract.tex: ../modules/research/devel/abstract.tex
+
+
 
 
 ${MODULE_FILES}:
