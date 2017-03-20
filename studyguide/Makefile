@@ -1,7 +1,7 @@
 .PHONY: all
 all: studyguide.pdf
 
-SRC=		studyguide.tex preamble.tex contents.tex
+SRC=		studyguide.tex preamble.tex contents.tex late.tex
 SRC+=		${MODULE_FILES}
 
 MODULE_FILES+= 	pricomlab-abstract.tex pricomlab.bib
