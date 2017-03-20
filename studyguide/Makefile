@@ -17,12 +17,12 @@ ismsmemo.bib: ../modules/ism/ismsmemo/ismsmemo.bib
 risksem-abstract.tex: ../modules/ism/risksem/abstract.tex
 risksem.bib: ../modules/ism/risksem/risksem.bib
 
-MODULE_FILES+= 	msbintro-abstract.tex msbintro.bib
-MODULE_FILES+= 	msbforts-abstract.tex msbforts.bib
+MODULE_FILES+=	msbiframework-abstract.tex
+MODULE_FILES+=	msbintro.bib
+MODULE_FILES+=	msbforts.bib
 
-msbintro-abstract.tex: ../modules/ism/msbframework/msbintro/abstract.tex
+msbframework-abstract.tex: ../modules/ism/msbframework/abstract.tex
 msbintro.bib: ../modules/ism/msbframework/msbintro/msbintro.bib
-msbforts-abstract.tex: ../modules/ism/msbframework/msbforts/abstract.tex
 msbforts.bib: ../modules/ism/msbframework/msbforts/msbforts.bib
 
 MODULE_FILES+= 	crypto-abstract.tex crypto.bib
