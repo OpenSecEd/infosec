@@ -65,15 +65,10 @@ MODULE_FILES+= 	auth-abstract.tex auth.bib
 auth-abstract.tex: ../modules/auth/overview/abstract.tex
 auth.bib: ../modules/auth/overview/overview.bib
 
-MODULE_FILES+= 	pwdguess-abstract.tex pwdguess.bib
+MODULE_FILES+= 	pwdeval-abstract.tex pwdeval.bib
 
-pwdguess-abstract.tex: ../modules/auth/passwd/pwdguess/abstract.tex
-pwdguess.bib: ../modules/auth/passwd/pwdguess/pwdguess.bib
-
-MODULE_FILES+= 	pwdpolicies-abstract.tex pwdpolicies.bib
-
-pwdpolicies-abstract.tex: ../modules/auth/passwd/pwdpolicies/abstract.tex
-pwdpolicies.bib: ../modules/auth/passwd/pwdpolicies/pwdpolicies.bib
+pwdeval-abstract.tex: ../modules/auth/passwd/pwdeval/abstract.tex
+pwdeval.bib: ../modules/auth/passwd/pwdeval/pwdeval.bib
 
 MODULE_FILES+= 	accessctrl-abstract.tex accessctrl.bib
 #MODULE_FILES+= 	lvlltrl-abstract.tex lvlltrl.bib
