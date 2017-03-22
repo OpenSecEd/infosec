@@ -17,7 +17,7 @@ More concretely, after completing the course, you should be able to:
     \emph{design} a high-level approach to protection which considers 
     usability.
   \item \emph{overview} the field of information security, \emph{understand} 
-    your own limits and where to search for solutions, e.g\ experts or 
+    your own limits and where to search for solutions, e.g.\ experts or 
     published research results that are relevant to the solution of a problem.
   \item \emph{analyse and apply} the results of published research in the 
     security field.
@@ -35,133 +35,134 @@ achieve the \acp{ILO} above.
 \dots
 
 
-\section{Course structure and content overview}
-\label{sec:outline}
+\section{Course structure and overview}
+\label{CourseStructure}
 
-The first part of the course covers information security on a strategic level, 
+The course is divided into three parts.
+The first part of the course covers the foundations of security: what it is, 
+how to evaluate new knowledge in the field.
+This covers both purely technical aspects, but also includes human aspects such
+as usability --- even if a system is proved secure, it will offer no security 
+if its human users cannot use it.
+
+The second part of the course covers information security on a strategic level, 
 this concerns organizational management systems for information security: how 
 to implement these and how to continuously run them in an organization.
-The main material used for this part~\cite{%
-  MSB2011itm,MSB2011sle,MSB2011p,%
-	MSB2011v,MSB2011r,MSB2011gap,MSB2011gb,%
-	MSB2011vs,MSB2011us,MSB2011upo,%
-	MSB2011pg,MSB2011koa,MSB2011i,%
-	MSB2011o,MSB2011g,MSB2011lg,%
-	MSB2011ulo,MSB2011kf,MSB2011fa%
-} is produced by the Swedish Civil Contingencies Agency (MSB) and is based on 
-the ISO 27000 standard documents.
+It also includes threat and risk analysis.
+The main material is produced by the Swedish Civil Contingencies Agency (MSB) 
+and is based on the ISO 27000 standard.
 
-The second part of the course will focus on the content of Anderson's book 
-\citetitle{Anderson2008sea}~\cite{Anderson2008sea} and Gollmann's book 
-\citetitle{Gollmann2011cs}~\cite{Gollmann2011cs}.
-The focus in the second part of the course is on security mechanisms and how to 
-use these in secure systems.
-There is also some additional material for this part of the course, e.g.\ 
-research papers and some other material.
+The third part of the course covers the technical aspects: how to design 
+security (and not to design security).
+The focus in this part of the course is on security mechanisms and how to use 
+these in secure systems.
 
 \subsection{Teaching and tutoring}
 
-The course is taught using lectures, seminars, laboratory assignments and, 
-finally, a project.
-All assignments are numbered consecutively prefixed with an \enquote{L} for 
-laboratory assignments, \enquote{S} for seminar assignments and \enquote{M} for 
-memos.
+The teaching of the course is oriented towards active learning.
+I.e.\ the course consists of learning sessions which requires active 
+participation.
+
+Generally, you are expected to read the material in advance.
+During the learning session the most important parts of the material will be 
+discussed and you will perform some tasks to work with the topic in groups, 
+i.e.\ to apply it to learn it more efficiently.
+Some modules of the course will have several learning sessions linked together,
+e.g.\ a starting seminar, followed by laboratory work which is then summarized 
+and used in a final seminar.
 
 \subsection{Schedule}
 
-You will find an outline for a schedule for the course in \cref{Schedule}.
-You are free to follow this schedule or any schedule you make for yourself, but 
-the learning and tutoring sessions, deadlines etc.\ will follow this schedule.
-The detailed reading instructions for each item in the schedule can be found in 
-the following sections.
+In \cref{Schedule} you will find an overview of the schedule for the course.
+The detailed schedule can be found in the University's central scheduling 
+system.
+The details for each session can be found in \cref{CourseContents}.
 
 \begin{table}
   % XXX Update time table
 	\centering
   \caption{%
-    A summary of the parts of the course and when they will (or should) be 
-    done.
-    The table is adapted to taking this course on half-time study rate.
+    A summary of the parts of the course and when they will be scheduled.
+    The table is adapted to taking this course at half-time pace, i.e.\ 20 
+    hours per week for 10 weeks.
   }\label{Schedule}
   \begin{tabular}{lp{9cm}}
     \toprule
-    \textbf{Course Week}	& \textbf{Work} \\
+    \textbf{Course week}	& \textbf{Work} \\
     \midrule
     1
-      & Course Start/Foundations of Security\\
-      & Lecture on Security Usability\\
-      %& Start working on L0 (privacy)\\
-      & Lecture on MSB's Framework, Part I\\
+      & Lecture: Course start/Foundations of security\\
+      & Lecture: Security usability\\
+      & Lecture: MSB's framework, part I\\
       & Start working on M1 (isms)\\
-      & Lecture on MSB's Framework, Part II\\
+      & Lecture: MSB's framework, part II\\
       & Start working on M2, prepare S3 (risk)\\
     \midrule
     2
-      & Lecture on Information Theory\\
-      & Lecture on Cryptographic Mechanisms, Part I\\
-      & Lecture on Cryptographic Mechanisms, Part II\\
-      & First grading of M1 (isms), M2 (risk)\\
+      & Lecture: Information theory\\
+      & Lecture: Cryptography, part I\\
+      & Lecture: Cryptography, part II\\
+      & Lecture: Cryptography, part III\\
+      & Grading: M1 (isms), M2 (risk)\\
     \midrule
     3
-      & Lecture on Identification and Authentication\\
-      & First seminar session S3 (risk)\\
+      & Lecture: Protocols, part I\\
+      & Lecture: Protocols, part II\\
+      & Lecture: Differential privacy, part I\\
+      & Lecture: Differential privacy, part II\\
+      & Seminar: S3 (risk)\\
     \midrule
     4
-      & Lecture on Access Control\\
-      & Lecture on Secure Protocols\\
-      & Lecture on Accountability and Non-Repudiation\\
-      & Lab session L4 (pwdguess)\\
-      & Lab session L6 (pricomlab)\\
-      & First seminar session S5 (pwdpolicies)\\
+      & Lecture: Identification and authentication, part I\\
+      & Lecture: Identification and authentication, part II\\
+      & Lab: L4 (pwdeval)\\
+      & Lab: L4 (pwdeval)\\
+      & Seminar: L4 (pwdeval)\\
     \midrule
     5
-      & Lecture on Software Security\\
-      & Lecture on Trusted Computing\\
-      & Lecture on Side-Channels\\
-      & Lab session L4 (pwdguess)\\
-      & Lab session L6 (pricomlab)\\
+      & Lecture: Access control, part I\\
+      & Lecture: Access control, part II\\
+      & Lab: L5 (pricomlab)\\
+      & Lecture: Accountability\\
+      & Lab: L5 (pricomlab)\\
     \midrule
     6
-      & Tutoring session for project\\
-      & Lab session L4 (pwdguess)\\
-      & Lab session L6 (pricomlab)\\
+      & Seminar: L5 (pricomlab)\\
+      & Lecture: Software security\\
+      & Lecture: Trusted computing\\
+      & Tutoring: P6 (devel)\\
     \midrule
     7
-      & Tutoring session for project\\
-      & Presentation for S7 (review)\\
-      & Lab session L4 (pwdguess)\\
-      & Lab session L6 (pricomlab)\\
+      & Tutoring: P6 (devel)\\
     \midrule
     8
-      %& Presentation for L0 (privacy)\\
-      & Tutoring session for project\\
+      & Tutoring: P6 (devel)\\
     \midrule
     9
-      & Tutoring session for project\\
+      & Tutoring: P6 (devel)\\
     \midrule
     10
-      & Presentation P8 (research)\\
-      & Second grading of M1 (isms), M2 (risk)\\
-      & Second seminar session for S3 (risk), S5 (pwdpolicies), S7 (review)\\
-      & Final lab session L4 (pwdguess), L6 (pricomlab)\\
+      & Presentation: P6 (devel)\\
+      & Second grading: M1 (isms), M2 (risk)\\
+      & Second seminar: S3 (risk), L4 (pwdeval), L5 (pricomlab)\\
     \midrule
     +3 months
-      & Second presentation P8 (research)\\
-      & Final grading of M1 (isms), M2 (risk)\\
-      & Final seminar session for S3 (risk), S5 (pwdpolicies), S7 (review)\\
+      & Second presentation: P6 (devel)\\
+      & Final grading: M1 (isms), M2 (risk)\\
+      & Final seminar: S3 (risk), L4 (pwdeval), L5 (pricomlab)\\
     \midrule
     +6 months
-      & Final presentation P8 (research)\\
+      & Final presentation: P6 (devel)\\
     \bottomrule
   \end{tabular}
 \end{table}
 
 
-\section{Course content}
+\section{Course contents}
+\label{CourseContents}
 
-This section summarizes the material covered by the lectures and assignments, 
-i.e.~what you should read for each of them.
-It is divided by topics and ordered according to progression of the course.
+This section summarizes each of the learning sessions, i.e.\ what they cover, 
+what you are expected to learn and its reading material.
 
 %\subsection{L0 Privacy is Dead}
 %\input{privacydead-abstract.tex}
@@ -196,11 +197,11 @@ It is divided by topics and ordered according to progression of the course.
 \subsection{Identification and authentication}
 \input{auth-abstract.tex}
 
-\subsection{Access control}
-\input{accessctrl-abstract.tex}
-
 \subsection{L4 Evaluating authentication mechanisms}
 \input{pwdeval-abstract.tex}
+
+\subsection{Access control}
+\input{accessctrl-abstract.tex}
 
 \subsection{Accountability}
 \input{accountability-abstract.tex}
@@ -213,9 +214,6 @@ It is divided by topics and ordered according to progression of the course.
 
 \subsection{Trusted computing}
 \input{trustcomp-abstract.tex}
-
-\subsection{Side-channels}
-\input{sidechannels-abstract.tex}
 
 \subsection{P6 Integrating security and usability in development}
 \input{project-abstract.tex}
@@ -235,24 +233,24 @@ LADOK\@.
     P means pass, F means fail.
     A--E are also passing grades, where A is the best.
   }\label{LADOKTable}
-  \begin{tabular}{rrll}
+  \setlength{\tabcolsep}{0.5em}
+  \begin{tabular}{r r l l}
     \toprule
-    LADOK & Credits (ECTS)  & Grade       & Course Assignments\\
+    LADOK & ECTS  & Grade       & Course assignments\\
     \midrule
-    I104  & 1.5             & P, F        & M1, M2, S3\\
-    L104  & 1.5             & P, F        & L4, L5\\
-    R104  & 4.5             & A--F        & P6\\
+    I104  & 1.5   & P, F        & M1, M2, S3\\
+    L104  & 1.5   & P, F        & L4, L5\\
+    R104  & 4.5   & A--F        & P6\\
     \midrule
-    Total & 7.5             & A--F        & Grade based on P6\\
+    Total & 7.5   & A--F        & P6\\
     \bottomrule
   \end{tabular}
 \end{table}
 
 The project report is graded from A to F, where A--E are for passing and F and 
 Fx are for failing.
-The project also includes an oral presentation and a seminar (S7).
-These are both graded pass (P) or fail (F), and are reported with the project 
-to LADOK\@.
+The project also includes an oral presentation which is graded pass (P) or fail 
+(F), and is reported with the project to LADOK\@.
 The grade of the project will also be the grade of the course total.
 
 \subsection{Handed-in assignments}
