@@ -27,8 +27,8 @@ msbforts.bib: ../modules/ism/msbframework/msbforts/msbforts.bib
 
 MODULE_FILES+= 	crypto-abstract.tex crypto.bib
 
-crypto-abstract.tex: ../modules/appliedcrypto/crypto/abstract.tex
-crypto.bib: ../modules/appliedcrypto/crypto/crypto.bib
+crypto-abstract.tex: ../modules/appliedcrypto/overview/abstract.tex
+crypto.bib: ../modules/appliedcrypto/overview/overview.bib
 
 MODULE_FILES+= 	software-abstract.tex software.bib
 
@@ -82,7 +82,7 @@ MODULE_FILES+= 	foundations-abstract.tex foundations.bib
 foundations-abstract.tex: ../modules/foundations/overview/abstract.tex
 foundations.bib: ../modules/foundations/overview/overview.bib
 
-MODULE_FILES+= 	accountability-abstract.tex
+MODULE_FILES+= 	accountability-abstract.tex accountability.bib
 
 accountability-abstract.tex: ../modules/accountability/overview/abstract.tex
 accountability.bib: ../modules/accountability/overview/overview.bib
