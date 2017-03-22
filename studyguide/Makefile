@@ -14,10 +14,10 @@ MODULE_FILES+= 	ismsmemo-aim.tex ismsmemo-lit.tex ismsmemo.bib
 MODULE_FILES+= 	risksem-aim.tex risksem-lit.tex risksem.bib
 
 ismsmemo-aim.tex: ../modules/ism/ismsmemo/aims.tex
-ismsmemo-lit.tex: ../modules/ism/ismsmemo/literature.tex
+ismsmemo-lit.tex: ../modules/ism/ismsmemo/abstract.tex
 ismsmemo.bib: ../modules/ism/ismsmemo/ismsmemo.bib
 risksem-aim.tex: ../modules/ism/risksem/aims.tex
-risksem-lit.tex: ../modules/ism/risksem/literature.tex
+risksem-lit.tex: ../modules/ism/risksem/abstract.tex
 risksem.bib: ../modules/ism/risksem/risksem.bib
 
 MODULE_FILES+= 	msbintro-lit.tex msbintro.bib
@@ -92,7 +92,7 @@ MODULE_FILES+= 	foundations-lit.tex foundations.bib
 foundations-lit.tex: ../modules/foundations/overview/abstract.tex
 foundations.bib: ../modules/foundations/overview/overview.bib
 
-MODULE_FILES+= 	accountability-lit.tex
+MODULE_FILES+= 	accountability-lit.tex accountability.bib
 
 accountability-lit.tex: ../modules/accountability/overview/abstract.tex
 accountability.bib: ../modules/accountability/overview/overview.bib
