@@ -1,6 +1,13 @@
+PUB_FILES?=		${RELEASE_FILES}
+PUB_SERVER?=	ver.miun.se
+PUB_DIR?=		/srv/web/svn/courses/security/infosakc
+PUB_GROUP?=		svn
+PUB_METHOD?=	ssh
+PUB_VCS?=		git
+PUB_AUTOTAG?=	true
+
 .PHONY: release
-release:
-	git tag $(shell date +%Y%m%d-%H%M)
+release: ${RELEASE_FILES}
 
 RELEASE_FILES+=	studyguide.pdf
 SRC-studyguide.pdf=../studyguide/studyguide.pdf
@@ -87,3 +94,7 @@ distclean-$(1):
 endef
 
 $(foreach target,${RELEASE_FILES},$(eval $(call target_rules,${target})))
+
+
+INCLUDE_MAKEFILES=../makefiles
+include ${INCLUDE_MAKEFILES}/pub.mk
