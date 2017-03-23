@@ -1,6 +1,7 @@
 PUB_FILES?=		${RELEASE_FILES}
 PUB_SERVER?=	ver.miun.se
 PUB_DIR?=		/srv/web/svn/courses/security/infosakc
+PUB_USER?=		
 PUB_GROUP?=		svn
 PUB_METHOD?=	ssh
 PUB_VCS?=		git
