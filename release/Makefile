@@ -74,6 +74,10 @@ RELEASE_FILES+=	prestudy.pdf
 SRC-prestudy.pdf=../modules/research/prestudy/prestudy.pdf
 
 
+.PHONY: print
+print: ${RELEASE_FILES}
+
+
 .PHONY: clean distclean
 
 define target_rules
@@ -99,3 +103,4 @@ $(foreach target,${RELEASE_FILES},$(eval $(call target_rules,${target})))
 
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/pub.mk
+include ${INCLUDE_MAKEFILES}/doc.mk
