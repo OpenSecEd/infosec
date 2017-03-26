@@ -40,17 +40,17 @@ contains lectures, assignments etc.  Currently the course comprises the
 following topics:
 
  - Foundations of Security (`foundations`)
+ - Security Usability (`usability`)
  - Framework for Information Security Management (`ism`)
  - Information Theory (`infotheory`)
  - Cryptography (`appliedcrypto`)
- - Secure Protocols (`fverif`)
  - Identification and Authentication (`auth`)
- - Security Usability (`usability`)
  - Access Control (`ac`)
+ - Secure Protocols (`fverif`)
  - Accountability and Non-Repudiation (`accountability`)
- - Software Security (`software`)
  - Trusted Computing (`trustcomp`)
  - Side-Channels (`sidechannels`)
+ - Software Security (`software`)
 
 These topics are examined using the following assignments.  The assignments 
 prefixed with L are laboratory assignments, prefixed with M are memos, S for 
@@ -106,7 +106,7 @@ seminars, and prefixed with P are project assignments.
 
  S4: Password Policies (`passwd/pwdpolicies`)
 
- L5: Privacy of Communication (`pricomlab`)
+ L5: Private Communication (`pricomlab`)
 
  S6: Review of Research Literature (`research/review`)
 
