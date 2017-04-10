@@ -53,7 +53,7 @@ RELEASE_FILES+=	ac-slides.pdf
 SRC-ac-slides.pdf=../modules/ac/overview/overview.pdf
 
 RELEASE_FILES+=	accountability-slides.pdf
-SRC-accountability-slides.pdf=../modules/accountability/overview/overview.pdf
+SRC-accountability-slides.pdf=../modules/accountability/overview/slides.pdf
 
 RELEASE_FILES+=	pricomlab.pdf
 SRC-pricomlab.pdf=../modules/pricomlab/pricomlab.pdf
