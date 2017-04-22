@@ -50,7 +50,7 @@ RELEASE_FILES+=	fverif-slides.pdf
 SRC-fverif-slides.pdf=../modules/fverif/intro/intro.pdf
 
 RELEASE_FILES+=	ac-slides.pdf
-SRC-ac-slides.pdf=../modules/ac/overview/overview.pdf
+SRC-ac-slides.pdf=../modules/ac/overview/slides.pdf
 
 RELEASE_FILES+=	accountability-slides.pdf
 SRC-accountability-slides.pdf=../modules/accountability/overview/slides.pdf
