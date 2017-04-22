@@ -58,9 +58,9 @@ MODULE_FILES+= 	trustcomp-lit.tex trustcomp.bib
 trustcomp-lit.tex: ../modules/trustcomp/overview/abstract.tex
 trustcomp.bib: ../modules/trustcomp/overview/overview.bib
 
-MODULE_FILES+= 	proto-lit.tex fverif.bib
+MODULE_FILES+= 	fverif-lit.tex fverif.bib
 
-proto-lit.tex: ../modules/fverif/intro/abstract.tex
+fverif-lit.tex: ../modules/fverif/intro/abstract.tex
 fverif.bib: ../modules/fverif/intro/intro.bib
 
 MODULE_FILES+= 	sidechannels-lit.tex sidechannels.bib
