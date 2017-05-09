@@ -1,129 +1,105 @@
+PUB_FILES?=		${RELEASE_FILES}
+PUB_SERVER?=	ver.miun.se
+PUB_DIR?=		/srv/web/svn/courses/security/infosakb
+PUB_USER?=		
+PUB_GROUP?=		svn
+PUB_METHOD?=	ssh
+PUB_VCS?=		git
+PUB_AUTOTAG?=	true
+
 .PHONY: all
-all: release
+all: ${RELEASE_FILES}
 
-infosec.pdf: llncs bibsp.sty
+RELEASE_FILES+=	studyguide.pdf
+SRC-studyguide.pdf=../studyguide/studyguide.pdf
 
-infosec.pdf: preamble-studyguide.tex
-infosec.pdf: ../studyguide/contents.tex
-infosec.pdf: ../studyguide/studyguide.pdf
+RELEASE_FILES+=	foundations-slides.pdf
+SRC-foundations-slides.pdf=../modules/foundations/overview/overview.pdf
 
-LATEXFLAGS+=		-shell-escape
+RELEASE_FILES+=	usability-slides.pdf
+SRC-usability-slides.pdf=../modules/usability/overview/overview.pdf
 
-infosec.pdf: preamble-software.tex
-infosec.pdf: ../modules/software/overview/overview-content.tex
+RELEASE_FILES+=	msbintro-slides.pdf
+SRC-msbintro-slides.pdf=../modules/ism/msbframework/msbintro/msbintro.pdf
 
+RELEASE_FILES+=	ismsmemo.pdf
+SRC-ismsmemo.pdf=../modules/ism/ismsmemo/ismsmemo.pdf
 
-RELEASE_DOCS+=		studyguide.pdf
-MODULE_DOCS+=		../studyguide/studyguide.pdf
-studyguide.pdf:		../studyguide/studyguide.pdf
+RELEASE_FILES+=	msbforts-slides.pdf
+SRC-msbforts-slides.pdf=../modules/ism/msbframework/msbforts/msbforts.pdf
 
-RELEASE_DOCS+=		foundations-slides.pdf
-MODULE_DOCS+=		../modules/foundations/overview/overview.pdf
-foundations-slides.pdf: ../modules/foundations/overview/overview.pdf
+RELEASE_FILES+=	risksem.pdf
+SRC-risksem.pdf=../modules/ism/risksem/risksem.pdf
 
-RELEASE_DOCS+=		msbintro-slides.pdf
-MODULE_DOCS+=		../modules/ism/msbframework/msbintro/msbintro.pdf
-msbintro-slides.pdf: ../modules/ism/msbframework/msbintro/msbintro.pdf
+RELEASE_FILES+=	infotheory-slides.pdf
+SRC-infotheory-slides.pdf=../modules/infotheory/basics/basics.pdf
 
-RELEASE_DOCS+=		msbforts-slides.pdf
-MODULE_DOCS+=		../modules/ism/msbframework/msbforts/msbforts.pdf
-msbforts-slides.pdf: ../modules/ism/msbframework/msbforts/msbforts.pdf
+RELEASE_FILES+=	crypto-slides.pdf
+SRC-crypto-slides.pdf=../modules/appliedcrypto/overview/overview-slides.pdf
 
-RELEASE_DOCS+=		ismsmemo.pdf
-MODULE_DOCS+=		../modules/ism/ismsmemo/ismsmemo.pdf
-ismsmemo.pdf:		../modules/ism/ismsmemo/ismsmemo.pdf
+RELEASE_FILES+=	auth-slides.pdf
+SRC-auth-slides.pdf=../modules/auth/overview/overview.pdf
 
-RELEASE_DOCS+=		risksem.pdf
-MODULE_DOCS+=		../modules/ism/risksem/risksem.pdf
-risksem.pdf:		../modules/ism/risksem/risksem.pdf
+RELEASE_FILES+=	pwdguess.pdf
+SRC-pwdguess.pdf=../modules/auth/passwd/pwdguess/pwdguess.pdf
 
-RELEASE_DOCS+=		gapproject.pdf
-MODULE_DOCS+=		../modules/ism/gapproject/gapproject.pdf
-gapproject.pdf:		../modules/ism/gapproject/gapproject.pdf
+RELEASE_FILES+=	pwdpolicies.pdf
+SRC-pwdpolicies.pdf=../modules/auth/passwd/pwdpolicies/pwdpolicies.pdf
 
-RELEASE_DOCS+=		infotheory-slides.pdf
-MODULE_DOCS+=		../modules/infotheory/basics/basics.pdf
-infotheory-slides.pdf: ../modules/infotheory/basics/basics.pdf
+RELEASE_FILES+=	fverif-slides.pdf
+SRC-fverif-slides.pdf=../modules/fverif/intro/intro.pdf
 
-RELEASE_DOCS+=		appliedcrypto-slides.pdf
-MODULE_DOCS+=		../modules/appliedcrypto/overview/overview-slides.pdf
-appliedcrypto-slides.pdf: ../modules/appliedcrypto/overview/overview-slides.pdf
+RELEASE_FILES+=	ac-slides.pdf
+SRC-ac-slides.pdf=../modules/ac/overview/slides.pdf
 
-RELEASE_DOCS+=		fverif-slides.pdf
-MODULE_DOCS+=		../modules/fverif/intro/intro.pdf
-fverif-slides.pdf:	../modules/fverif/intro/intro.pdf
+RELEASE_FILES+=	accountability-slides.pdf
+SRC-accountability-slides.pdf=../modules/accountability/overview/slides.pdf
 
-RELEASE_DOCS+=		auth-slides.pdf
-MODULE_DOCS+=		../modules/auth/overview/overview.pdf
-auth-slides.pdf:	../modules/auth/overview/overview.pdf
+RELEASE_FILES+=	pricomlab.pdf
+SRC-pricomlab.pdf=../modules/pricomlab/pricomlab.pdf
 
-RELEASE_DOCS+=		pwdguess.pdf
-MODULE_DOCS+=		../modules/auth/passwd/pwdguess/pwdguess.pdf
-pwdguess.pdf:		../modules/auth/passwd/pwdguess/pwdguess.pdf
+RELEASE_FILES+=	software-slides.pdf
+SRC-software-slides.pdf=../modules/software/overview/overview-slides.pdf
 
-RELEASE_DOCS+=		pwdpolicies.pdf
-MODULE_DOCS+=		../modules/auth/passwd/pwdpolicies/pwdpolicies.pdf
-pwdpolicies.pdf:	../modules/auth/passwd/pwdpolicies/pwdpolicies.pdf
+RELEASE_FILES+=	trustcomp-slides.pdf
+SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
 
-RELEASE_DOCS+=		pricomlab.pdf
-MODULE_DOCS+=		../modules/pricomlab/pricomlab.pdf
-pricomlab.pdf:		../modules/pricomlab/pricomlab.pdf
+RELEASE_FILES+=	sidechannels-slides.pdf
+SRC-sidechannels-slides.pdf=../modules/sidechannels/overview/overview.pdf
 
-RELEASE_DOCS+=		usability-slides.pdf
-MODULE_DOCS+=		../modules/usability/overview/overview.pdf
-usability-slides.pdf: ../modules/usability/overview/overview.pdf
-
-RELEASE_DOCS+=		ac-slides.pdf
-MODULE_DOCS+=		../modules/ac/overview/overview.pdf
-ac-slides.pdf: ../modules/ac/overview/overview.pdf
-
-RELEASE_DOCS+=		accountability-slides.pdf
-MODULE_DOCS+=		../modules/accountability/overview/overview.pdf
-accountability-slides.pdf: ../modules/accountability/overview/overview.pdf
-
-RELEASE_DOCS+=		software-slides.pdf
-MODULE_DOCS+=		../modules/software/overview/overview-slides.pdf
-software-slides.pdf: ../modules/software/overview/overview-slides.pdf
-
-RELEASE_DOCS+=		software-notes.pdf
-MODULE_DOCS+=		../modules/software/overview/overview-notes.pdf
-software-notes.pdf: ../modules/software/overview/overview-notes.pdf
-
-RELEASE_DOCS+=		trustcomp-slides.pdf
-MODULE_DOCS+=		../modules/trustcomp/overview/overview.pdf
-trustcomp-slides.pdf: ../modules/trustcomp/overview/overview.pdf
-
-RELEASE_DOCS+=		sidechannels-slides.pdf
-MODULE_DOCS+=		../modules/sidechannels/overview/overview.pdf
-sidechannels-slides.pdf: ../modules/sidechannels/overview/overview.pdf
+RELEASE_FILES+=	gapproject.pdf
+SRC-gapproject.pdf=../modules/ism/gapproject/gapproject.pdf
 
 
-.PHONY: release
-release: ${RELEASE_DOCS}
+.PHONY: print
+print: ${RELEASE_FILES}
 
-${RELEASE_DOCS}:
-	ln -f $^ $@
 
-.PHONY: clean
+.PHONY: clean distclean
 clean:
-	${RM} ${RELEASE_DOCS}
-	${RM} -R _minted-infosec
+	${RM} ${RELEASE_FILES}
+
+define target_rules
+all: $(1)
+
+$(1): ${SRC-$(1)}
+	cp $$^ $$@
+
+${SRC-$(1)}::
+	${MAKE} -C $$(dir $$@) $$(notdir $$@)
+
+clean: clean-$(1)
+clean-$(1):
+	${MAKE} -C $$(dir ${SRC-$(1)}) clean
+
+distclean: distclean-$(1)
+distclean-$(1):
+	${MAKE} -C $$(dir ${SRC-$(1)}) distclean clean-depends
+endef
+
+$(foreach target,${RELEASE_FILES},$(eval $(call target_rules,${target})))
 
 
-${MODULE_DOCS}::
-	${MAKE} -C $(dir $@) $(notdir $@)
-
-.PHONY: clean-modules
-clean: clean-modules
-clean-modules:
-	$(foreach dir,$(dir ${MODULE_DOCS}),${MAKE} -C ${dir} clean;)
-
-.PHONY: distclean clean-depends
-distclean clean-depends:
-	$(foreach dir,$(dir ${MODULE_DOCS}),${MAKE} -C ${dir} clean-depends;)
-
-
-INCLUDE_MAKEFILES=	../makefiles
-include ${INCLUDE_MAKEFILES}/tex.mk
-INCLUDE_BIBSP=		../bibsp
-include ${INCLUDE_BIBSP}/bibsp.mk
+INCLUDE_MAKEFILES=../makefiles
+include ${INCLUDE_MAKEFILES}/pub.mk
+include ${INCLUDE_MAKEFILES}/doc.mk

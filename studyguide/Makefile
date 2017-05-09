@@ -116,7 +116,7 @@ ${MODULE_FILES}:
 
 
 studyguide.pdf: ${SRC}
-studyguide.pdf: llncs biblatex-lncs bibsp.sty
+studyguide.pdf: lncs biblatex-lncs bibsp.sty
 
 
 .PHONY: clean-depends
