@@ -25,6 +25,11 @@ msbframework-abstract.tex: ../modules/ism/msbframework/abstract.tex
 msbintro.bib: ../modules/ism/msbframework/msbintro/msbintro.bib
 msbforts.bib: ../modules/ism/msbframework/msbforts/msbforts.bib
 
+MODULE_FILES+=	recmgmt-abstract.tex recmgmt.bib
+
+recmgmt-abstract.tex: ../modules/ism/recmgmt/abstract.tex
+recmgmt.bib: ../modules/ism/recmgmt/recmgmt.bib
+
 MODULE_FILES+= 	crypto-abstract.tex crypto.bib
 
 crypto-abstract.tex: ../modules/appliedcrypto/overview/abstract.tex
