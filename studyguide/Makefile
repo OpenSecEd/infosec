@@ -32,10 +32,10 @@ MODULE_FILES+=	recmgmt-abstract.tex recmgmt.bib
 recmgmt-abstract.tex: ../modules/ism/recmgmt/abstract.tex
 recmgmt.bib: ../modules/ism/recmgmt/recmgmt.bib
 
-MODULE_FILES+= 	crypto-abstract.tex crypto.bib
+MODULE_FILES+= 	crypto-abstract.tex cryptomodule.bib
 
 crypto-abstract.tex: ../modules/appliedcrypto/overview/abstract.tex
-crypto.bib: ../modules/appliedcrypto/overview/overview.bib
+cryptomodule.bib: ../modules/appliedcrypto/overview/overview.bib
 
 MODULE_FILES+= 	software-abstract.tex software.bib
 
@@ -67,10 +67,10 @@ MODULE_FILES+= 	sidechannels-abstract.tex sidechannels.bib
 sidechannels-abstract.tex: ../modules/sidechannels/overview/abstract.tex
 sidechannels.bib: ../modules/sidechannels/overview/overview.bib
 
-MODULE_FILES+= 	auth-abstract.tex auth.bib
+MODULE_FILES+= 	auth-abstract.tex authmodule.bib
 
 auth-abstract.tex: ../modules/auth/overview/abstract.tex
-auth.bib: ../modules/auth/overview/overview.bib
+authmodule.bib: ../modules/auth/overview/overview.bib
 
 MODULE_FILES+= 	pwdeval-abstract.tex pwdeval.bib
 
