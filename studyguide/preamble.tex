@@ -9,9 +9,6 @@
 \usepackage[strict]{csquotes}
 \usepackage{acro}
 
-\usepackage[std,crypto,mpc,ac]{bibsp}
-\usepackage{assessment}
-
 \usepackage[natbib,style=numeric-comp,maxbibnames=99,sorting=none]{biblatex}
 \addbibresource{pricomlab.bib}
 \addbibresource{pwdguess.bib}
@@ -26,9 +23,21 @@
 \addbibresource{trustcomp.bib}
 \addbibresource{fverif.bib}
 \addbibresource{sidechannels.bib}
-\addbibresource{auth.bib}
-\addbibresource{ac.bib}
+\addbibresource{authmodule.bib}
 \addbibresource{accountability.bib}
 \addbibresource{foundations.bib}
+\addbibresource{accessctrl.bib}
+\addbibresource{cryptomodule.bib}
 \addbibresource{recmgmt.bib}
 
+\usepackage{bibsp}
+\usepackage{assessment}
+
+\DeclareAcronym{ISM}{%
+  short = {ISM},
+  long = {information security management},
+}
+\DeclareAcronym{ISMS}{%
+  short = {ISMS},
+  long = {information system management system},
+}

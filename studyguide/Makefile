@@ -33,10 +33,10 @@ MODULE_FILES+=	recmgmt-abstract.tex recmgmt.bib
 recmgmt-abstract.tex: ../modules/ism/recmgmt/abstract.tex
 recmgmt.bib: ../modules/ism/recmgmt/recmgmt.bib
 
-MODULE_FILES+= 	crypto-lit.tex crypto.bib
+MODULE_FILES+= 	crypto-lit.tex cryptomodule.bib
 
 crypto-lit.tex: ../modules/appliedcrypto/overview/abstract.tex
-crypto.bib: ../modules/appliedcrypto/overview/overview.bib
+cryptomodule.bib: ../modules/appliedcrypto/overview/overview.bib
 
 MODULE_FILES+= 	software-lit.tex software.bib
 
@@ -68,10 +68,10 @@ MODULE_FILES+= 	sidechannels-lit.tex sidechannels.bib
 sidechannels-lit.tex: ../modules/sidechannels/overview/abstract.tex
 sidechannels.bib: ../modules/sidechannels/overview/overview.bib
 
-MODULE_FILES+= 	auth-lit.tex auth.bib
+MODULE_FILES+= 	auth-lit.tex authmodule.bib
 
 auth-lit.tex: ../modules/auth/overview/abstract.tex
-auth.bib: ../modules/auth/overview/overview.bib
+authmodule.bib: ../modules/auth/overview/overview.bib
 
 MODULE_FILES+= 	pwdguess-aim.tex pwdguess-lit.tex pwdguess.bib
 
@@ -85,11 +85,11 @@ pwdpolicies-aim.tex: ../modules/auth/passwd/pwdpolicies/aims.tex
 pwdpolicies-lit.tex: ../modules/auth/passwd/pwdpolicies/literature.tex
 pwdpolicies.bib: ../modules/auth/passwd/pwdpolicies/pwdpolicies.bib
 
-MODULE_FILES+= 	accessctrl-lit.tex ac.bib
+MODULE_FILES+= 	accessctrl-lit.tex accessctrl.bib
 #MODULE_FILES+= 	lvlltrl-lit.tex lvlltrl.bib
 
 accessctrl-lit.tex: ../modules/ac/overview/abstract.tex
-ac.bib: ../modules/ac/overview/overview.bib
+accessctrl.bib: ../modules/ac/overview/overview.bib
 #lvlltrl-lit.tex: ../modules/ac/lvlltrl/abstract.tex
 
 MODULE_FILES+= 	foundations-lit.tex foundations.bib
@@ -117,7 +117,7 @@ ${MODULE_FILES}:
 
 
 studyguide.pdf: ${SRC}
-studyguide.pdf: lncs biblatex-lncs bibsp.sty assessment.sty
+studyguide.pdf: bibsp.sty assessment.sty
 
 
 .PHONY: clean
