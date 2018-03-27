@@ -64,9 +64,6 @@ SRC-software-slides.pdf=../modules/software/overview/overview-slides.pdf
 RELEASE_FILES+=	trustcomp-slides.pdf
 SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
 
-RELEASE_FILES+=	sidechannels-slides.pdf
-SRC-sidechannels-slides.pdf=../modules/sidechannels/overview/overview.pdf
-
 RELEASE_FILES+=	review.pdf
 SRC-review.pdf=../modules/research/review/review.pdf
 
