@@ -64,11 +64,6 @@ MODULE_FILES+= 	fverif-lit.tex fverif.bib
 fverif-lit.tex: ../modules/fverif/intro/abstract.tex
 fverif.bib: ../modules/fverif/intro/intro.bib
 
-MODULE_FILES+= 	sidechannels-lit.tex sidechannels.bib
-
-sidechannels-lit.tex: ../modules/sidechannels/overview/abstract.tex
-sidechannels.bib: ../modules/sidechannels/overview/overview.bib
-
 MODULE_FILES+= 	auth-lit.tex authmodule.bib
 
 auth-lit.tex: ../modules/auth/overview/abstract.tex
