@@ -1,11 +1,18 @@
-PUB_FILES?=		${RELEASE_FILES}
-PUB_SERVER?=	ver.miun.se
-PUB_DIR?=		/srv/web/svn/courses/security/infosakc
-PUB_USER?=		
-PUB_GROUP?=		svn
-PUB_METHOD?=	ssh
-PUB_VCS?=		git
-PUB_AUTOTAG?=	true
+PUB_FILES?=			${RELEASE_FILES}
+PUB_SERVER?=		ver.miun.se
+PUB_DIR?=			/srv/web/svn/courses/security/infosakc
+PUB_USER?=			
+PUB_GROUP?=			svn
+PUB_METHOD?=		ssh
+PUB_VCS?=			git
+PUB_AUTOTAG?=		true
+
+PKG_NAME?=			infosakc
+PKG_TARBALL_FILES?=	${RELEASE_FILES}
+
+.PHONY: all
+all: infosakc.tar.gz
+
 
 .PHONY: all
 all: ${RELEASE_FILES}
@@ -103,3 +110,4 @@ $(foreach target,${RELEASE_FILES},$(eval $(call target_rules,${target})))
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/pub.mk
 include ${INCLUDE_MAKEFILES}/doc.mk
+include ${INCLUDE_MAKEFILES}/pkg.mk
