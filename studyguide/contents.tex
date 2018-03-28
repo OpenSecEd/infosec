@@ -1,5 +1,30 @@
+\mode*
+
 \section{Scope and aims}%
 \label{sec:aim}
+
+\mode<presentation>{%
+  \subsection{Scope}
+
+  \begin{frame}
+    \begin{itemize}
+
+      \item The course treats a wide interpretation of Information Security.
+      \item It treats both engineering and management.
+
+        \pause
+
+      \item The first part is about management.
+      \item The second part is about engineering.
+
+        \pause
+
+      \item But the principles from the engineering parts can be applied in an 
+        organization's process design too.
+
+    \end{itemize}
+  \end{frame}
+}
 
 The course treats information security from a user, organization and technical 
 perspective.
@@ -10,20 +35,39 @@ mechanisms and principles for design of secure systems.
 In full, the course aims at giving you an understanding of threats to security 
 and how to work to protect against these.
 
+\mode<presentation>{%
+  \subsection{Aims}
+}
+
 More concretely, the \acp{ILO} of the course are the following.
 After completing the course, you should be able to:
+\begin{frame}
+\mode<presentation>{You should be able to}
 \begin{itemize}
+
   \item \emph{apply} basic concepts and models in information security.
+
+    \pause
+
   \item \emph{evaluate} the usability of security solutions and \emph{suggest} 
     improvements that improve usability and security.
-  \item \emph{analyse} threats, possible protection mechanisms and 
-    \emph{design} an approach to protection which considers usability.
+
+  \item \emph{analyse} threats, possible protection mechanisms and \emph{design} 
+    an approach to protection which considers usability.
+
+    \pause
+
   \item \emph{apply} the Swedish Civil Contingency Agency's Framework for 
     Information Security Management Systems to \emph{analyse, assess and 
       improve} the information security in an organization.
+
+    \pause
+
   \item \emph{review and apply} the results of published research in the 
     security field.
+
 \end{itemize}
+\end{frame}
 The course has a variety of learning sessions designed to ensure that you learn 
 these \acp{ILO}.
 Each such session has a set of further specified \acp{ILO}:
@@ -58,6 +102,28 @@ research papers and some other material.
 
 \subsection{Teaching and tutoring}
 
+\mode<presentation>{%
+  \begin{frame}
+    \begin{itemize}
+
+      \item Teaching consists of several types of learning sessions.
+      \item Most topics are covered only by lectures.
+        
+        \pause
+
+      \item Some are complemented with seminars, hand-ins and labs.
+      \item These are for combined learning and assessment.
+
+        \pause
+
+      \item These are focused to the first six weeks.
+      \item The last four weeks are dedicated to the project.
+      \item These weeks have weekly tutoring sessions.
+        
+    \end{itemize}
+  \end{frame}
+}
+
 The course is taught using lectures, seminars, laboratory assignments and, 
 finally, a project.
 All assignments are numbered consecutively prefixed with an \enquote{L} for 
@@ -72,7 +138,9 @@ the learning and tutoring sessions, deadlines etc.\ will follow this schedule.
 The detailed reading instructions for each item in the schedule can be found in 
 the following sections.
 
+\begin{frame}[allowframebreaks]
 \input{schedule.tex}
+\end{frame}
 
 
 \section{Course content}
@@ -81,75 +149,134 @@ This section summarizes the material covered by the lectures and assignments,
 \ie what you should read for each of them.
 It is divided by topics and ordered according to progression of the course.
 
+\mode<article>{%
 \subsection{Foundations of security}
 \input{foundations-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Security usability}
 \input{usability-lit.tex}
+}
 
 %\subsection{L0 Privacy is Dead}
 %\input{privacy-lit.tex}
-%
+
+\mode<article>{%
 \subsection{MSB's framework, part I}
 \input{msbintro-lit.tex}
+}
 
+\mode<article>{%
 \subsection{M1 Information security management system}
 \input{ismsmemo-lit.tex}
+}
 
+\mode<article>{%
 \subsection{MSB's framework, part II}
 \input{msbforts-lit.tex}
+}
 
+\mode<article>{%
 \subsection{M2 and S3 Assessment and risk analysis}
 \input{risksem-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Information security from a records management perspective}
 \input{recmgmt-abstract.tex}
+}
 
+\mode<article>{%
 \subsection{Information theory}
 \input{infotheory-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Cryptography}
 \input{crypto-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Identification and authentication}
 \input{auth-lit.tex}
+}
 
+\mode<article>{%
 \subsection{L4 Password cracking and social engineering}
 \input{pwdguess-lit.tex}
+}
 
+\mode<article>{%
 \subsection{S5 Password policies}
 \input{pwdpolicies-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Protocols and formal verification}
 \input{fverif-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Access control}
 \input{accessctrl-lit.tex}
+}
 
 %\subsection{Multi-Level and Multi-Lateral Security}
 %\input{lvlltrl-lit.tex}
 
+\mode<article>{%
 \subsection{Accountability}
 \input{accountability-lit.tex}
+}
 
+\mode<article>{%
 \subsection{L6 Private communication}
 \input{pricomlab-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Trusted computing}
 \input{trustcomp-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Software security}
 \input{software-lit.tex}
+}
 
+\mode<article>{%
 \subsection{Course conclusion}
+}
 
 During this lecture we will shortly review the course and try to fit things into 
 a bigger picture.
 
 \subsection{P7 A short study in information security}
 
-The project aims at a smaller \enquote{pre-study} within the area of 
-information security.
+\mode<presentation>{%
+  \begin{frame}
+    \begin{itemize}
+      \item Small independent study in information security.
+      \item Aim is to practice your knowledge from the course.
+      \item As well as deepen your knowledge in some parts.
+
+        \pause
+
+      \item And to assess that you reach the \acp{ILO} above.
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \begin{itemize}
+      \item You are quite free in choosing.
+      \item But the project must be connected to research.
+      \item You must select and read relevant research papers.
+    \end{itemize}
+  \end{frame}
+}
+
+The project is a smaller study within the area of information security.
 The idea is to deepen your knowledge in some areas of information security, so 
 during the project you must select and read papers which are related to the 
 course.
@@ -167,10 +294,15 @@ More details are provided in the separate instruction.
 \section{Assessment}%
 \label{Assessment}
 
+\mode<presentation>{%
+  \subsection{LADOK modules}
+}
+
 This section explains how the course modules are graded and mapped to LADOK\@.
 \Cref{LADOKTable} visualizes the relations between modules, credits, grades and 
 LADOK\@.
 
+\begin{frame}
 \begin{table}
   \centering
   \setlength{\tabcolsep}{0.5em}
@@ -191,12 +323,27 @@ LADOK\@.
     A--E are also passing grades, where A is the best.
   }\label{LADOKTable}
 \end{table}
+\end{frame}
 
 The project is graded from A to F, where A--E are for passing and F and Fx are 
 for failing.
 The grade of the project will also be the grade of the course total.
 
 \subsection{Handed-in assignments}
+
+\mode<presentation>{%
+  \begin{frame}
+    \begin{itemize}
+      \item Must be in \enquote{passable} condition.
+      \item Otherwise rejection without comment.
+
+        \pause
+
+      \item No plagiarism accepted.
+      \item When working in group: everyone accountable.
+    \end{itemize}
+  \end{frame}
+}
 
 In general, all hand-ins in the course must be in a \enquote{passable} 
 condition; \ie they must be well-written, grammatically correct and without 
@@ -211,7 +358,7 @@ assignments, created by you or one of the group members.
 When you refer to or quote other texts, then you must provide a correct list of 
 references and, in the case of quotations, the quoted text must be clearly 
 marked as quoted.
-If any part of the document is plagiarised you risk being suspended from study 
+If any part of the document is plagiarized you risk being suspended from study 
 for a predetermined time, not exceeding six months, due to disciplinary 
 offence.
 If it is a group assignment, all group members will be held accountable for 
@@ -225,6 +372,39 @@ Unless otherwise stated, all assignments are to be done individually.
 
 \subsection{\enquote{What if I'm not done in time?}}%
 \label{sec:late}
+
+\mode<presentation>{%
+  \begin{frame}
+    \begin{itemize}
+      \item You have three chances for grading per year.
+      \item These are marked in the schedule.
+      \item Thus there will be three deadlines per assignment until the next 
+        time the course is given.
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \begin{itemize}
+      \item No tutoring is planned after the course.
+      \item If you want to ensure tutoring, it's during the course.
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \begin{alertblock}{If you predict you will not finish on time}
+      \begin{itemize}
+        \item Within three weeks of course start, deregister from the course.
+        \item This allows you to reregister next time the course is given.
+
+          \pause
+
+        \item You must reregister to get access to the course the following 
+          year.
+        \item If you haven't cancelled, you'll be last in the queue.
+      \end{itemize}
+    \end{alertblock}
+  \end{frame}
+}
 
 The deadlines on this course are of great importance, make sure to keep these!
 %You must have completed the introductory assignment within its deadline.

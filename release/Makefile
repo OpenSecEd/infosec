@@ -20,6 +20,9 @@ all: ${RELEASE_FILES}
 RELEASE_FILES+=	studyguide.pdf
 SRC-studyguide.pdf=../studyguide/studyguide.pdf
 
+RELEASE_FILES+=	studyguide-slides.pdf
+SRC-studyguide-slides.pdf=../studyguide/studyguide-slides.pdf
+
 RELEASE_FILES+=	foundations-slides.pdf
 SRC-foundations-slides.pdf=../modules/foundations/overview/overview.pdf
 
@@ -70,9 +73,6 @@ SRC-software-slides.pdf=../modules/software/overview/overview-slides.pdf
 
 RELEASE_FILES+=	trustcomp-slides.pdf
 SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
-
-RELEASE_FILES+=	review.pdf
-SRC-review.pdf=../modules/research/review/review.pdf
 
 RELEASE_FILES+=	prestudy.pdf
 SRC-prestudy.pdf=../modules/research/prestudy/prestudy.pdf
