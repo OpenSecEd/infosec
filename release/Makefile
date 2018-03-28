@@ -20,6 +20,9 @@ all: ${RELEASE_FILES}
 RELEASE_FILES+=	studyguide.pdf
 SRC-studyguide.pdf=../studyguide/studyguide.pdf
 
+RELEASE_FILES+=	studyguide-slides.pdf
+SRC-studyguide-slides.pdf=../studyguide/studyguide-slides.pdf
+
 RELEASE_FILES+=	foundations-slides.pdf
 SRC-foundations-slides.pdf=../modules/foundations/overview/overview.pdf
 
