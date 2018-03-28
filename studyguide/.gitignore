@@ -1,6 +1,4 @@
 assessment.sty
-review-aim.tex
-review-lit.tex
 
 ac.bib
 accessctrl-lit.tex
@@ -34,7 +32,6 @@ pricomlab-aim.tex
 pricomlab-lit.tex
 pricomlab.bib
 project-aim.tex
-proto-lit.tex
 fverif-lit.tex
 pwdguess-aim.tex
 pwdguess-lit.tex
@@ -48,8 +45,6 @@ remreset.sty
 risksem-aim.tex
 risksem-lit.tex
 risksem.bib
-sidechannels-lit.tex
-sidechannels.bib
 software-lit.tex
 software.bib
 splncs03.bst
