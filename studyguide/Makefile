@@ -78,7 +78,7 @@ pwdguess.bib: ../modules/auth/passwd/pwdguess/pwdguess.bib
 MODULE_FILES+= 	pwdpolicies-aim.tex pwdpolicies-lit.tex pwdpolicies.bib
 
 pwdpolicies-aim.tex: ../modules/auth/passwd/pwdpolicies/aims.tex
-pwdpolicies-lit.tex: ../modules/auth/passwd/pwdpolicies/literature.tex
+pwdpolicies-lit.tex: ../modules/auth/passwd/pwdpolicies/abstract.tex
 pwdpolicies.bib: ../modules/auth/passwd/pwdpolicies/pwdpolicies.bib
 
 MODULE_FILES+= 	accessctrl-lit.tex accessctrl.bib
