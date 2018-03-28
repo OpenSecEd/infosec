@@ -1,5 +1,5 @@
 .PHONY: all
-all: studyguide.pdf
+all: studyguide.pdf studyguide-slides.pdf
 
 SRC=		studyguide.tex preamble.tex contents.tex
 SRC+= 		schedule.tex
@@ -110,10 +110,13 @@ ${MODULE_FILES}:
 studyguide.pdf: ${SRC}
 studyguide.pdf: bibsp.sty assessment.sty
 
+studyguide-slides.pdf: ${SRC}
+studyguide-slides.pdf: bibsp.sty assessment.sty
+
 
 .PHONY: clean
 clean:
-	${RM} studyguide.pdf
+	${RM} studyguide.pdf studyguide-slides.pdf
 
 .PHONY: clean-depends distclean
 clean-depends distclean:
