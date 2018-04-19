@@ -48,7 +48,7 @@ RELEASE_FILES+=	crypto-slides.pdf
 SRC-crypto-slides.pdf=../modules/appliedcrypto/overview/overview-slides.pdf
 
 RELEASE_FILES+=	sidechannels-slides.pdf
-SRC-sidechannels-slides.pdf=../modules/appliedcrypto/sidechannels/sidechannels.pdf
+SRC-sidechannels-slides.pdf=../modules/appliedcrypto/sidechannels/sidechannels-slides.pdf
 
 RELEASE_FILES+=	auth-slides.pdf
 SRC-auth-slides.pdf=../modules/auth/overview/overview.pdf
