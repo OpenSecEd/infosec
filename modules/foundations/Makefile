@@ -44,15 +44,15 @@ abstract.tex: usability/attacking-humans/abstract.tex
 abstract.tex: usability/psychology/abstract.tex
 
 abstract.tex:
-	${RM} abstract.tex
-	echo "\\paragraph{What is security?}" >> abstract.tex
-	cat security/security/abstract.tex >> abstract.tex
-	echo "\\paragraph{The scientific method}" >> abstract.tex
-	cat security/scientific-method/abstract.tex >> abstract.tex
-	echo "\\paragraph{Attacking humans}" >> abstract.tex
-	cat usability/attacking-humans/abstract.tex >> abstract.tex
-	echo "\\paragraph{Psychology}" >> abstract.tex
-	cat usability/psychology/abstract.tex >> abstract.tex
+	${RM} $@
+	echo "\\paragraph{What is security?}" >> $@
+	cat security/security/abstract.tex >> $@
+	echo "\\paragraph{The scientific method}" >> $@
+	cat security/scientific-method/abstract.tex >> $@
+	echo "\\paragraph{Attacking humans}" >> $@
+	cat usability/attacking-humans/abstract.tex >> $@
+	echo "\\paragraph{Psychology}" >> $@
+	cat usability/psychology/abstract.tex >> $@
 
 abstract.bib: security/security/security.bib
 abstract.bib: security/scientific-method/scientific-method.bib
