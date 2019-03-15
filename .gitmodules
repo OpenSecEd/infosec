@@ -19,7 +19,7 @@
 	url = https://github.com/OpenSecEd/appliedcrypto.git
 	branch = master
 [submodule "modules/usability"]
-	path = modules/usability
+	path = modules/foundations/usability
 	url = https://github.com/OpenSecEd/usability.git
 	branch = master
 [submodule "modules/infotheory"]
@@ -47,7 +47,7 @@
 	url = https://github.com/OpenSecEd/accountability.git
 	branch = master
 [submodule "modules/foundations"]
-	path = modules/foundations
+	path = modules/foundations/security
 	url = https://github.com/OpenSecEd/foundations.git
 	branch = master
 [submodule "bibsp"]
