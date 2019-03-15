@@ -1,3 +1,5 @@
+\mode*
+
 \section{Scope and aims}%
 \label{sec:aim}
 The aim of the course is that after the course you should be able to make 
@@ -39,7 +41,7 @@ these in secure systems.
 \subsection{Teaching and tutoring}
 
 The teaching of the course is oriented towards active learning.
-I.e.\ the course consists of learning sessions which requires active 
+\Ie the course consists of learning sessions which requires active 
 participation.
 
 Generally, you are expected to read the material in advance.
@@ -57,86 +59,9 @@ The detailed schedule can be found in the University's central scheduling
 system.
 The details for each session can be found in \cref{CourseContents}.
 
-\begin{table}
-  % XXX Update time table
-	\centering
-  \begin{tabular}{lp{9cm}}
-    \toprule
-    \textbf{Course week}	& \textbf{Work} \\
-    \midrule
-    1
-      & Lecture: Course start/Foundations of security\\
-      & Lecture: Security usability\\
-      & Lecture: MSB's framework, part I\\
-      & Start working on M1 (isms)\\
-      & Lecture: MSB's framework, part II\\
-      & Start working on M2, prepare S3 (risk)\\
-      & Lecture: Records management\\
-    \midrule
-    2
-      & Lecture: Information theory\\
-      & Lecture: Cryptography, part I\\
-      & Lecture: Cryptography, part II\\
-      & Lecture: Cryptography, part III\\
-      & Grading: M1 (isms), M2 (risk)\\
-    \midrule
-    3
-      & Lecture: Protocols, part I\\
-      & Lecture: Protocols, part II\\
-      & Lecture: Differential privacy, part I\\
-      & Lecture: Differential privacy, part II\\
-      & Seminar: S3 (risk)\\
-    \midrule
-    4
-      & Lecture: Identification and authentication, part I\\
-      & Lecture: Identification and authentication, part II\\
-      & Lab: L4 (pwdeval)\\
-      & Lab: L4 (pwdeval)\\
-      & Seminar: L4 (pwdeval)\\
-    \midrule
-    5
-      & Lecture: Access control, part I\\
-      & Lecture: Access control, part II\\
-      & Lab: L5 (pricomlab)\\
-      & Lecture: Accountability\\
-      & Lab: L5 (pricomlab)\\
-    \midrule
-    6
-      & Seminar: L5 (pricomlab)\\
-      & Lecture: Software security\\
-      & Lecture: Trusted computing\\
-      & Tutoring: P6 (devel)\\
-      %& Tutoring: P6 (research)\\
-    \midrule
-    7
-      & Tutoring: P6 (devel)\\
-    \midrule
-    8
-      & Tutoring: P6 (devel)\\
-    \midrule
-    9
-      & Tutoring: P6 (devel)\\
-    \midrule
-    10
-      & Presentation: P6 (devel)\\
-      & Second grading: M1 (isms), M2 (risk)\\
-      & Second seminar: S3 (risk), L4 (pwdeval), L5 (pricomlab)\\
-    \midrule
-    +3 months
-      & Second presentation: P6 (devel)\\
-      & Final grading: M1 (isms), M2 (risk)\\
-      & Final seminar: S3 (risk), L4 (pwdeval), L5 (pricomlab)\\
-    \midrule
-    +6 months
-      & Final presentation: P6 (devel)\\
-    \bottomrule
-  \end{tabular}
-  \caption{%
-    A summary of the parts of the course and when they will (or should) be done.
-    The table is adapted to taking this course at half-time pace, \ie 20 hours 
-    per week for 10 weeks.
-  }\label{Schedule}
-\end{table}
+\begin{frame}[allowframebreaks]
+\input{schedule.tex}
+\end{frame}
 
 
 \section{Course contents}%
@@ -148,6 +73,7 @@ what you are expected to learn and its reading material.
 %\subsection{L0 Privacy is Dead}
 %\input{privacydead-abstract.tex}
 %
+\mode<article>{%
 \subsection{Foundations of security}
 \input{foundations-abstract.tex}
 
@@ -159,25 +85,37 @@ what you are expected to learn and its reading material.
 
 \subsection{M1 Information security management system}
 \input{ismsmemo-abstract.tex}
+}
 
+\mode<article>{%
 \subsection{M2 and S3 Assessment and risk analysis}
 \input{risksem-abstract.tex}
+}
 
+\mode<article>{%
 \subsection{Information security from a records management perspective}
 \input{recmgmt-abstract.tex}
+}
 
+\mode<article>{%
 \subsection{Information theory}
 \input{infotheory-abstract.tex}
+}
 
+\mode<article>{%
 \subsection{Cryptography}
 \input{crypto-abstract.tex}
 
 \subsection{Protocols}
 \input{proto-abstract.tex}
+}
 
+\mode<article>{%
 \subsection{Differential privacy}
 \input{diffpriv-abstract.tex}
+}
 
+\mode<article>{%
 \subsection{Identification and authentication}
 \input{auth-abstract.tex}
 
@@ -202,6 +140,7 @@ what you are expected to learn and its reading material.
 %\subsection{P8 A short study in information security}
 \subsection{P6 Integrating security and usability in development}
 \input{project-abstract.tex}
+}
 
 
 \section{Assessment}%
@@ -209,31 +148,7 @@ what you are expected to learn and its reading material.
 \input{ladok.tex}
 
 \subsection{Handed-in assignments}
-
-In general, all hand-ins in the course must be in a \enquote{passable} 
-condition; i.e.~they must be well-written, grammatically correct and without 
-spelling errors, have citations and references according to~\cite{IEEEcitation} 
-(see also~\cite{PurdueCitation} for a tutorial), and finally fulfil all 
-requirements from the assignment instruction.
-If you hand something in which is not in this condition, you will receive an 
-F without further comment.
-
-All material handed-in must be created by yourself, or, in the case of group 
-assignments, created by you or one of the group members.
-When you refer to or quote other texts, then you must provide a correct list of 
-references and, in the case of quotations, the quoted text must be clearly 
-marked as quoted.
-If any part of the document is plagiarised you risk being suspended from study 
-for a predetermined time, not exceeding six months, due to disciplinary 
-offence.
-If it is a group assignment, all group members will be held accountable for 
-disciplinary offence unless it is clearly marked in the work who is responsible 
-for the part containing the plagiarism.
-
-If cooperation takes place without the assignment instruction explicitly 
-allowing this, this will be regarded as a disciplinary offence with the risk of
-being suspended for a predetermined time, not exceeding six months.
-Unless otherwise stated, all assignments are to be done individually.
+\input{hand-ins.tex}
 
 \subsection{\enquote{What if I'm not done in time?}}%
 \label{sec:late}

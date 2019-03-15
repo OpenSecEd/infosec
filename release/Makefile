@@ -1,17 +1,27 @@
-PUB_FILES?=		${RELEASE_FILES}
-PUB_SERVER?=	ver.miun.se
-PUB_DIR?=		/srv/web/svn/courses/security/infosakc
-PUB_USER?=		
-PUB_GROUP?=		svn
-PUB_METHOD?=	ssh
-PUB_VCS?=		git
-PUB_AUTOTAG?=	true
+PUB_FILES?=			${RELEASE_FILES}
+PUB_SERVER?=		ver.miun.se
+PUB_DIR?=			/srv/web/svn/courses/security/infosakc
+PUB_USER?=			
+PUB_GROUP?=			svn
+PUB_METHOD?=		ssh
+PUB_VCS?=			git
+PUB_AUTOTAG?=		true
+
+PKG_NAME?=			infosakc
+PKG_TARBALL_FILES?=	${RELEASE_FILES}
+
+.PHONY: all
+all: infosakc.tar.gz
+
 
 .PHONY: all
 all: ${RELEASE_FILES}
 
 RELEASE_FILES+=	studyguide.pdf
 SRC-studyguide.pdf=../studyguide/studyguide.pdf
+
+RELEASE_FILES+=	studyguide-slides.pdf
+SRC-studyguide-slides.pdf=../studyguide/studyguide-slides.pdf
 
 RELEASE_FILES+=	foundations-slides.pdf
 SRC-foundations-slides.pdf=../modules/foundations/overview/overview.pdf
@@ -36,6 +46,9 @@ SRC-infotheory-slides.pdf=../modules/infotheory/basics/basics.pdf
 
 RELEASE_FILES+=	crypto-slides.pdf
 SRC-crypto-slides.pdf=../modules/appliedcrypto/overview/overview-slides.pdf
+
+RELEASE_FILES+=	sidechannels-slides.pdf
+SRC-sidechannels-slides.pdf=../modules/appliedcrypto/sidechannels/sidechannels-slides.pdf
 
 RELEASE_FILES+=	auth-slides.pdf
 SRC-auth-slides.pdf=../modules/auth/overview/overview.pdf
@@ -63,12 +76,6 @@ SRC-software-slides.pdf=../modules/software/overview/overview-slides.pdf
 
 RELEASE_FILES+=	trustcomp-slides.pdf
 SRC-trustcomp-slides.pdf=../modules/trustcomp/overview/overview.pdf
-
-RELEASE_FILES+=	sidechannels-slides.pdf
-SRC-sidechannels-slides.pdf=../modules/sidechannels/overview/overview.pdf
-
-RELEASE_FILES+=	review.pdf
-SRC-review.pdf=../modules/research/review/review.pdf
 
 RELEASE_FILES+=	prestudy.pdf
 SRC-prestudy.pdf=../modules/research/prestudy/prestudy.pdf
@@ -106,3 +113,4 @@ $(foreach target,${RELEASE_FILES},$(eval $(call target_rules,${target})))
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/pub.mk
 include ${INCLUDE_MAKEFILES}/doc.mk
+include ${INCLUDE_MAKEFILES}/pkg.mk

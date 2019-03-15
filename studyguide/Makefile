@@ -1,9 +1,9 @@
 .PHONY: all
-all: studyguide.pdf
+all: studyguide.pdf studyguide-slides.pdf
 
 SRC=		studyguide.tex preamble.tex contents.tex
 SRC+= 		ilo-grading.tex prerequisites.tex ladok.tex
-SRC+= 		late.tex
+SRC+= 		schedule.tex hand-ins.tex late.tex
 SRC+=		${MODULE_FILES}
 
 MODULE_FILES+= 	pricomlab-abstract.tex pricomlab.bib
@@ -62,11 +62,6 @@ MODULE_FILES+= 	proto-abstract.tex fverif.bib
 proto-abstract.tex: ../modules/fverif/intro/abstract.tex
 fverif.bib: ../modules/fverif/intro/intro.bib
 
-MODULE_FILES+= 	sidechannels-abstract.tex sidechannels.bib
-
-sidechannels-abstract.tex: ../modules/sidechannels/overview/abstract.tex
-sidechannels.bib: ../modules/sidechannels/overview/overview.bib
-
 MODULE_FILES+= 	auth-abstract.tex authmodule.bib
 
 auth-abstract.tex: ../modules/auth/overview/abstract.tex
@@ -111,10 +106,13 @@ ${MODULE_FILES}:
 studyguide.pdf: ${SRC}
 studyguide.pdf: bibsp.sty assessment.sty
 
+studyguide-slides.pdf: ${SRC}
+studyguide-slides.pdf: bibsp.sty assessment.sty
+
 
 .PHONY: clean
 clean:
-	${RM} studyguide.pdf
+	${RM} studyguide.pdf studyguide-slides.pdf
 
 .PHONY: clean-depends distclean
 clean-depends distclean:
