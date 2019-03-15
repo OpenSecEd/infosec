@@ -62,3 +62,6 @@
 [submodule "modules/privacy"]
 	path = modules/privacy
 	url = https://github.com/OpenSecEd/privacy.git
+[submodule "modules/intro/ethics"]
+	path = modules/intro/ethics
+	url = https://github.com/OpenSecEd/ethics.git
