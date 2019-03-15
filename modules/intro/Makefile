@@ -1,9 +1,13 @@
-OUT+= 	intro.html
-OUT+= 	security-society-seminar.pdf
+PUB_FILES+= 	intro.html
+PUB_FILES+= 	security-society-seminar.pdf
+
+PUB_SERVER?= 	ver.miun.se
+PUB_DIR?= 		/srv/web/svn/courses/security/infosakc
+PUB_GROUP?= 	svn
 
 
 .PHONY: all
-all: ${OUT}
+all: ${PUB_FILES}
 
 SECURITY-SOCIETY-FILES+= security-society-seminar.pdf
 SECURITY-SOCIETY-FILES+= security-society-seminar-abstract.tex
@@ -22,7 +26,7 @@ ethics/%:
 
 .PHONY: clean
 clean:
-	${RM} ${OUT} ${SECURITY-SOCIETY-FILES}
+	${RM} ${PUB_FILES} ${SECURITY-SOCIETY-FILES}
 	${MAKE} -C ethics clean
 
 .PHONY: distclean
@@ -32,4 +36,4 @@ distclean:
 
 INCLUDE_MAKEFILES?=../../makefiles
 include ${INCLUDE_MAKEFILES}/doc.mk
-
+include ${INCLUDE_MAKEFILES}/pub.mk
