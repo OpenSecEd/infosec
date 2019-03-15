@@ -6,6 +6,11 @@ SRC+= 		ilo-grading.tex prerequisites.tex ladok.tex
 SRC+= 		schedule.tex hand-ins.tex late.tex
 SRC+=		${MODULE_FILES}
 
+MODULE_FILES+= 	foundations-abstract.tex foundations.bib
+
+foundations-abstract.tex: ../modules/foundations/abstract.tex
+foundations.bib: ../modules/foundations/abstract.bib
+
 MODULE_FILES+= 	pricomlab-abstract.tex pricomlab.bib
 
 pricomlab-abstract.tex: ../modules/pricomlab/abstract.tex
@@ -42,11 +47,6 @@ MODULE_FILES+= 	software-abstract.tex software.bib
 software-abstract.tex: ../modules/software/overview/abstract.tex
 software.bib: ../modules/software/overview/overview.bib
 
-MODULE_FILES+= 	usability-abstract.tex usability.bib
-
-usability-abstract.tex: ../modules/usability/overview/abstract.tex
-usability.bib: ../modules/usability/overview/overview.bib
-
 MODULE_FILES+= 	infotheory-abstract.tex infotheory.bib
 
 infotheory-abstract.tex: ../modules/infotheory/basics/abstract.tex
@@ -79,11 +79,6 @@ accessctrl-abstract.tex: ../modules/ac/overview/abstract.tex
 accessctrl.bib: ../modules/ac/overview/overview.bib
 #lvlltrl-abstract.tex: ../modules/ac/lvlltrl/abstract.tex
 
-MODULE_FILES+= 	foundations-abstract.tex foundations.bib
-
-foundations-abstract.tex: ../modules/foundations/overview/abstract.tex
-foundations.bib: ../modules/foundations/overview/overview.bib
-
 MODULE_FILES+= 	accountability-abstract.tex accountability.bib
 
 accountability-abstract.tex: ../modules/accountability/overview/abstract.tex
@@ -101,6 +96,9 @@ diffpriv.bib: ../modules/privacy/diffpriv/diffpriv.bib
 
 ${MODULE_FILES}:
 	ln -s $^ $@
+
+../modules/%:
+	${MAKE} -C $(dir $@) $(notdir $@)
 
 
 studyguide.pdf: ${SRC}
