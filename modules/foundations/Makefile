@@ -25,7 +25,8 @@ foundations.md:
 	echo "We then discuss the scienfitic method and how it's applied in security in " >> $@
 	${CAT} security/scientific-method/README.md >> $@
 	echo "." >> $@
-	echo "# Usability"
+	echo >> $@
+	echo "# Usability" >> $@
 	echo "We continue with an introduction to the role of humans in security in " >> $@
 	${CAT} usability/attacking-humans/README.md >> $@
 	echo "." >> $@
