@@ -95,7 +95,7 @@ project-abstract.tex: ../modules/conclusion/projects/devel/abstract.tex
 
 
 ${MODULE_FILES}:
-	ln -s $^ $@
+	ln -sf $^ $@
 
 ../modules/%:
 	${MAKE} -C $(dir $@) $(notdir $@)
