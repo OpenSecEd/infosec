@@ -53,9 +53,9 @@
 [submodule "bibsp"]
 	path = bibsp
 	url = https://github.com/dbosk/bibsp.git
-[submodule "modules/research"]
-	path = modules/research
-	url = https://github.com/OpenSecEd/research.git
+[submodule "modules/conclusion/projects"]
+	path = modules/conclusion/projects
+	url = https://github.com/OpenSecEd/projects.git
 [submodule "bibedu"]
 	path = bibedu
 	url = https://github.com/dbosk/bibedu.git
