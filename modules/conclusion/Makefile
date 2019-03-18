@@ -17,14 +17,17 @@ projects/devel/%:
 	${MAKE} -C $(dir $@) $(notdir $@)
 
 
-abstract.tex:
+conclusion.tex:
 	${LN} projects/devel/abstract.tex $@
+
+conclusion.bib:
+	${LN} projects/devel/devel.bib $@
 
 
 .PHONY: clean
 clean:
 	${RM} ${PUB_FILES}
-	${RM} abstract.tex
+	${RM} conclusion.tex conclusion.bib
 	${MAKE} -C projects/devel clean
 
 .PHONY: distclean
