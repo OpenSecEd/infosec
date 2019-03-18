@@ -91,7 +91,7 @@ diffpriv.bib: ../modules/privacy/diffpriv/diffpriv.bib
 
 MODULE_FILES+= 	project-abstract.tex
 
-project-abstract.tex: ../modules/conclusion/projects/devel/abstract.tex
+project-abstract.tex: ../modules/conclusion/abstract.tex
 
 
 ${MODULE_FILES}:
