@@ -15,7 +15,7 @@
 	url = https://github.com/OpenSecEd/software.git
 	branch = master
 [submodule "modules/appliedcrypto"]
-	path = modules/appliedcrypto
+	path = modules/crypto/appliedcrypto
 	url = https://github.com/OpenSecEd/appliedcrypto.git
 	branch = master
 [submodule "modules/usability"]
@@ -23,7 +23,7 @@
 	url = https://github.com/OpenSecEd/usability.git
 	branch = master
 [submodule "modules/infotheory"]
-	path = modules/infotheory
+	path = modules/crypto/infotheory
 	url = https://github.com/OpenSecEd/infotheory.git
 	branch = master
 [submodule "modules/trustcomp"]
