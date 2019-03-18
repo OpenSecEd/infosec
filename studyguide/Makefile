@@ -84,14 +84,14 @@ MODULE_FILES+= 	accountability-abstract.tex accountability.bib
 accountability-abstract.tex: ../modules/accountability/overview/abstract.tex
 accountability.bib: ../modules/accountability/overview/overview.bib
 
-MODULE_FILES+= 	project-abstract.tex
-
-project-abstract.tex: ../modules/research/devel/abstract.tex
-
 MODULE_FILES+=	diffpriv-abstract.tex diffpriv.bib
 
 diffpriv-abstract.tex: ../modules/privacy/diffpriv/abstract.tex
 diffpriv.bib: ../modules/privacy/diffpriv/diffpriv.bib
+
+MODULE_FILES+= 	project-abstract.tex
+
+project-abstract.tex: ../modules/conclusion/projects/devel/abstract.tex
 
 
 ${MODULE_FILES}:
