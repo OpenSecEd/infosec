@@ -11,12 +11,12 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 SECURITY-SOCIETY-FILES+= security-society-seminar.pdf
-SECURITY-SOCIETY-FILES+= security-society-seminar-abstract.tex
-SECURITY-SOCIETY-FILES+= security-society-seminar.bib
+SECURITY-SOCIETY-FILES+= intro.tex
+SECURITY-SOCIETY-FILES+= intro.bib
 
 security-society-seminar.pdf: ethics/security-society-seminar/notes.pdf
-security-society-seminar-abstract.tex: ethics/security-society-seminar/abstract.tex
-security-society-seminar.bib: ethics/security-society-seminar/security-society-seminar.bib
+intro.tex: ethics/security-society-seminar/abstract.tex
+intro.bib: ethics/security-society-seminar/security-society-seminar.bib
 
 ${SECURITY-SOCIETY-FILES}:
 	ln -s $< $@
