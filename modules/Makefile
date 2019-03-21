@@ -5,6 +5,7 @@ SUBDIR+= 	foundations
 SUBDIR+= 	crypto
 SUBDIR+= 	auth
 SUBDIR+= 	proto
+SUBDIR+= 	ac
 
 SUBDIR_GOALS= 	all clean distclean
 
