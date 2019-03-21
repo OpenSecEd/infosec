@@ -1,4 +1,6 @@
 PUB_FILES+= 	auth.html
+PUB_FILES+= 	pwdeval.pdf
+PUB_FILES+= 	pricomlab.pdf
 
 PUB_SERVER?= 	ver.miun.se
 PUB_DIR?= 		/srv/web/svn/courses/security/infosakc
@@ -16,6 +18,7 @@ auth.md: auth/user-machine/README.md
 auth.md: auth/something-you-know/README.md
 auth.md: auth/something-you-have/README.md
 auth.md: auth/machine-user/README.md
+auth.md: labs.md
 
 auth.md:
 	${RM} auth.md
@@ -41,6 +44,15 @@ auth.bib: auth/machine-user/machine-user.bib
 
 auth.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
+
+pwdeval.pdf: auth/passwd/pwdeval/pwdeval.pdf
+pricomlab.pdf: pricomlab/pricomlab.pdf
+
+pwdeval.pdf pricomlab.pdf:
+	${LN} $< $@
+
+pricomlab/% auth/%:
+	${MAKE} -C $(dir $@) $(notdir $@)
 
 
 .PHONY: clean
