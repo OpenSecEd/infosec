@@ -31,7 +31,7 @@
 	url = https://github.com/OpenSecEd/trustcomp.git
 	branch = master
 [submodule "modules/fverif"]
-	path = modules/fverif
+	path = modules/proto/proto
 	url = https://github.com/OpenSecEd/fverif.git
 	branch = master
 [submodule "modules/auth"]
