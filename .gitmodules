@@ -39,7 +39,7 @@
 	url = https://github.com/OpenSecEd/auth.git
 	branch = master
 [submodule "modules/ac"]
-	path = modules/ac
+	path = modules/ac/ac
 	url = https://github.com/OpenSecEd/ac.git
 	branch = master
 [submodule "modules/accountability"]

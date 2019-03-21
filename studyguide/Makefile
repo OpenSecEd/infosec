@@ -57,10 +57,10 @@ BIBS+= 				../modules/auth/auth/passwd/pwdeval/pwdeval.bib
 pwdeval-abstract.tex: ../modules/auth/auth/passwd/pwdeval/abstract.tex
 
 MODULE_FILES+= 	accessctrl-abstract.tex
-BIBS+= 			../modules/ac/overview/overview.bib
+BIBS+= 			../modules/ac/ac.bib
 #MODULE_FILES+= 	lvlltrl-abstract.tex
 
-accessctrl-abstract.tex: ../modules/ac/overview/abstract.tex
+accessctrl-abstract.tex: ../modules/ac/ac.tex
 #lvlltrl-abstract.tex: ../modules/ac/lvlltrl/abstract.tex
 
 MODULE_FILES+= 	accountability-abstract.tex
