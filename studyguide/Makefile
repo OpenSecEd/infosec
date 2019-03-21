@@ -25,11 +25,12 @@ BIBS+= 			../modules/ism/risksem/risksem.bib
 ismsmemo-abstract.tex: ../modules/ism/ismsmemo/abstract.tex
 risksem-abstract.tex: ../modules/ism/risksem/abstract.tex
 
-MODULE_FILES+=	msbframework-abstract.tex
+MODULE_FILES+=	msbintro-abstract.tex msbforts-abstract.tex
 BIBS+= 			../modules/ism/msbframework/msbintro/msbintro.bib
 BIBS+= 			../modules/ism/msbframework/msbforts/msbforts.bib
 
-msbframework-abstract.tex: ../modules/ism/msbframework/abstract.tex
+msbintro-abstract.tex: ../modules/ism/msbframework/msbintro/abstract.tex
+msbforts-abstract.tex: ../modules/ism/msbframework/msbforts/abstract.tex
 
 MODULE_FILES+=	recmgmt-abstract.tex
 BIBS+= 			../modules/ism/recmgmt/recmgmt.bib
