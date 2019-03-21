@@ -12,20 +12,17 @@ all: ${PUB_FILES}
 
 crypto.md: infotheory/shannon-entropy/README.md
 crypto.md: infotheory/applications/README.md
+crypto.md: appliedcrypto/overview/README.md
 
 crypto.md:
 	${RM} crypto.md
 	echo "# Information theory\n" >> $@
-	echo "We first cover the basics of information theory," >> $@
 	${CAT} infotheory/shannon-entropy/README.md >> $@
-	echo ", then we cover some applications, " >> $@
-	${CAT} infotheory/applications/README.md >> $@
-	echo "."
 	echo >> $@
-	echo "# High-level overview of crypto" >> $@
-	echo "We next give a high-level overview of modern crypto, " >> $@
-	echo "[crypto lecture](https://miun-se.zoom.us/my/dbosk)" >> $@
-	echo "(not this is an interactive session, check the schedule)." >> $@
+	${CAT} infotheory/applications/README.md >> $@
+	echo >> $@
+	echo "# High-level overview of crypto\n" >> $@
+	${CAT} appliedcrypto/overview/README.md >> $@
 
 
 crypto.tex: infotheory/shannon-entropy/abstract.tex

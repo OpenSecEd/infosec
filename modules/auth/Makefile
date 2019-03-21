@@ -21,7 +21,7 @@ auth.md: auth/machine-user/README.md
 auth.md: labs.md
 
 auth.md:
-	${RM} auth.md
+	${RM} $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 #auth.tex: auth/intro/abstract.tex

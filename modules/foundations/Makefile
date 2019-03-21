@@ -15,25 +15,16 @@ foundations.md: usability/attacking-humans/README.md
 foundations.md: usability/psychology/README.md
 
 foundations.md:
-	${CAT} $^ > $@
 	${RM} $@
 	echo "# Foundations of security" >> $@
-	echo "We start by covering the foundations of security in " >> $@
 	${CAT} security/security/README.md >> $@
-	echo "." >> $@
 	echo >> $@
-	echo "We then discuss the scienfitic method and how it's applied in security in " >> $@
 	${CAT} security/scientific-method/README.md >> $@
-	echo "." >> $@
 	echo >> $@
 	echo "# Usability" >> $@
-	echo "We continue with an introduction to the role of humans in security in " >> $@
 	${CAT} usability/attacking-humans/README.md >> $@
-	echo "." >> $@
 	echo >> $@
-	echo "We then conclude with how humans work in " >> $@
 	${CAT} usability/psychology/README.md >> $@
-	echo "." >> $@
 
 
 .PHONY: all
