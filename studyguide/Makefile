@@ -41,35 +41,20 @@ BIBS+= 			../modules/crypto/crypto.bib
 
 crypto-abstract.tex: ../modules/crypto/crypto.tex
 
-MODULE_FILES+= 	pricomlab-abstract.tex
-BIBS+= 			../modules/pricomlab/pricomlab.bib
-
-pricomlab-abstract.tex: ../modules/pricomlab/abstract.tex
-
-MODULE_FILES+= 	trustcomp-abstract.tex
-BIBS+= 			../modules/trustcomp/overview/overview.bib
-
-trustcomp-abstract.tex: ../modules/trustcomp/overview/abstract.tex
-
-MODULE_FILES+= 	software-abstract.tex
-BIBS+= 			../modules/software/overview/overview.bib
-
-software-abstract.tex: ../modules/software/overview/abstract.tex
-
-MODULE_FILES+= 	proto-abstract.tex
-BIBS+= 			../modules/fverif/intro/intro.bib
-
-proto-abstract.tex: ../modules/fverif/intro/abstract.tex
-
 MODULE_FILES+= 	auth-abstract.tex
-BIBS+= 			../modules/auth/overview/overview.bib
+BIBS+= 			../modules/auth/auth.bib
 
-auth-abstract.tex: ../modules/auth/overview/abstract.tex
+auth-abstract.tex: ../modules/auth/auth.tex
 
-MODULE_FILES+= 	pwdeval-abstract.tex
-BIBS+= 			../modules/auth/passwd/pwdeval/pwdeval.bib
+MODULE_FILES+= 	pricomlab-abstract.tex
+BIBS+= 			../modules/auth/pricomlab/pricomlab.bib
 
-pwdeval-abstract.tex: ../modules/auth/passwd/pwdeval/abstract.tex
+pricomlab-abstract.tex: ../modules/auth/pricomlab/abstract.tex
+
+MODULE_FILES+= 		pwdeval-abstract.tex
+BIBS+= 				../modules/auth/auth/passwd/pwdeval/pwdeval.bib
+
+pwdeval-abstract.tex: ../modules/auth/auth/passwd/pwdeval/abstract.tex
 
 MODULE_FILES+= 	accessctrl-abstract.tex
 BIBS+= 			../modules/ac/overview/overview.bib
@@ -83,15 +68,30 @@ BIBS+= 			../modules/accountability/overview/overview.bib
 
 accountability-abstract.tex: ../modules/accountability/overview/abstract.tex
 
+MODULE_FILES+= 	proto-abstract.tex
+BIBS+= 			../modules/fverif/intro/intro.bib
+
+proto-abstract.tex: ../modules/fverif/intro/abstract.tex
+
 MODULE_FILES+=	diffpriv-abstract.tex
 BIBS+= 			../modules/privacy/diffpriv/diffpriv.bib
 
 diffpriv-abstract.tex: ../modules/privacy/diffpriv/abstract.tex
 
+MODULE_FILES+= 	trustcomp-abstract.tex
+BIBS+= 			../modules/trustcomp/overview/overview.bib
+
+trustcomp-abstract.tex: ../modules/trustcomp/overview/abstract.tex
+
+MODULE_FILES+= 	software-abstract.tex
+BIBS+= 			../modules/software/overview/overview.bib
+
+software-abstract.tex: ../modules/software/overview/abstract.tex
+
 MODULE_FILES+= 	project-abstract.tex
 BIBS+= 			../modules/conclusion/conclusion.bib
 
-project-abstract.tex: ../modules/conclusion/abstract.tex
+project-abstract.tex: ../modules/conclusion/conclusion.tex
 
 
 ${MODULE_FILES}:
