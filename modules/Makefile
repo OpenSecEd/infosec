@@ -6,6 +6,7 @@ SUBDIR+= 	crypto
 SUBDIR+= 	auth
 SUBDIR+= 	proto
 SUBDIR+= 	ac
+SUBDIR+= 	conclusion
 
 SUBDIR_GOALS= 	all clean distclean
 
