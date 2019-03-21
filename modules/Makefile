@@ -8,7 +8,7 @@ SUBDIR+= 	proto
 SUBDIR+= 	ac
 SUBDIR+= 	conclusion
 
-SUBDIR_GOALS= 	all clean distclean
+SUBDIR_GOALS= 	all clean distclean publish
 
 PUB_SERVER?=ver.miun.se
 PUB_DIR?= 	/srv/web/svn/courses/security/infosakc
