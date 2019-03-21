@@ -16,11 +16,11 @@ proto.md:
 	${RM} $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-#proto.tex: proto/intro/abstract.tex
-#
-#proto.tex:
-#	${RM} proto.tex
-#	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+proto.tex: proto/intro/abstract.tex
+
+proto.tex:
+	${RM} proto.tex
+	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 proto.bib: proto/intro/intro.bib
 

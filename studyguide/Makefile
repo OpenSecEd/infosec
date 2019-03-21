@@ -56,6 +56,11 @@ BIBS+= 				../modules/auth/auth/passwd/pwdeval/pwdeval.bib
 
 pwdeval-abstract.tex: ../modules/auth/auth/passwd/pwdeval/abstract.tex
 
+MODULE_FILES+= 	proto-abstract.tex
+BIBS+= 			../modules/proto/proto.bib
+
+proto-abstract.tex: ../modules/proto/proto.tex
+
 MODULE_FILES+= 	accessctrl-abstract.tex
 BIBS+= 			../modules/ac/ac.bib
 #MODULE_FILES+= 	lvlltrl-abstract.tex
@@ -67,11 +72,6 @@ MODULE_FILES+= 	accountability-abstract.tex
 BIBS+= 			../modules/accountability/overview/overview.bib
 
 accountability-abstract.tex: ../modules/accountability/overview/abstract.tex
-
-MODULE_FILES+= 	proto-abstract.tex
-BIBS+= 			../modules/fverif/intro/intro.bib
-
-proto-abstract.tex: ../modules/fverif/intro/abstract.tex
 
 MODULE_FILES+=	diffpriv-abstract.tex
 BIBS+= 			../modules/privacy/diffpriv/diffpriv.bib
