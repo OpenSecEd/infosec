@@ -28,14 +28,14 @@ foundations.md:
 
 
 .PHONY: all
-all: abstract.tex abstract.bib
+all: foundations.tex foundations.bib
 
-abstract.tex: security/security/abstract.tex
-abstract.tex: security/scientific-method/abstract.tex
-abstract.tex: usability/attacking-humans/abstract.tex
-abstract.tex: usability/psychology/abstract.tex
+foundations.tex: security/security/abstract.tex
+foundations.tex: security/scientific-method/abstract.tex
+foundations.tex: usability/attacking-humans/abstract.tex
+foundations.tex: usability/psychology/abstract.tex
 
-abstract.tex:
+foundations.tex:
 	${RM} $@
 	echo "\\paragraph{What is security?}" >> $@
 	cat security/security/abstract.tex >> $@
@@ -46,12 +46,12 @@ abstract.tex:
 	echo "\\paragraph{Psychology}" >> $@
 	cat usability/psychology/abstract.tex >> $@
 
-abstract.bib: security/security/security.bib
-abstract.bib: security/scientific-method/scientific-method.bib
-abstract.bib: usability/attacking-humans/attacking-humans.bib
-abstract.bib: usability/psychology/psychology.bib
+foundations.bib: security/security/security.bib
+foundations.bib: security/scientific-method/scientific-method.bib
+foundations.bib: usability/attacking-humans/attacking-humans.bib
+foundations.bib: usability/psychology/psychology.bib
 
-abstract.bib:
+foundations.bib:
 	${CAT} $^ > $@
 
 security/% usability/%:
@@ -60,9 +60,15 @@ security/% usability/%:
 
 .PHONY: clean
 clean:
-	${RM} ${PUB_FILES}
-	${RM} foundations.md
-	${RM} abstract.tex abstract.bib
+	${RM} foundations.md foundations.html
+	${RM} foundations.tex foundations.bib
+	${MAKE} -C security clean
+	${MAKE} -C usability clean
+
+.PHONY: distclean
+distclean:
+	${MAKE} -C security distclean
+	${MAKE} -C usability distclean
 
 
 INCLUDE_MAKEFILES?=../../makefiles

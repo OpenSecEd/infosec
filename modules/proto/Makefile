@@ -30,7 +30,7 @@ proto.bib:
 
 .PHONY: clean
 clean:
-	${RM} ${PUB_FILES}
+	${RM} proto.md proto.html proto.tex proto.bib
 
 
 INCLUDE_MAKEFILES?=../../makefiles

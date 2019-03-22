@@ -57,7 +57,8 @@ pricomlab/% auth/%:
 
 .PHONY: clean
 clean:
-	${RM} ${PUB_FILES}
+	${RM} auth.md auth.html auth.bib
+	${RM} pwdeval.pdf pricomlab.pdf
 
 
 INCLUDE_MAKEFILES?=../../makefiles

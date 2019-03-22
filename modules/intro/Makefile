@@ -27,7 +27,7 @@ ethics/%:
 
 .PHONY: clean
 clean:
-	${RM} ${PUB_FILES} ${SECURITY-SOCIETY-FILES}
+	${RM} intro.html ${SECURITY-SOCIETY-FILES}
 	${MAKE} -C ethics clean
 
 .PHONY: distclean

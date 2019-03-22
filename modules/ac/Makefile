@@ -30,7 +30,7 @@ ac.bib:
 
 .PHONY: clean
 clean:
-	${RM} ${PUB_FILES}
+	${RM} ac.md ac.html ac.tex ac.bib
 
 
 INCLUDE_MAKEFILES?=../../makefiles

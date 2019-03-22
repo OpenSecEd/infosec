@@ -46,11 +46,21 @@ crypto.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
 
 
+infotheory/% appliedcrypto/%:
+	${MAKE} -C $(dir $@) $(notdir $@)
+
+
 .PHONY: clean
 clean:
-	${RM} ${PUB_FILES}
 	${RM} crypto.md crypto.html
 	${RM} crypto.tex crypto.bib
+	${MAKE} -C infotheory clean
+	${MAKE} -C appliedcrypto clean
+
+.PHONY: distclean
+distclean:
+	${MAKE} -C infotheory distclean
+	${MAKE} -C appliedcrypto distclean
 
 
 INCLUDE_MAKEFILES?=../../makefiles

@@ -13,9 +13,9 @@ BIBS+= 			../modules/intro/intro.bib
 intro-abstract.tex: ../modules/intro/intro.tex
 
 MODULE_FILES+= 	foundations-abstract.tex
-BIBS+= 			../modules/foundations/abstract.bib
+BIBS+= 			../modules/foundations/foundations.bib
 
-foundations-abstract.tex: ../modules/foundations/abstract.tex
+foundations-abstract.tex: ../modules/foundations/foundations.tex
 
 MODULE_FILES+= 	ismsmemo-abstract.tex
 MODULE_FILES+= 	risksem-abstract.tex
