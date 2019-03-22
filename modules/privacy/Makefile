@@ -16,10 +16,10 @@ privacy.md:
 	${RM} $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-privacy.tex: privacy/diffpriv/abstrprivacyt.tex
+privacy.tex: privacy/diffpriv/abstract.tex
 
 privacy.tex:
-	${RM} privacy.tex
+	${RM} $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 privacy.bib: privacy/diffpriv/diffpriv.bib

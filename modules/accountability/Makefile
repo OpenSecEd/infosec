@@ -16,10 +16,10 @@ accountability.md:
 	${RM} $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-accountability.tex: accountability/overview/abstraccountabilityt.tex
+accountability.tex: accountability/overview/abstract.tex
 
 accountability.tex:
-	${RM} accountability.tex
+	${RM} $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 accountability.bib: accountability/overview/overview.bib

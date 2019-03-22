@@ -1,3 +1,11 @@
+PUB_FILES+= 	studyguide.pdf
+
+PUB_SERVER?= 	ver.miun.se
+PUB_DIR?= 		/srv/web/svn/courses/security/infosakc
+PUB_USER?=
+PUB_GROUP?= 	svn
+
+
 .PHONY: all
 all: studyguide.pdf studyguide-slides.pdf
 
@@ -70,24 +78,24 @@ accessctrl-abstract.tex: ../modules/ac/ac.tex
 #lvlltrl-abstract.tex: ../modules/ac/lvlltrl/abstract.tex
 
 MODULE_FILES+= 	accountability-abstract.tex
-BIBS+= 			../modules/accountability/overview/overview.bib
+BIBS+= 			../modules/accountability/accountability.bib
 
-accountability-abstract.tex: ../modules/accountability/overview/abstract.tex
+accountability-abstract.tex: ../modules/accountability/accountability.tex
 
 MODULE_FILES+=	diffpriv-abstract.tex
-BIBS+= 			../modules/privacy/diffpriv/diffpriv.bib
+BIBS+= 			../modules/privacy/privacy.bib
 
-diffpriv-abstract.tex: ../modules/privacy/diffpriv/abstract.tex
+diffpriv-abstract.tex: ../modules/privacy/privacy.tex
 
 MODULE_FILES+= 	trustcomp-abstract.tex
-BIBS+= 			../modules/trustcomp/overview/overview.bib
+BIBS+= 			../modules/trustcomp/trustcomp.bib
 
-trustcomp-abstract.tex: ../modules/trustcomp/overview/abstract.tex
+trustcomp-abstract.tex: ../modules/trustcomp/trustcomp.tex
 
 MODULE_FILES+= 	software-abstract.tex
-BIBS+= 			../modules/software/overview/overview.bib
+BIBS+= 			../modules/software/software.bib
 
-software-abstract.tex: ../modules/software/overview/abstract.tex
+software-abstract.tex: ../modules/software/software.tex
 
 MODULE_FILES+= 	project-abstract.tex
 BIBS+= 			../modules/conclusion/conclusion.bib
@@ -126,6 +134,7 @@ clean-depends distclean:
 
 INCLUDE_MAKEFILES=../makefiles
 include ${INCLUDE_MAKEFILES}/tex.mk
+include ${INCLUDE_MAKEFILES}/pub.mk
 INCLUDE_BIBSP=../bibsp
 include ${INCLUDE_BIBSP}/bibsp.mk
 INCLUDE_BIBEDU=../bibedu
