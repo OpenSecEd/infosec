@@ -43,7 +43,7 @@
 	url = https://github.com/OpenSecEd/ac.git
 	branch = master
 [submodule "modules/accountability"]
-	path = modules/accountability
+	path = modules/accountability/accountability
 	url = https://github.com/OpenSecEd/accountability.git
 	branch = master
 [submodule "modules/foundations"]
