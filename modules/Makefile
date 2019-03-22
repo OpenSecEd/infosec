@@ -7,6 +7,7 @@ SUBDIR+= 	auth
 SUBDIR+= 	proto
 SUBDIR+= 	ac
 SUBDIR+= 	accountability
+SUBDIR+= 	trustcomp
 SUBDIR+= 	conclusion
 
 SUBDIR_GOALS= 	all clean distclean publish

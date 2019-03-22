@@ -27,7 +27,7 @@
 	url = https://github.com/OpenSecEd/infotheory.git
 	branch = master
 [submodule "modules/trustcomp"]
-	path = modules/trustcomp
+	path = modules/trustcomp/trustcomp
 	url = https://github.com/OpenSecEd/trustcomp.git
 	branch = master
 [submodule "modules/fverif"]
