@@ -13,6 +13,7 @@ foundations.md: security/security/README.md
 foundations.md: security/scientific-method/README.md
 foundations.md: usability/attacking-humans/README.md
 foundations.md: usability/psychology/README.md
+foundations.md: session.md
 
 foundations.md:
 	${RM} $@
@@ -25,6 +26,10 @@ foundations.md:
 	${CAT} usability/attacking-humans/README.md >> $@
 	echo >> $@
 	${CAT} usability/psychology/README.md >> $@
+	echo >> $@
+	echo "# Session on foundations" >> $@
+	echo >> $@
+	${CAT} session.md >> $@
 
 
 .PHONY: all
