@@ -1,7 +1,8 @@
 # First session: Course intro
 
 We will start the course with an introduction.
-This will happen [in Zoom][zoom-room].
+This will happen [in Zoom][zoom-room], see the [schedule][schedule] for the 
+date and time.
 
 [Zoom][zoom] is a tool for video conferencing. There are clients for the web 
 browser (no installation), the computer (Linux, Mac, Windows) and smartphones 
@@ -28,8 +29,10 @@ them to the calendar app of your choice.
 
 To familiarize yourself with the topic and its importance in society, we will 
 start the course with a seminar to discuss the role of security: [What's up 
-with security?][security-news].
-Start by creating or signing up to a group (see Working Groups below).
+with security?][security-news] (see the [schedule][schedule] for the date and 
+time).
+
+Create or sign up to a group (see Working Groups below).
 These groups will be reused throughout the course, whenever group work is 
 required.
 
