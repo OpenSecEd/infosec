@@ -30,6 +30,11 @@ $(addsuffix /%,${SUBDIR}):
 .PHONY: clean
 clean:
 	${RM} index.md index.html
+	$(foreach d,${SUBDIR},${MAKE} -C $d clean;)
+
+.PHONY: distclean
+distclean:
+	$(foreach d,${SUBDIR},${MAKE} -C $d distclean;)
 
 
 INCLUDE_MAKEFILES=../makefiles
