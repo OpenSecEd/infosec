@@ -10,7 +10,7 @@ PUB_GROUP?= 	svn
 all: studyguide.pdf studyguide-slides.pdf
 
 SRC=		studyguide.tex preamble.tex contents.tex
-SRC+= 		ilo-grading.tex prerequisites.tex ladok.tex
+SRC+= 		ilo-grading.tex ladok.tex
 SRC+= 		schedule.tex hand-ins.tex late.tex
 SRC+= 		studyguide.bib
 SRC+=		${MODULE_FILES}
