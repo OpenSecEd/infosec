@@ -2,6 +2,7 @@
 
 \section{Scope and aims}%
 \label{sec:aim}
+
 The aim of the course is that after the course you should be able to make 
 high-level designs for secure solutions, \ie combine relevant research results 
 based on their high-level properties into a solution with the desired security, 
@@ -9,8 +10,29 @@ privacy and usability properties.
 The problems and solutions can be in both the technical or organizational 
 domain.
 
+\mode<presentation>{%
+  \subsection{Scope}
+
+  \begin{frame}
+    \begin{itemize}
+      \item We consider two general situations.
+    \end{itemize}
+
+    \begin{enumerate}
+      \item You must acquire some system from a third party.
+      \item You participate in the design of a new system.
+    \end{enumerate}
+
+    \begin{itemize}
+      \item In both cases you must know the possibilities of security.
+    \end{itemize}
+  \end{frame}
+}
+
 \subsection{\Aclp*{ILO}}
+\mode<all>{%
 \input{ilo-grading.tex}
+}
 
 
 \section{Course structure and overview}%
@@ -37,14 +59,29 @@ these in secure systems.
 
 \subsection{Teaching and tutoring}
 
+\mode<presentation>{%
+\begin{frame}
+  \begin{remark}
+    \begin{itemize}
+      \item The course uses flipped classroom and active learning.
+      \item There are videos to watch and texts to read before sessions.
+      \item Then you'll be more active during the sessions.
+    \end{itemize}
+  \end{remark}
+\end{frame}
+}
+
 The teaching of the course is oriented towards active learning.
 \Ie the course consists of learning sessions which requires active 
 participation.
 
-Generally, you are expected to read the material in advance.
-During the learning session the most important parts of the material will be 
-discussed and you will perform some tasks to work with the topic in groups, 
-\ie to apply it to learn it more efficiently.
+Each topic is covered by some recorded lectures and an interactive session.
+For each topic the reading material is specified.
+Generally, you are expected to watch the videos and read the material in 
+advance.
+During the (interactive) learning session the most important parts of the 
+material will be discussed and you will perform some tasks to work with the 
+topic in groups, \ie to apply it to learn it more efficiently.
 Some modules of the course will have several learning sessions linked together,
 \eg a starting seminar, followed by laboratory work which is then summarized 
 and used in a final seminar.
@@ -148,14 +185,14 @@ what you are expected to learn and its reading material.
 
 \section{Assessment}%
 \label{Assessment}
-\input{ladok.tex}
+\mode<all>{\input{ladok.tex}}
 
 \subsection{Handed-in assignments}
-\input{hand-ins.tex}
+\mode<all>{\input{hand-ins.tex}}
 
 \subsection{\enquote{What if I'm not done in time?}}%
 \label{sec:late}
-\input{late.tex}
+\mode<all>{\input{late.tex}}
 
 
-\printbibliography{}
+\printbibliography
