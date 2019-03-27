@@ -16,6 +16,9 @@ crypto.md: appliedcrypto/overview/README.md
 
 crypto.md:
 	${RM} crypto.md
+	echo "# Elementary probability theory\n" >> $@
+	${CAT} infotheory/probability/README.md >> $@
+	echo >> $@
 	echo "# Information theory\n" >> $@
 	${CAT} infotheory/shannon-entropy/README.md >> $@
 	echo >> $@
