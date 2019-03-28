@@ -28,18 +28,18 @@ crypto.md:
 	${CAT} appliedcrypto/overview/README.md >> $@
 
 
-crypto.tex: infotheory/shannon-entropy/abstract.tex
-crypto.tex: infotheory/applications/abstract.tex
-crypto.tex: appliedcrypto/overview/abstract.tex
-
-crypto.tex:
-	${RM} abstract.tex
-	echo "\\paragraph{Basic informatino theory}" >> $@
-	${CAT} infotheory/shannon-entropy/abstract.tex >> $@
-	echo "\\paragraph{Some applications of information theory}" >> $@
-	${CAT} infotheory/applications/abstract.tex >> $@
-	echo "\\paragraph{A high-level overview of crypto}" >> $@
-	${CAT} appliedcrypto/overview/abstract.tex >> $@
+#crypto.tex: infotheory/shannon-entropy/abstract.tex
+#crypto.tex: infotheory/applications/abstract.tex
+#crypto.tex: appliedcrypto/overview/abstract.tex
+#
+#crypto.tex:
+#	${RM} abstract.tex
+#	echo "\\paragraph{Basic informatino theory}" >> $@
+#	${CAT} infotheory/shannon-entropy/abstract.tex >> $@
+#	echo "\\paragraph{Some applications of information theory}" >> $@
+#	${CAT} infotheory/applications/abstract.tex >> $@
+#	echo "\\paragraph{A high-level overview of crypto}" >> $@
+#	${CAT} appliedcrypto/overview/abstract.tex >> $@
 
 crypto.bib: infotheory/shannon-entropy/shannon-entropy.bib
 crypto.bib: infotheory/applications/applications.bib
@@ -56,7 +56,7 @@ infotheory/% appliedcrypto/%:
 .PHONY: clean
 clean:
 	${RM} crypto.md crypto.html
-	${RM} crypto.tex crypto.bib
+	${RM} crypto.bib
 	${MAKE} -C infotheory clean
 	${MAKE} -C appliedcrypto clean
 
