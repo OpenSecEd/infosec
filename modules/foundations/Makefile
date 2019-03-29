@@ -1,4 +1,5 @@
 PUB_FILES+= 	foundations.html
+PUB_FILES+= 	foundations-session.pdf
 
 PUB_SERVER?= 	ver.miun.se
 PUB_DIR?= 		/srv/web/svn/courses/security/infosakc
@@ -59,7 +60,10 @@ foundations.bib: usability/psychology/psychology.bib
 foundations.bib:
 	${CAT} $^ > $@
 
-security/% usability/%:
+foundations-session.pdf: session/slides.pdf
+	${LN} $^ $@
+
+session/% security/% usability/%:
 	${MAKE} -C $(dir $@) $(notdir $@)
 
 
@@ -69,11 +73,13 @@ clean:
 	${RM} foundations.tex foundations.bib
 	${MAKE} -C security clean
 	${MAKE} -C usability clean
+	${MAKE} -C session clean
 
 .PHONY: distclean
 distclean:
 	${MAKE} -C security distclean
 	${MAKE} -C usability distclean
+	${MAKE} -C session distclean
 
 
 INCLUDE_MAKEFILES?=../../makefiles
