@@ -12,17 +12,25 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 
-auth.md: auth/intro/README.md
-auth.md: auth/bootstrapping/README.md
-auth.md: auth/user-machine/README.md
-auth.md: auth/something-you-know/README.md
-auth.md: auth/something-you-have/README.md
-auth.md: auth/machine-user/README.md
+AUTH-README+= auth/intro/README.md
+AUTH-README+= auth/bootstrapping/README.md
+AUTH-README+= auth/user-machine/README.md
+AUTH-README+= auth/something-you-know/README.md
+AUTH-README+= auth/something-you-have/README.md
+AUTH-README+= auth/machine-user/README.md
+
+auth.md: ${AUTH-README}
+auth.md: session.md
 auth.md: labs.md
 
 auth.md:
 	${RM} $@
-	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+	echo "# Non-interactive learning sessions\n" >> $@
+	for f in ${AUTH-README}; do ${CAT} $$f >> $@; echo >> $@; done
+	echo >> $@
+	${CAT} session.md >> $@
+	echo >> $@
+	${CAT} labs.md >> $@
 
 #auth.tex: auth/intro/abstract.tex
 #auth.tex: auth/bootstrapping/abstract.tex
