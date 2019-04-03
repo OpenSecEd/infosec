@@ -10,9 +10,17 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 
+CRYPTO_MODULES+= appliedcrypto/intro
+CRYPTO_MODULES+= appliedcrypto/shared-key
+CRYPTO_MODULES+= appliedcrypto/one-way
+CRYPTO_MODULES+= appliedcrypto/pub-key
+CRYPTO_MODULES+= appliedcrypto/zkp-smc
+CRYPTO_MODULES+= appliedcrypto/sidechannels
+
 crypto.md: infotheory/shannon-entropy/README.md
 crypto.md: infotheory/applications/README.md
-crypto.md: appliedcrypto/overview/README.md
+crypto.md: $(addsuffix /README.md,${CRYPTO_MODULES})
+crypto.md: session.md
 
 crypto.md:
 	${RM} crypto.md
@@ -25,7 +33,10 @@ crypto.md:
 	${CAT} infotheory/applications/README.md >> $@
 	echo >> $@
 	echo "# High-level overview of crypto\n" >> $@
-	${CAT} appliedcrypto/overview/README.md >> $@
+	for d in ${CRYPTO_MODULES}; do ${CAT} $$d/README.md >> $@; echo >> $@; done
+	echo >> $@
+	echo "# Interactive session" >> $@
+	${CAT} session.md >> $@
 
 
 #crypto.tex: infotheory/shannon-entropy/abstract.tex
@@ -43,7 +54,7 @@ crypto.md:
 
 crypto.bib: infotheory/shannon-entropy/shannon-entropy.bib
 crypto.bib: infotheory/applications/applications.bib
-crypto.bib: appliedcrypto/overview/overview.bib
+crypto.bib: $(addsuffix /bibliography.bib,${CRYPTO_MODULES})
 
 crypto.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
