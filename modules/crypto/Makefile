@@ -35,7 +35,6 @@ crypto.md:
 	echo "# High-level overview of crypto\n" >> $@
 	for d in ${CRYPTO_MODULES}; do ${CAT} $$d/README.md >> $@; echo >> $@; done
 	echo >> $@
-	echo "# Interactive session" >> $@
 	${CAT} session.md >> $@
 
 
