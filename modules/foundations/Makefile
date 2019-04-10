@@ -10,47 +10,47 @@ PUB_GROUP?= 	svn
 .PHONY: all
 all: ${PUB_FILES}
 
-foundations.md: security/security/README.md
-foundations.md: security/scientific-method/README.md
-foundations.md: usability/attacking-humans/README.md
-foundations.md: usability/psychology/README.md
-foundations.md: session.md
+MD2HTMLFLAGS= 	-s --bibliography=foundations.bib
 
-foundations.md:
-	${RM} $@
-	echo "# Foundations of security" >> $@
-	${CAT} security/security/README.md >> $@
-	echo >> $@
-	${CAT} security/scientific-method/README.md >> $@
-	echo >> $@
+abstract.md: foundations.tex foundations.bib
+	echo "# Abstract" > $@
+	pandoc foundations.tex --bibliography=foundations.bib >> $@
+
+security.md: security/security/README.md
+security.md: security/scientific-method/README.md
+	echo "# Foundations of security" > $@
+	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+
+usability.md: usability/attacking-humans/README.md
+usability.md: usability/psychology/README.md
 	echo "# Usability" >> $@
-	${CAT} usability/attacking-humans/README.md >> $@
-	echo >> $@
-	${CAT} usability/psychology/README.md >> $@
-	echo >> $@
-	echo "# Session on foundations" >> $@
-	echo >> $@
-	${CAT} session.md >> $@
+	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+
+foundations.html: abstract.html security.html usability.html session.html
+	pandoc -s --bibliography=foundations.bib -o $@ $^
 
 
 .PHONY: all
-all: foundations.tex foundations.bib
-
-foundations.tex: security/security/abstract.tex
-foundations.tex: security/scientific-method/abstract.tex
-foundations.tex: usability/attacking-humans/abstract.tex
-foundations.tex: usability/psychology/abstract.tex
+all: foundations.bib
 
 foundations.tex:
-	${RM} $@
-	echo "\\paragraph{What is security?}" >> $@
-	cat security/security/abstract.tex >> $@
-	echo "\\paragraph{The scientific method}" >> $@
-	cat security/scientific-method/abstract.tex >> $@
-	echo "\\paragraph{Attacking humans}" >> $@
-	cat usability/attacking-humans/abstract.tex >> $@
-	echo "\\paragraph{Psychology}" >> $@
-	cat usability/psychology/abstract.tex >> $@
+	true
+
+#foundations.tex: security/security/abstract.tex
+#foundations.tex: security/scientific-method/abstract.tex
+#foundations.tex: usability/attacking-humans/abstract.tex
+#foundations.tex: usability/psychology/abstract.tex
+#
+#foundations.tex:
+#	${RM} $@
+#	echo "\\paragraph{What is security?}" >> $@
+#	cat security/security/abstract.tex >> $@
+#	echo "\\paragraph{The scientific method}" >> $@
+#	cat security/scientific-method/abstract.tex >> $@
+#	echo "\\paragraph{Attacking humans}" >> $@
+#	cat usability/attacking-humans/abstract.tex >> $@
+#	echo "\\paragraph{Psychology}" >> $@
+#	cat usability/psychology/abstract.tex >> $@
 
 foundations.bib: security/security/security.bib
 foundations.bib: security/scientific-method/scientific-method.bib
@@ -70,7 +70,12 @@ session/% security/% usability/%:
 .PHONY: clean
 clean:
 	${RM} foundations.md foundations.html
-	${RM} foundations.tex foundations.bib
+	${RM} foundations.bib
+	${RM} abstract.md abstract.html
+	${RM} security.md security.html
+	${RM} usability.md usability.html
+	${RM} session.html
+	${RM} foundations-session.pdf
 	${MAKE} -C security clean
 	${MAKE} -C usability clean
 	${MAKE} -C session clean
