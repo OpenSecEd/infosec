@@ -1,3 +1,5 @@
+# Interactive learning session
+
 There is one interactive session for this module, see the [schedule][schedule] 
 for date and time.
 Watch the videos linked above before the session.
