@@ -12,10 +12,6 @@ all: ${PUB_FILES}
 
 MD2HTMLFLAGS= 	-s --bibliography=foundations.bib
 
-abstract.md: foundations.tex foundations.bib
-	echo "# Abstract" > $@
-	pandoc foundations.tex --bibliography=foundations.bib >> $@
-
 security.md: security/security/README.md
 security.md: security/scientific-method/README.md
 	echo "# Foundations of security" > $@
@@ -26,12 +22,11 @@ usability.md: usability/psychology/README.md
 	echo "# Usability" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-foundations.html: abstract.html security.html usability.html session.html
+reading.html: reading.md foundations.bib
+
+foundations.html: security.html usability.html reading.html session.html
 	pandoc -s --bibliography=foundations.bib -o $@ $^
 
-
-.PHONY: all
-all: foundations.bib
 
 foundations.tex:
 	true
@@ -69,11 +64,11 @@ session/% security/% usability/%:
 
 .PHONY: clean
 clean:
-	${RM} foundations.md foundations.html
+	${RM} foundations.html
 	${RM} foundations.bib
-	${RM} abstract.md abstract.html
 	${RM} security.md security.html
 	${RM} usability.md usability.html
+	${RM} reading.html
 	${RM} session.html
 	${RM} foundations-session.pdf
 	${MAKE} -C security clean
