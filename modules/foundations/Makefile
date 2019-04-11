@@ -22,6 +22,8 @@ usability.md: usability/psychology/README.md
 	echo "# Usability" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
+security.html: security.html foundations.bib
+usability.html: usability.html foundations.bib
 reading.html: reading.md foundations.bib
 
 foundations.html: security.html usability.html reading.html session.html
