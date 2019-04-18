@@ -10,17 +10,24 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 
-privacy.md: privacy/diffpriv/README.md
+privacy.html: video.html reading.html session.html
+	pandoc -s -o $@ $^
 
-privacy.md:
+video.md: privacy/diffpriv/README.md
+
+video.md:
 	${RM} $@
+	echo "# Non-interactive sessions\n" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-privacy.tex: privacy/diffpriv/abstract.tex
+reading.html: reading.md privacy.bib
+	pandoc -s --bibliography=privacy.bib -o $@ $<
 
-privacy.tex:
-	${RM} $@
-	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+#privacy.tex: privacy/diffpriv/abstract.tex
+#
+#privacy.tex:
+#	${RM} $@
+#	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 privacy.bib: privacy/diffpriv/diffpriv.bib
 
