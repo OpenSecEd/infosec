@@ -7,22 +7,24 @@ PUB_GROUP?= 	svn
 
 
 .PHONY: all
-all: ${PUB_FILES}
+all: ${PUB_FILES} proto.md proto.tex proto.bib
 
 
-proto.md: proto/intro/README.md
+proto.md: proto/secure-protocols/README.md
+proto.md: proto/principles/README.md
 
 proto.md:
 	${RM} $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-proto.tex: proto/intro/abstract.tex
+#proto.tex: proto/secure-protocols/abstract.tex
+#proto.tex: proto/principles/abstract.tex
+#
+#proto.tex:
+#	${RM} proto.tex
+#	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-proto.tex:
-	${RM} proto.tex
-	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
-
-proto.bib: proto/intro/intro.bib
+proto.bib: proto/secure-protocols/secure-protocols.bib
 
 proto.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
