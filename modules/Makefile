@@ -1,4 +1,4 @@
-PUB_FILES+= index.html
+#PUB_FILES+= index.html
 
 SUBDIR+= 	intro
 SUBDIR+= 	foundations
@@ -19,17 +19,17 @@ PUB_USER?=
 PUB_GROUP?= svn
 
 
-index.md: $(foreach f,${SUBDIR},$f/$f.md)
-	${RM} $@
-	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
-
-$(addsuffix /%,${SUBDIR}):
-	${MAKE} -C $(dir $@) $(notdir $@)
+#index.md: $(foreach f,${SUBDIR},$f/$f.md)
+#	${RM} $@
+#	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+#
+#$(addsuffix /%,${SUBDIR}):
+#	${MAKE} -C $(dir $@) $(notdir $@)
 
 
 .PHONY: clean
 clean:
-	${RM} index.md index.html
+	#${RM} index.md index.html
 	$(foreach d,${SUBDIR},${MAKE} -C $d clean;)
 
 .PHONY: distclean
