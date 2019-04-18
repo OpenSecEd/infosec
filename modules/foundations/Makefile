@@ -10,38 +10,24 @@ PUB_GROUP?= 	svn
 .PHONY: all
 all: ${PUB_FILES}
 
-MD2HTMLFLAGS=  -s --bibliography=foundations.bib
+foundations.html: video.html reading.html session.html
+	pandoc -s \
+		--metadata pagetitle="Foundations" \
+		--metadata title="" \
+		-o $@ $^
 
-foundations.html: foundations.md reading.html session.html foundations.bib
-	pandoc -s foundations.md -t html -o $@
-	pandoc -s --bibliography=foundations.bib -o $@ \
-		foundations.html reading.html session.html
+video.md: security/security/README.md
+video.md: security/scientific-method/README.md
+video.md: usability/attacking-humans/README.md
+video.md: usability/psychology/README.md
 
-foundations.md: security/security/README.md
-foundations.md: security/scientific-method/README.md
-foundations.md: usability/attacking-humans/README.md
-foundations.md: usability/psychology/README.md
-#foundations.md: reading.md
-#foundations.md: session.md
-
-foundations.md:
+video.md:
 	${RM} $@
-	echo "# Foundations of security" >> $@
-	${CAT} security/security/README.md >> $@
-	echo >> $@
-	${CAT} security/scientific-method/README.md >> $@
-	echo >> $@
-	echo "# Usability" >> $@
-	${CAT} usability/attacking-humans/README.md >> $@
-	echo >> $@
-	${CAT} usability/psychology/README.md >> $@
-#	echo >> $@
-#	${CAT} reading.md >> $@
-#	echo >> $@
-#	echo "# Session on foundations" >> $@
-#	echo >> $@
-#	${CAT} session.md >> $@
+	echo "# Non-interactive learning sessions\n" >> $@
+	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
+reading.html: reading.md foundations.bib
+	pandoc -s --bibliography=foundations.bib -o $@ $<
 
 .PHONY: all
 all: foundations.tex foundations.bib
@@ -68,7 +54,7 @@ foundations.bib: usability/attacking-humans/attacking-humans.bib
 foundations.bib: usability/psychology/psychology.bib
 
 foundations.bib:
-	${CAT} $^ > $@
+	${BIBTOOL} ${BIBTOOLFLAGS} -o $@ $^
 
 foundations-session.pdf: session/slides.pdf
 	${LN} $^ $@
@@ -79,8 +65,10 @@ session/% security/% usability/%:
 
 .PHONY: clean
 clean:
-	${RM} foundations.md foundations.html
+	${RM} foundations.html
 	${RM} foundations.tex foundations.bib
+	${RM} video.md video.html reading.html session.html
+	${RM} foundations-session.pdf
 	${MAKE} -C security clean
 	${MAKE} -C usability clean
 	${MAKE} -C session clean
@@ -95,3 +83,4 @@ distclean:
 INCLUDE_MAKEFILES?=../../makefiles
 include ${INCLUDE_MAKEFILES}/doc.mk
 include ${INCLUDE_MAKEFILES}/pub.mk
+include ${INCLUDE_MAKEFILES}/tex.mk
