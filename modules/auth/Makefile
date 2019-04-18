@@ -12,6 +12,12 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 
+auth.html: video.html reading.html session.html labs.html
+	pandoc -s \
+		--metadata pagetitle="Authentication" \
+		--metadata title="" \
+		-o $@ $^
+
 AUTH-README+= auth/intro/README.md
 AUTH-README+= auth/bootstrapping/README.md
 AUTH-README+= auth/user-machine/README.md
@@ -19,18 +25,13 @@ AUTH-README+= auth/something-you-know/README.md
 AUTH-README+= auth/something-you-have/README.md
 AUTH-README+= auth/machine-user/README.md
 
-auth.md: ${AUTH-README}
-auth.md: session.md
-auth.md: labs.md
-
-auth.md:
+video.md: ${AUTH-README}
 	${RM} $@
 	echo "# Non-interactive learning sessions\n" >> $@
 	for f in ${AUTH-README}; do ${CAT} $$f >> $@; echo >> $@; done
-	echo >> $@
-	${CAT} session.md >> $@
-	echo >> $@
-	${CAT} labs.md >> $@
+
+reading.html: reading.md auth.bib
+	pandoc -s --bibliography=auth.bib -o $@ $<
 
 #auth.tex: auth/intro/abstract.tex
 #auth.tex: auth/bootstrapping/abstract.tex
@@ -51,7 +52,7 @@ auth.bib: auth/something-you-have/something-you-have.bib
 auth.bib: auth/machine-user/machine-user.bib
 
 auth.bib:
-	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
+	${BIBTOOL} ${BIBTOOLFLAGS} -o $@ $^
 
 pwdeval.pdf: auth/passwd/pwdeval/pwdeval.pdf
 pricomlab.pdf: pricomlab/pricomlab.pdf
@@ -72,3 +73,4 @@ clean:
 INCLUDE_MAKEFILES?=../../makefiles
 include ${INCLUDE_MAKEFILES}/doc.mk
 include ${INCLUDE_MAKEFILES}/pub.mk
+include ${INCLUDE_MAKEFILES}/tex.mk
