@@ -5,17 +5,24 @@ PUB_DIR?= 		/srv/web/svn/courses/security/infosakc
 PUB_USER?=
 PUB_GROUP?= 	svn
 
+MD2HTMLFLAGS=  -s --bibliography=proto.bib
 
 .PHONY: all
-all: ${PUB_FILES} proto.md proto.tex proto.bib
+all: ${PUB_FILES} video.md proto.tex proto.bib
 
 
-proto.md: proto/secure-protocols/README.md
-proto.md: proto/principles/README.md
+proto.html: video.html reading.html session.html
+	pandoc -s --bibliography=proto.bib -o $@ $^
 
-proto.md:
+video.md: proto/secure-protocols/README.md
+video.md: proto/principles/README.md
+
+video.md:
 	${RM} $@
+	echo "# Non-interactive learning sessions\n" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+
+video.html reading.html session.html: proto.bib
 
 #proto.tex: proto/secure-protocols/abstract.tex
 #proto.tex: proto/principles/abstract.tex
@@ -32,7 +39,8 @@ proto.bib:
 
 .PHONY: clean
 clean:
-	${RM} proto.md proto.html proto.tex proto.bib
+	${RM} proto.html proto.bib
+	${RM} video.md video.html reading.html session.html
 
 
 INCLUDE_MAKEFILES?=../../makefiles
