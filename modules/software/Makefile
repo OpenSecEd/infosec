@@ -10,17 +10,27 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 
-software.md: software/overview/README.md
+software.html: video.html reading.html session.html
+	pandoc -s \
+		--metadata pagetitle=Software \
+		--metadata title="" \
+		-o $@ $^
 
-software.md:
+video.md: software/overview/README.md
+
+video.md:
 	${RM} $@
+	echo "# Non-interactive learning sessions\n" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-software.tex: software/overview/abstract.tex
+reading.html: reading.md software.bib
+	pandoc -s --bibliography=software.bib -o $@ $<
 
-software.tex:
-	${RM} software.tex
-	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+#software.tex: software/overview/abstract.tex
+#
+#software.tex:
+#	${RM} software.tex
+#	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 software.bib: software/overview/overview.bib
 
@@ -30,8 +40,9 @@ software.bib:
 
 .PHONY: clean
 clean:
-	${RM} software.md software.html
-	${RM} software.tex software.bib
+	${RM} software.html
+	${RM} software.bib
+	${RM} video.md video.html reading.html session.html
 
 
 INCLUDE_MAKEFILES?=../../makefiles
