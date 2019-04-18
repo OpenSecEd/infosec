@@ -10,17 +10,24 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 
-accountability.md: accountability/overview/README.md
+accountability.html: video.html reading.html session.html
+	pandoc -s -o $@ $^
 
-accountability.md:
+video.md: accountability/overview/README.md
+
+video.md:
 	${RM} $@
+	echo "# Non-interactive sessions\n" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-accountability.tex: accountability/overview/abstract.tex
+reading.html: reading.md accountability.bib
+	pandoc -s --bibliography=accountability.bib -o $@ $<
 
-accountability.tex:
-	${RM} $@
-	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+#accountability.tex: accountability/overview/abstract.tex
+#
+#accountability.tex:
+#	${RM} $@
+#	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 accountability.bib: accountability/overview/overview.bib
 
@@ -30,8 +37,8 @@ accountability.bib:
 
 .PHONY: clean
 clean:
-	${RM} accountability.md accountability.html
-	${RM} accountability.tex accountability.bib
+	${RM} video.md video.html reading.html session.html
+	${RM} accountability.bib
 
 
 INCLUDE_MAKEFILES?=../../makefiles
