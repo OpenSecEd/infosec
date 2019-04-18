@@ -9,18 +9,24 @@ PUB_GROUP?= 	svn
 .PHONY: all
 all: ${PUB_FILES}
 
+ac.html: video.html reading.html session.html
+	pandoc -s --bibliography=ac.bib -o $@ $^
 
-ac.md: ac/overview/README.md
+video.md: ac/overview/README.md
 
-ac.md:
+video.md:
 	${RM} $@
+	echo "# Non-interactive sessions\n" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-ac.tex: ac/overview/abstract.tex
+reading.html: reading.md ac.bib
+	pandoc -s --bibliography=ac.bib -o $@ $<
 
-ac.tex:
-	${RM} ac.tex
-	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+#ac.tex: ac/overview/abstract.tex
+#
+#ac.tex:
+#	${RM} ac.tex
+#	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 ac.bib: ac/overview/overview.bib
 
@@ -30,7 +36,8 @@ ac.bib:
 
 .PHONY: clean
 clean:
-	${RM} ac.md ac.html ac.tex ac.bib
+	${RM} ac.html ac.bib
+	${RM} video.md video.html reading.html session.html
 
 
 INCLUDE_MAKEFILES?=../../makefiles
