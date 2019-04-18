@@ -9,18 +9,27 @@ PUB_GROUP?= 	svn
 .PHONY: all
 all: ${PUB_FILES}
 
+trustcomp.html: video.html reading.html session.html
+	pandoc -s \
+		--metadata pagetitle="Trusted computing" \
+		--metadata title="" \
+		-o $@ $^
 
-trustcomp.md: trustcomp/overview/README.md
+video.md: trustcomp/overview/README.md
 
-trustcomp.md:
+video.md:
 	${RM} $@
+	echo "# Non-interactive learning sessions\n" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-trustcomp.tex: trustcomp/overview/abstract.tex
+reading.html: reading.md trustcomp.bib
+	pandoc -s --bibliography=trustcomp.bib -o $@ $<
 
-trustcomp.tex:
-	${RM} trustcomp.tex
-	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+#trustcomp.tex: trustcomp/overview/abstract.tex
+#
+#trustcomp.tex:
+#	${RM} trustcomp.tex
+#	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
 trustcomp.bib: trustcomp/overview/overview.bib
 
@@ -30,8 +39,9 @@ trustcomp.bib:
 
 .PHONY: clean
 clean:
-	${RM} trustcomp.md trustcomp.html
-	${RM} trustcomp.tex trustcomp.bib
+	${RM} trustcomp.html
+	${RM} video.md video.html reading.html session.html
+	${RM} trustcomp.bib
 
 
 INCLUDE_MAKEFILES?=../../makefiles

@@ -1,0 +1,31 @@
+One can only do so much with software.
+The problem with software and general purpose processors is that the software 
+can be modified and the processor will still execute it.
+Some examples: Alice left the laptop in the hotel room while having breakfast, 
+perhaps the hotel aide replaced the bootloader to break Alice's full-disk 
+encryption?
+Or, how can Alice even trust the computer when it is brand new?
+Another aspect of this is to protect parts of the system from Alice herself, 
+e.g.\ this is what \ac{DRM} is all about.
+We also have the compartmentalization of apps in a smartphone.
+If Alice accidentally installs a malicious app, it shouldn't be able to 
+compromize the banking app.
+Here we will explore how to ensure the integrity of the computer system.
+
+More concretely, after this session you should be able to
+\begin{itemize}
+  \item \emph{understand} the problem of trusted computing, its approaches to 
+    solutions, the underlying assumptions and its limitations.
+  \item \emph{analyse} different approaches to trusted computing and their 
+    limitations and \emph{apply} them in a solution to a given problem.
+\end{itemize}
+
+We treat the material in Chapters 16, 17, 18, 22 and 23 in 
+\citetitle{Anderson2008sea}~\cite{Anderson2008sea}.
+The papers~\cite{%
+  VoltageKeyExtraction,AcousticKeyExtraction,ElectromagneticKeyExtraction%
+} illustrates just how difficult this can be.
+The authors extract encryption keys using acoustic side-channels, i.e.\ they 
+analyse the sound emitted by the electrical circuitry to find the computations 
+done and hence derive the bits of the key used.
+
