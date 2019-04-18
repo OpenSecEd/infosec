@@ -11,7 +11,10 @@ all: ${PUB_FILES}
 
 
 privacy.html: video.html reading.html session.html
-	pandoc -s -o $@ $^
+	pandoc -s \
+		--metadata pagetitle="Privacy" \
+		--metadata title="" \
+		-o $@ $^
 
 video.md: privacy/diffpriv/README.md
 
@@ -37,8 +40,8 @@ privacy.bib:
 
 .PHONY: clean
 clean:
-	${RM} privacy.md privacy.html
-	${RM} privacy.tex privacy.bib
+	${RM} privacy.html
+	${RM} privacy.bib
 
 
 INCLUDE_MAKEFILES?=../../makefiles
