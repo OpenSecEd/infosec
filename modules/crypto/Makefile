@@ -10,7 +10,10 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 crypto.html: video.html reading.html session.html
-	pandoc -s --bibliography=crypto.bib -o $@ $^
+	pandoc -s \
+		--metadata pagetitle="Crypto" \
+		--metadata title="" \
+		-o $@ $^
 
 CRYPTO_MODULES+= appliedcrypto/intro
 CRYPTO_MODULES+= appliedcrypto/shared-key
@@ -25,15 +28,16 @@ video.md: $(addsuffix /README.md,${CRYPTO_MODULES})
 
 video.md:
 	${RM} $@
-	echo "# Elementary probability theory\n" >> $@
+	echo "# Non-interactive learning sessions\n" >> $@
+	echo "## Elementary probability theory\n" >> $@
 	${CAT} infotheory/probability/README.md >> $@
 	echo >> $@
-	echo "# Information theory\n" >> $@
+	echo "## Information theory\n" >> $@
 	${CAT} infotheory/shannon-entropy/README.md >> $@
 	echo >> $@
 	${CAT} infotheory/applications/README.md >> $@
 	echo >> $@
-	echo "# High-level overview of crypto\n" >> $@
+	echo "## High-level overview of crypto\n" >> $@
 	for d in ${CRYPTO_MODULES}; do ${CAT} $$d/README.md >> $@; echo >> $@; done
 	echo >> $@
 
