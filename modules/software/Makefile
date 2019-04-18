@@ -48,3 +48,4 @@ clean:
 INCLUDE_MAKEFILES?=../../makefiles
 include ${INCLUDE_MAKEFILES}/doc.mk
 include ${INCLUDE_MAKEFILES}/pub.mk
+include ${INCLUDE_MAKEFILES}/tex.mk
