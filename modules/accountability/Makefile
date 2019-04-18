@@ -11,7 +11,10 @@ all: ${PUB_FILES}
 
 
 accountability.html: video.html reading.html session.html
-	pandoc -s -o $@ $^
+	pandoc -s \
+		--metadata pagetitle="Accountability" \
+		--metadata title="" \
+		-o $@ $^
 
 video.md: accountability/overview/README.md
 

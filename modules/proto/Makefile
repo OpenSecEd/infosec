@@ -12,7 +12,10 @@ all: ${PUB_FILES} video.md proto.tex proto.bib
 
 
 proto.html: video.html reading.html session.html
-	pandoc -s --bibliography=proto.bib -o $@ $^
+	pandoc -s \
+		--metadata pagetitle="Protocols" \
+		--metadata title="" \
+		-o $@ $^
 
 video.md: proto/secure-protocols/README.md
 video.md: proto/principles/README.md

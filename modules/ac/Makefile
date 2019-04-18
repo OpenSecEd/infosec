@@ -10,7 +10,10 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 ac.html: video.html reading.html session.html
-	pandoc -s --bibliography=ac.bib -o $@ $^
+	pandoc -s \
+		--metadata pagetitle="Access control" \
+		--metadata title="" \
+		-o $@ $^
 
 video.md: ac/overview/README.md
 
