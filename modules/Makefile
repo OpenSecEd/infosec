@@ -19,9 +19,12 @@ PUB_USER?=
 PUB_GROUP?= svn
 
 
-index.md: $(foreach f,${SUBDIR},$f/$f.md)
-	${RM} $@
-	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
+index.html: $(foreach f,${SUBDIR},$f/$f.html) bibliography.bib
+	pandoc -s --bibliography=bibliography.bib -o $@ $(filter %.html,$^)
+
+bibliography.bib: bibliography.bib($(foreach f,${SUBDIR},$f/$f.bib))
+
+(%.bib): %.bib
 
 $(addsuffix /%,${SUBDIR}):
 	${MAKE} -C $(dir $@) $(notdir $@)
@@ -29,7 +32,8 @@ $(addsuffix /%,${SUBDIR}):
 
 .PHONY: clean
 clean:
-	${RM} index.md index.html
+	${RM} index.html
+	${RM} bibliography.bib
 	$(foreach d,${SUBDIR},${MAKE} -C $d clean;)
 
 .PHONY: distclean
