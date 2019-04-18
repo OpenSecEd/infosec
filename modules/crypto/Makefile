@@ -9,6 +9,8 @@ PUB_GROUP?= 	svn
 .PHONY: all
 all: ${PUB_FILES}
 
+crypto.html: video.html reading.html session.html
+	pandoc -s --bibliography=crypto.bib -o $@ $^
 
 CRYPTO_MODULES+= appliedcrypto/intro
 CRYPTO_MODULES+= appliedcrypto/shared-key
@@ -17,13 +19,12 @@ CRYPTO_MODULES+= appliedcrypto/pub-key
 CRYPTO_MODULES+= appliedcrypto/zkp-smc
 CRYPTO_MODULES+= appliedcrypto/sidechannels
 
-crypto.md: infotheory/shannon-entropy/README.md
-crypto.md: infotheory/applications/README.md
-crypto.md: $(addsuffix /README.md,${CRYPTO_MODULES})
-crypto.md: session.md
+video.md: infotheory/shannon-entropy/README.md
+video.md: infotheory/applications/README.md
+video.md: $(addsuffix /README.md,${CRYPTO_MODULES})
 
-crypto.md:
-	${RM} crypto.md
+video.md:
+	${RM} $@
 	echo "# Elementary probability theory\n" >> $@
 	${CAT} infotheory/probability/README.md >> $@
 	echo >> $@
@@ -35,7 +36,9 @@ crypto.md:
 	echo "# High-level overview of crypto\n" >> $@
 	for d in ${CRYPTO_MODULES}; do ${CAT} $$d/README.md >> $@; echo >> $@; done
 	echo >> $@
-	${CAT} session.md >> $@
+
+reading.html: reading.md crypto.bib
+	pandoc -s --bibliography=crypto.bib -o $@ $<
 
 
 #crypto.tex: infotheory/shannon-entropy/abstract.tex
@@ -65,8 +68,9 @@ infotheory/% appliedcrypto/%:
 
 .PHONY: clean
 clean:
-	${RM} crypto.md crypto.html
+	${RM} crypto.html
 	${RM} crypto.bib
+	${RM} video.md video.html reading.html session.html
 	${MAKE} -C infotheory clean
 	${MAKE} -C appliedcrypto clean
 
