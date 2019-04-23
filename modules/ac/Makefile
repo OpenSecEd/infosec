@@ -15,7 +15,8 @@ ac.html: video.html reading.html session.html
 		--metadata title="" \
 		-o $@ $^
 
-video.md: ac/overview/README.md
+video.md: ac/intro-ac/README.md
+video.md: ac/ac-models/README.md
 
 video.md:
 	${RM} $@
@@ -31,7 +32,7 @@ reading.html: reading.md ac.bib
 #	${RM} ac.tex
 #	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-ac.bib: ac/overview/overview.bib
+ac.bib: ac.bib(ac/intro-ac/intro-ac.bib ac/ac-models/ac-models.bib)
 
 ac.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
