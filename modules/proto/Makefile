@@ -11,7 +11,7 @@ MD2HTMLFLAGS=  -s --bibliography=proto.bib
 all: ${PUB_FILES} video.md proto.tex proto.bib
 
 
-proto.html: video.html reading.html session.html
+proto.html: video.html reading.html session.html labs.html
 	pandoc -s \
 		--metadata pagetitle="Protocols" \
 		--metadata title="" \
@@ -43,7 +43,7 @@ proto.bib:
 .PHONY: clean
 clean:
 	${RM} proto.html proto.bib
-	${RM} video.md video.html reading.html session.html
+	${RM} video.md video.html reading.html session.html labs.html
 
 
 INCLUDE_MAKEFILES?=../../makefiles
