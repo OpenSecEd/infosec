@@ -17,6 +17,8 @@ ac.html: video.html reading.html session.html
 
 video.md: ac/intro-ac/README.md
 video.md: ac/ac-models/README.md
+video.md: ac/multi-level/README.md
+video.md: ac/multi-lateral/README.md
 
 video.md:
 	${RM} $@
