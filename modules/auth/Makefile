@@ -1,6 +1,5 @@
 PUB_FILES+= 	auth.html
 PUB_FILES+= 	pwdeval.pdf
-PUB_FILES+= 	pricomlab.pdf
 
 PUB_SERVER?= 	ver.miun.se
 PUB_DIR?= 		/srv/web/svn/courses/security/infosakc
@@ -55,19 +54,16 @@ auth.bib:
 	${BIBTOOL} ${BIBTOOLFLAGS} -o $@ $^
 
 pwdeval.pdf: auth/passwd/pwdeval/pwdeval.pdf
-pricomlab.pdf: pricomlab/pricomlab.pdf
-
-pwdeval.pdf pricomlab.pdf:
 	${LN} $< $@
 
-pricomlab/% auth/%:
+auth/%:
 	${MAKE} -C $(dir $@) $(notdir $@)
 
 
 .PHONY: clean
 clean:
 	${RM} auth.md auth.html auth.bib
-	${RM} pwdeval.pdf pricomlab.pdf
+	${RM} pwdeval.pdf
 
 
 INCLUDE_MAKEFILES?=../../makefiles

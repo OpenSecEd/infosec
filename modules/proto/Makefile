@@ -1,4 +1,5 @@
 PUB_FILES+= 	proto.html
+PUB_FILES+= 	pricomlab.pdf
 
 PUB_SERVER?= 	ver.miun.se
 PUB_DIR?= 		/srv/web/svn/courses/security/infosakc
@@ -39,11 +40,18 @@ proto.bib: proto/secure-protocols/secure-protocols.bib
 proto.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
 
+pricomlab.pdf: pricomlab/pricomlab.pdf
+	${LN} $< $@
+
+pricomlab/% proto/%:
+	${MAKE} -C $(dir $@) $(notdir $@)
+
 
 .PHONY: clean
 clean:
 	${RM} proto.html proto.bib
 	${RM} video.md video.html reading.html session.html labs.html
+	${RM} pricomlab.pdf
 
 
 INCLUDE_MAKEFILES?=../../makefiles

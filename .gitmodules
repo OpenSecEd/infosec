@@ -3,7 +3,7 @@
 	url = https://github.com/dbosk/makefiles.git
 	branch = master
 [submodule "modules/pricomlab"]
-	path = modules/auth/pricomlab
+	path = modules/proto/pricomlab
 	url = https://github.com/OpenSecEd/pricomlab.git
 	branch = master
 [submodule "modules/ism"]
