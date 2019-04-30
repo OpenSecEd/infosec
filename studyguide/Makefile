@@ -55,11 +55,6 @@ BIBS+= 			../modules/auth/auth.bib
 
 auth-abstract.tex: ../modules/auth/auth.tex
 
-MODULE_FILES+= 	pricomlab-abstract.tex
-BIBS+= 			../modules/auth/pricomlab/pricomlab.bib
-
-pricomlab-abstract.tex: ../modules/auth/pricomlab/abstract.tex
-
 MODULE_FILES+= 		pwdeval-abstract.tex
 BIBS+= 				../modules/auth/auth/passwd/pwdeval/pwdeval.bib
 
@@ -69,6 +64,11 @@ MODULE_FILES+= 	proto-abstract.tex
 BIBS+= 			../modules/proto/proto.bib
 
 proto-abstract.tex: ../modules/proto/proto.tex
+
+MODULE_FILES+= 	pricomlab-abstract.tex
+BIBS+= 			../modules/proto/pricomlab/pricomlab.bib
+
+pricomlab-abstract.tex: ../modules/proto/pricomlab/abstract.tex
 
 MODULE_FILES+= 	accessctrl-abstract.tex
 BIBS+= 			../modules/ac/ac.bib
