@@ -16,7 +16,8 @@ accountability.html: video.html reading.html session.html
 		--metadata title="" \
 		-o $@ $^
 
-video.md: accountability/overview/README.md
+video.md: accountability/book-keeping/README.md
+video.md: accountability/logging/README.md
 
 video.md:
 	${RM} $@
@@ -32,7 +33,8 @@ reading.html: reading.md accountability.bib
 #	${RM} $@
 #	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-accountability.bib: accountability/overview/overview.bib
+accountability.bib: accountability/book-keeping/book-keeping.bib
+accountability.bib: accountability/logging/logging.bib
 
 accountability.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
