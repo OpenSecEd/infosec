@@ -10,7 +10,8 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 
-software.html: video.html reading.html session.html
+#software.html: video.html
+software.html: reading.html session.html
 	pandoc -s \
 		--metadata pagetitle=Software \
 		--metadata title="" \

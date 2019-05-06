@@ -9,7 +9,9 @@ PUB_GROUP?= 	svn
 .PHONY: all
 all: ${PUB_FILES}
 
-trustcomp.html: video.html reading.html session.html
+#trustcomp.html: video.html
+trustcomp.html: reading.html session.html
+trustcomp.html:
 	pandoc -s \
 		--metadata pagetitle="Trusted computing" \
 		--metadata title="" \
