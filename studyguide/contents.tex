@@ -3,338 +3,196 @@
 \section{Scope and aims}%
 \label{sec:aim}
 
+The aim of the course is that after the course you should be able to make 
+high-level designs for secure solutions, \ie combine relevant research results 
+based on their high-level properties into a solution with the desired security, 
+privacy and usability properties.
+The problems and solutions can be in both the technical or organizational 
+domain.
+
 \mode<presentation>{%
   \subsection{Scope}
 
   \begin{frame}
     \begin{itemize}
+      \item We consider two general situations.
+    \end{itemize}
 
-      \item The course treats a wide interpretation of Information Security.
-      \item It treats both engineering and management.
+    \begin{enumerate}
+      \item You must acquire some system from a third party.
+      \item You participate in the design of a new system.
+    \end{enumerate}
 
-        \pause
-
-      \item The first part is about management.
-      \item The second part is about engineering.
-
-        \pause
-
-      \item But the principles from the engineering parts can be applied in an 
-        organization's process design too.
-
+    \begin{itemize}
+      \item In both cases you must know the possibilities of security.
     \end{itemize}
   \end{frame}
 }
 
-The course treats information security from a user, organization and technical 
-perspective.
-The first part of the course concerns security on a strategic level, \ie 
-managing security within an organization.
-The second part of the course focuses on the operative parts, \ie security 
-mechanisms and principles for design of secure systems.
-In full, the course aims at giving you an understanding of threats to security 
-and how to work to protect against these.
-
-\mode<presentation>{%
-  \subsection{Aims}
+\subsection{\Aclp*{ILO}}
+\mode<all>{%
+\input{ilo-grading.tex}
 }
 
-More concretely, the \acp{ILO} of the course are the following.
-After completing the course, you should be able to:
-\begin{frame}
-\mode<presentation>{You should be able to}
-\begin{itemize}
 
-  \item \emph{apply} basic concepts and models in information security.
+\section{Course structure and overview}%
+\label{CourseStructure}
 
-    \pause
+The course is divided into three parts.
+The first part of the course covers the foundations of security: what it is, 
+how to evaluate new knowledge in the field.
+This covers both purely technical aspects, but also includes human aspects such
+as usability --- even if a system is proved secure, it will offer no security 
+if its human users cannot use it.
 
-  \item \emph{evaluate} the usability of security solutions and \emph{suggest} 
-    improvements that improve usability and security.
-
-  \item \emph{analyse} threats, possible protection mechanisms and \emph{design} 
-    an approach to protection which considers usability.
-
-    \pause
-
-  \item \emph{apply} the Swedish Civil Contingency Agency's Framework for 
-    Information Security Management Systems to \emph{analyse, assess and 
-      improve} the information security in an organization.
-
-    \pause
-
-  \item \emph{review and apply} the results of published research in the 
-    security field.
-
-\end{itemize}
-\end{frame}
-The course has a variety of learning sessions designed to ensure that you learn 
-these \acp{ILO}.
-Each such session has a set of further specified \acp{ILO}:
-\eg the first outcome above refers to \enquote{basic concepts and models}, 
-the \acp{ILO} of a learning session would specify which concepts and models it 
-covers.
-
-
-\section{Course structure and content overview}%
-\label{sec:outline}
-
-The first part of the course covers information security on a strategic level, 
+The second part of the course covers information security on a strategic level, 
 this concerns organizational management systems for information security: how 
 to implement these and how to continuously run them in an organization.
-The main material used for this part~\cite{%
-  MSB2011itm,MSB2011sle,MSB2011p,%
-	MSB2011v,MSB2011r,MSB2011gap,MSB2011gb,%
-	MSB2011vs,MSB2011us,MSB2011upo,%
-	MSB2011pg,MSB2011koa,MSB2011i,%
-	MSB2011o,MSB2011g,MSB2011lg,%
-	MSB2011ulo,MSB2011kf,MSB2011fa%
-} is produced by the Swedish Civil Contingencies Agency (MSB) and is based on 
-the ISO 27000 standard documents.
+It also includes threat and risk analysis.
+The main material is produced by the Swedish Civil Contingencies Agency (MSB) 
+and is based on the ISO 27000 standard.
 
-The second part of the course will focus on the content of Anderson's book 
-\citetitle{Anderson2008sea}~\cite{Anderson2008sea} and Gollmann's book 
-\citetitle{Gollmann2011cs}~\cite{Gollmann2011cs}.
-The focus in the second part of the course is on security mechanisms and how to 
-use these in secure systems.
-There is also some additional material for this part of the course, \eg 
-research papers and some other material.
+The third part of the course covers the technical aspects: how to design 
+security (and not to design security).
+The focus in this part of the course is on security mechanisms and how to use 
+these in secure systems.
 
 \subsection{Teaching and tutoring}
 
 \mode<presentation>{%
-  \begin{frame}
+\begin{frame}
+  \begin{remark}
     \begin{itemize}
-
-      \item Teaching consists of several types of learning sessions.
-      \item Most topics are covered only by lectures.
-        
-        \pause
-
-      \item Some are complemented with seminars, hand-ins and labs.
-      \item These are for combined learning and assessment.
-
-        \pause
-
-      \item These are focused to the first six weeks.
-      \item The last four weeks are dedicated to the project.
-      \item These weeks have weekly tutoring sessions.
-        
+      \item The course uses flipped classroom and active learning.
+      \item There are videos to watch and texts to read before sessions.
+      \item Then you'll be more active during the sessions.
     \end{itemize}
-  \end{frame}
+  \end{remark}
+\end{frame}
 }
 
-The course is taught using lectures, seminars, laboratory assignments and, 
-finally, a project.
-All assignments are numbered consecutively prefixed with an \enquote{L} for 
-laboratory assignments, \enquote{S} for seminar assignments, \enquote{M} for 
-memos and \enquote{P} for projects.
+The teaching of the course is oriented towards active learning.
+\Ie the course consists of learning sessions which requires active 
+participation.
+
+Each topic is covered by some recorded lectures and an interactive session.
+For each topic the reading material is specified.
+Generally, you are expected to watch the videos and read the material in 
+advance.
+During the (interactive) learning session the most important parts of the 
+material will be discussed and you will perform some tasks to work with the 
+topic in groups, \ie to apply it to learn it more efficiently.
+Some modules of the course will have several learning sessions linked together,
+\eg a starting seminar, followed by laboratory work which is then summarized 
+and used in a final seminar.
 
 \subsection{Schedule}
 
-You will find an outline for a schedule for the course in \cref{Schedule}.
-You are free to follow this schedule or any schedule you make for yourself, but 
-the learning and tutoring sessions, deadlines etc.\ will follow this schedule.
-The detailed reading instructions for each item in the schedule can be found in 
-the following sections.
+In \cref{Schedule} you will find an overview of the schedule for the course.
+The detailed schedule can be found in the University's central scheduling 
+system.
+The details for each session can be found in Section~\ref{CourseContents}.
 
 \begin{frame}[allowframebreaks]
 \input{schedule.tex}
 \end{frame}
 
 
-\section{Course content}
+\section{Course contents}%
+\label{CourseContents}
 
-This section summarizes the material covered by the lectures and assignments, 
-\ie what you should read for each of them.
-It is divided by topics and ordered according to progression of the course.
-
-\mode<article>{%
-\subsection{Foundations of security}
-\input{foundations-lit.tex}
-}
+This section summarizes each of the learning sessions, \ie what they cover, 
+what you are expected to learn and its reading material.
 
 \mode<article>{%
-\subsection{Security usability}
-\input{usability-lit.tex}
-}
-
 %\subsection{L0 Privacy is Dead}
-%\input{privacy-lit.tex}
+%\input{privacydead-abstract.tex}
+%
+\subsection{S0 What's up with security?}%
+\label{security-society-seminar}
+\input{intro-abstract.tex}
 
-\mode<article>{%
-\subsection{MSB's framework, part I}
-\input{msbintro-lit.tex}
-}
+\subsection{Foundations}%
+\label{foundations}
+\input{foundations-abstract.tex}
 
-\mode<article>{%
-\subsection{M1 Information security management system}
-\input{ismsmemo-lit.tex}
-}
+\subsection{Managing information security}%
+\label{msb-framework}
 
-\mode<article>{%
-\subsection{MSB's framework, part II}
-\input{msbforts-lit.tex}
-}
+\subsubsection{MSB part I}
+\input{msbintro-abstract.tex}
 
-\mode<article>{%
-\subsection{M2 and S3 Assessment and risk analysis}
-\input{risksem-lit.tex}
-}
+\subsubsection{M1 Information security management system}%
+\label{ism}
+\input{ismsmemo-abstract.tex}
 
-\mode<article>{%
-\subsection{Information security from a records management perspective}
+\subsubsection{MSB part II}
+\input{msbforts-abstract.tex}
+
+\subsubsection{M2 and S3 Assessment and risk analysis}%
+\label{risksem}
+\input{risksem-abstract.tex}
+
+\subsubsection{Information security from a records management perspective}
 \input{recmgmt-abstract.tex}
-}
 
-\mode<article>{%
-\subsection{Information theory}
-\input{infotheory-lit.tex}
-}
+\subsection{Cryptography}%
+\label{crypto}
+\input{crypto-abstract.tex}
 
-\mode<article>{%
-\subsection{Cryptography}
-\input{crypto-lit.tex}
-}
+\subsection{Authentication}%
+\label{authentication}
+\input{auth-abstract.tex}
 
-\mode<article>{%
-\subsection{Identification and authentication}
-\input{auth-lit.tex}
-}
+\subsubsection{L4 Evaluating and designing authentication}%
+\label{pwdeval}
+\input{pwdeval-abstract.tex}
 
-\mode<article>{%
-\subsection{L4 Password cracking and social engineering}
-\input{pwdguess-lit.tex}
-}
+\subsection{Protocols}%
+\label{protocols}
+\input{proto-abstract.tex}
 
-\mode<article>{%
-\subsection{S5 Password policies}
-\input{pwdpolicies-lit.tex}
-}
+\subsubsection{L5 Private communication}%
+\label{pricomlab}
+\input{pricomlab-abstract.tex}
 
-\mode<article>{%
-\subsection{Protocols and formal verification}
-\input{fverif-lit.tex}
-}
+\subsection{Access control}%
+\label{ac}
+\input{accessctrl-abstract.tex}
 
-\mode<article>{%
-\subsection{Access control}
-\input{accessctrl-lit.tex}
-}
+\subsection{Accountability}%
+\label{accountability}
+\input{accountability-abstract.tex}
 
-%\subsection{Multi-Level and Multi-Lateral Security}
-%\input{lvlltrl-lit.tex}
+\subsection{Differential privacy}%
+\label{diffpriv}
+\input{diffpriv-abstract.tex}
 
-\mode<article>{%
-\subsection{Accountability}
-\input{accountability-lit.tex}
-}
+\subsection{Software security}%
+\label{software}
+\input{software-abstract.tex}
 
-\mode<article>{%
-\subsection{L6 Private communication}
-\input{pricomlab-lit.tex}
-}
+\subsection{Trusted computing}%
+\label{trustcomp}
+\input{trustcomp-abstract.tex}
 
-\mode<article>{%
-\subsection{Trusted computing}
-\input{trustcomp-lit.tex}
-}
-
-\mode<article>{%
-\subsection{Software security}
-\input{software-lit.tex}
-}
-
-\mode<article>{%
-\subsection{Course conclusion}
-}
-
-During this lecture we will shortly review the course and try to fit things into 
-a bigger picture.
-
-\subsection{P7 A short study in information security}
-
-\mode<presentation>{%
-  \begin{frame}
-    \begin{itemize}
-      \item Small independent study in information security.
-      \item Aim is to practice your knowledge from the course.
-      \item As well as deepen your knowledge in some parts.
-
-        \pause
-
-      \item And to assess that you reach the \acp{ILO} above.
-    \end{itemize}
-  \end{frame}
-
-  \begin{frame}
-    \begin{itemize}
-      \item You are quite free in choosing.
-      \item But the project must be connected to research.
-      \item You must select and read relevant research papers.
-    \end{itemize}
-  \end{frame}
-}
-
-The project is a smaller study within the area of information security.
-The idea is to deepen your knowledge in some areas of information security, so 
-during the project you must select and read papers which are related to the 
-course.
-For example, you can focus on areas such as:
-\begin{itemize}
-  \item usable security,
-  \item privacy enhancing technologies (PETs), or
-  \item more advanced methods for guessing passwords.
-\end{itemize}
-These are just examples, you are free to choose the area and papers in 
-corroboration with the tutor.
-More details are provided in the separate instruction.
+%\subsection{P8 A short study in information security}
+\subsection{P6 Applying security and usability in practice}%
+\label{devel}
+\input{project-abstract.tex}
+} % mode<article>
 
 
 \section{Assessment}%
 \label{Assessment}
-
-\mode<presentation>{%
-  \subsection{LADOK modules}
-}
-
-This section explains how the course modules are graded and mapped to LADOK\@.
-\Cref{LADOKTable} visualizes the relations between modules, credits, grades and 
-LADOK\@.
-
-\begin{frame}
-\begin{table}
-  \centering
-  \setlength{\tabcolsep}{0.5em}
-  \begin{tabular}{r r l l}
-    \toprule
-    LADOK & Credits (ECTS)  & Grade       & Course Assignments\\
-    \midrule
-    I104  & 1.5             & P, F        & M1, M2, S3, S5\\
-    L104  & 1.5             & P, F        & L4, L6\\
-    R104  & 4.5             & A--F        & P7\\
-    \midrule
-    Total & 7.5             & A--F        & P7\\
-    \bottomrule
-  \end{tabular}
-  \caption{%
-    Table summarizing course modules and their mapping to LADOK\@.
-    P means pass, F means fail.
-    A--E are also passing grades, where A is the best.
-  }\label{LADOKTable}
-\end{table}
-\end{frame}
-
-The project is graded from A to F, where A--E are for passing and F and Fx are 
-for failing.
-The grade of the project will also be the grade of the course total.
+\mode<all>{\input{ladok.tex}}
 
 \subsection{Handed-in assignments}
-\input{hand-ins.tex}
+\mode<all>{\input{hand-ins.tex}}
 
 \subsection{\enquote{What if I'm not done in time?}}%
 \label{sec:late}
-\input{late.tex}
+\mode<all>{\input{late.tex}}
 
 
-\printbibliography{}
+\printbibliography

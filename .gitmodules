@@ -2,60 +2,66 @@
 	path = makefiles
 	url = https://github.com/dbosk/makefiles.git
 	branch = master
-[submodule "pricomlab"]
-	path = modules/pricomlab
+[submodule "modules/pricomlab"]
+	path = modules/proto/pricomlab
 	url = https://github.com/OpenSecEd/pricomlab.git
 	branch = master
-[submodule "ism"]
+[submodule "modules/ism"]
 	path = modules/ism
 	url = https://github.com/OpenSecEd/ism.git
 	branch = master
-[submodule "software"]
-	path = modules/software
+[submodule "modules/software"]
+	path = modules/software/software
 	url = https://github.com/OpenSecEd/software.git
 	branch = master
-[submodule "appliedcrypto"]
-	path = modules/appliedcrypto
+[submodule "modules/appliedcrypto"]
+	path = modules/crypto/appliedcrypto
 	url = https://github.com/OpenSecEd/appliedcrypto.git
 	branch = master
-[submodule "usability"]
-	path = modules/usability
+[submodule "modules/usability"]
+	path = modules/foundations/usability
 	url = https://github.com/OpenSecEd/usability.git
 	branch = master
-[submodule "infotheory"]
-	path = modules/infotheory
+[submodule "modules/infotheory"]
+	path = modules/crypto/infotheory
 	url = https://github.com/OpenSecEd/infotheory.git
 	branch = master
-[submodule "trustcomp"]
-	path = modules/trustcomp
+[submodule "modules/trustcomp"]
+	path = modules/trustcomp/trustcomp
 	url = https://github.com/OpenSecEd/trustcomp.git
 	branch = master
-[submodule "fverif"]
-	path = modules/fverif
+[submodule "modules/fverif"]
+	path = modules/proto/proto
 	url = https://github.com/OpenSecEd/fverif.git
 	branch = master
-[submodule "auth"]
-	path = modules/auth
+[submodule "modules/auth"]
+	path = modules/auth/auth
 	url = https://github.com/OpenSecEd/auth.git
 	branch = master
-[submodule "ac"]
-	path = modules/ac
+[submodule "modules/ac"]
+	path = modules/ac/ac
 	url = https://github.com/OpenSecEd/ac.git
 	branch = master
-[submodule "accountability"]
-	path = modules/accountability
+[submodule "modules/accountability"]
+	path = modules/accountability/accountability
 	url = https://github.com/OpenSecEd/accountability.git
 	branch = master
-[submodule "foundations"]
-	path = modules/foundations
+[submodule "modules/foundations"]
+	path = modules/foundations/security
 	url = https://github.com/OpenSecEd/foundations.git
 	branch = master
 [submodule "bibsp"]
 	path = bibsp
 	url = https://github.com/dbosk/bibsp.git
-[submodule "modules/research"]
-	path = modules/research
-	url = https://github.com/OpenSecEd/research.git
+[submodule "modules/conclusion/projects"]
+	path = modules/conclusion/projects
+	url = https://github.com/OpenSecEd/projects.git
 [submodule "bibedu"]
 	path = bibedu
 	url = https://github.com/dbosk/bibedu.git
+[submodule "modules/privacy"]
+	path = modules/privacy/privacy
+	url = https://github.com/OpenSecEd/privacy.git
+[submodule "modules/intro/ethics"]
+	path = modules/intro/ethics
+	url = https://github.com/OpenSecEd/ethics.git
