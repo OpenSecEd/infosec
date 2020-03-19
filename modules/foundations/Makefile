@@ -10,24 +10,29 @@ PUB_GROUP?= 	svn
 .PHONY: all
 all: ${PUB_FILES}
 
-foundations.html: video.html reading.html session.html
+foundations.html: foundations.md
 	pandoc -s \
 		--metadata pagetitle="Foundations" \
 		--metadata title="" \
 		-o $@ $^
 
-video.md: security/security/README.md
-video.md: security/scientific-method/README.md
-video.md: usability/attacking-humans/README.md
-video.md: usability/psychology/README.md
+foundations.md: session.md
+foundations.md: security.md
+foundations.md: attacking-humans.md psychology.md
+foundations.md: scientific-method.md
 
-video.md:
+foundations.md:
 	${RM} $@
-	echo "# Non-interactive learning sessions\n" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-reading.html: reading.md foundations.bib
-	pandoc -s --bibliography=foundations.bib -o $@ $<
+security.md: security/security/README.md
+scientific-method.md: security/scientific-method/README.md
+attacking-humans.md: usability/attacking-humans/README.md
+psychology.md: usability/psychology/README.md
+
+security.md scientific-method.md attacking-humans.md psychology.md:
+	${LN} $< $@
+
 
 .PHONY: all
 all: foundations.tex foundations.bib
@@ -59,6 +64,7 @@ foundations.bib:
 foundations-session.pdf: session/slides.pdf
 	${LN} $^ $@
 
+
 session/% security/% usability/%:
 	${MAKE} -C $(dir $@) $(notdir $@)
 
@@ -66,8 +72,8 @@ session/% security/% usability/%:
 .PHONY: clean
 clean:
 	${RM} foundations.html
+	${RM} security.md scientific-method.md attacking-humans.md psychology.md
 	${RM} foundations.tex foundations.bib
-	${RM} video.md video.html reading.html session.html
 	${RM} foundations-session.pdf
 	${MAKE} -C security clean
 	${MAKE} -C usability clean
