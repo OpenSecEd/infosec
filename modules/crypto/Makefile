@@ -9,11 +9,15 @@ PUB_GROUP?= 	svn
 .PHONY: all
 all: ${PUB_FILES}
 
-crypto.html: video.html reading.html session.html
+#crypto.html: video.html reading.html session.html
+crypto.html: session.html
 	pandoc -s \
 		--metadata pagetitle="Crypto" \
 		--metadata title="" \
 		-o $@ $^
+
+session.html: session.md
+	${CONVERT.md.html}
 
 CRYPTO_MODULES+= appliedcrypto/intro
 CRYPTO_MODULES+= appliedcrypto/shared-key

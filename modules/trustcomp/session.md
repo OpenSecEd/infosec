@@ -1,9 +1,11 @@
-# Interactive learning session
+There is one interactive session for this part. See the [schedule][schedule] for
+date and time for the various sessions. Before this session, you should work 
+through the [Trusted Computing Module][SL-trustcomp] in ScalableLearning.
 
-There is one interactive session for this module, see the [schedule][schedule] 
-for date and time.
+The reading material is covered in Section 3.9 in the [study 
+guide][studyguide].
 
-There are no videos to watch before this session, it will be a more traditional 
-lecture but with interactive elements.
 
-[schedule]: https://portal.miun.se/web/student/schedule
+[schedule]: https://miun.se/schema
+[studyguide]: https://ver.miun.se/courses/security/infosakc/studyguide.pdf
+[SL-trustcomp]: https://www.scalable-learning.com/#/courses/4573/modules/18025/courseware

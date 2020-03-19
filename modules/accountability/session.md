@@ -1,9 +1,10 @@
-# Interactive learning session
+There is one interactive session for this module (see the [schedule][schedule] 
+for date and time).
 
-There is one interactive session for this module, see the [schedule][schedule] 
-for date and time.
-Watch the videos linked above before the session.
-During the session we will summarize (together) the most important parts, 
-discuss the most difficult/ambiguous/strange/counter-intuitive parts.
+Watch the videos in the [Accountability module][SL-accountability] on Scalable 
+Learning before the session. You can find the reading material in Section 3.8 
+in the [study guide][studyguide].
 
 [schedule]: https://portal.miun.se/web/student/schedule
+[SL-accountability]: https://www.scalable-learning.com/#/courses/3659/modules/16794/courseware
+[studyguide]: https://ver.miun.se/courses/security/infosakc/studyguide.pdf

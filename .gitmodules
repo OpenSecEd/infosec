@@ -31,7 +31,7 @@
 	url = https://github.com/OpenSecEd/trustcomp.git
 	branch = master
 [submodule "modules/fverif"]
-	path = modules/proto/proto
+	path = modules/proto/protocols
 	url = https://github.com/OpenSecEd/fverif.git
 	branch = master
 [submodule "modules/auth"]
@@ -59,9 +59,6 @@
 [submodule "bibedu"]
 	path = bibedu
 	url = https://github.com/dbosk/bibedu.git
-[submodule "modules/privacy"]
-	path = modules/privacy/privacy
-	url = https://github.com/OpenSecEd/privacy.git
 [submodule "modules/intro/ethics"]
 	path = modules/intro/ethics
 	url = https://github.com/OpenSecEd/ethics.git

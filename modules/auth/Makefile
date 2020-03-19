@@ -11,7 +11,8 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 
-auth.html: video.html reading.html session.html labs.html
+#auth.html: video.html reading.html session.html labs.html
+auth.html: session.html labs.html
 	pandoc -s \
 		--metadata pagetitle="Authentication" \
 		--metadata title="" \

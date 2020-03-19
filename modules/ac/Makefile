@@ -9,7 +9,8 @@ PUB_GROUP?= 	svn
 .PHONY: all
 all: ${PUB_FILES}
 
-ac.html: video.html reading.html session.html
+#ac.html: video.html reading.html session.html
+ac.html: session.html
 	pandoc -s \
 		--metadata pagetitle="Access control" \
 		--metadata title="" \

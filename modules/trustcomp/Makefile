@@ -10,30 +10,26 @@ PUB_GROUP?= 	svn
 all: ${PUB_FILES}
 
 #trustcomp.html: video.html
-trustcomp.html: reading.html session.html
+#trustcomp.html: reading.html session.html
+trustcomp.html: session.html
 trustcomp.html:
 	pandoc -s \
 		--metadata pagetitle="Trusted computing" \
 		--metadata title="" \
 		-o $@ $^
 
+video.md: trustcomp/drm/README.md
 video.md: trustcomp/overview/README.md
 
 video.md:
 	${RM} $@
-	echo "# Non-interactive learning sessions\n" >> $@
 	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-reading.html: reading.md trustcomp.bib
-	pandoc -s --bibliography=trustcomp.bib -o $@ $<
+trustcomp.tex: trustcomp/overview/abstract.tex
+	${CAT} $^ > $@
 
-#trustcomp.tex: trustcomp/overview/abstract.tex
-#
-#trustcomp.tex:
-#	${RM} trustcomp.tex
-#	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
-
-trustcomp.bib: trustcomp/overview/overview.bib
+trustcomp.bib: trustcomp/drm/bibliography.bib
+trustcomp.bib: trustcomp/overview/bibliography.bib
 
 trustcomp.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^

@@ -12,14 +12,15 @@ MD2HTMLFLAGS=  -s --bibliography=proto.bib
 all: ${PUB_FILES} video.md proto.tex proto.bib
 
 
-proto.html: video.html reading.html session.html labs.html
+#proto.html: video.html reading.html session.html labs.html
+proto.html: session.html labs.html
 	pandoc -s \
 		--metadata pagetitle="Protocols" \
 		--metadata title="" \
 		-o $@ $^
 
-video.md: proto/secure-protocols/README.md
-video.md: proto/principles/README.md
+video.md: protocols/secure-protocols/README.md
+video.md: protocols/principles/README.md
 
 video.md:
 	${RM} $@
@@ -28,14 +29,14 @@ video.md:
 
 video.html reading.html session.html: proto.bib
 
-#proto.tex: proto/secure-protocols/abstract.tex
-#proto.tex: proto/principles/abstract.tex
+#proto.tex: protocols/secure-protocols/abstract.tex
+#proto.tex: protocols/principles/abstract.tex
 #
 #proto.tex:
 #	${RM} proto.tex
 #	for f in $^; do ${CAT} $$f >> $@; echo >> $@; done
 
-proto.bib: proto/secure-protocols/secure-protocols.bib
+proto.bib: protocols/secure-protocols/secure-protocols.bib
 
 proto.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
@@ -43,7 +44,7 @@ proto.bib:
 pricomlab.pdf: pricomlab/pricomlab.pdf
 	${LN} $< $@
 
-pricomlab/% proto/%:
+pricomlab/% protocols/%:
 	${MAKE} -C $(dir $@) $(notdir $@)
 
 

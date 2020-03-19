@@ -1,10 +1,9 @@
-# Interactive learning session
-
 There is one interactive session for this module, see the [schedule][schedule] 
-for date and time.
-Watch the videos linked above before the session.
-During the session we will [summarize (together) the most important parts, 
-discuss the most difficult/ambiguous/strange/counter-intuitive 
-parts](https://ver.miun.se/courses/security/infosakc/auth-session.pdf).
+for date and time. Before that session, work through [this][SL-auth] module on
+ScalableLearning. There are also reading instructions in the [study 
+guide][studyguide] (Section 3.5).
 
-[schedule]: https://portal.miun.se/web/student/schedule
+[schedule]: https://miun.se/schema
+[studyguide]: https://ver.miun.se/courses/security/infosakc/studyguide.pdf
+[SL-auth]: https://www.scalable-learning.com/#/courses/4573/modules/18022/courseware
+
