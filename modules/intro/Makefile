@@ -14,7 +14,7 @@ SECURITY-SOCIETY-FILES+= security-society-seminar.pdf
 SECURITY-SOCIETY-FILES+= intro.tex
 SECURITY-SOCIETY-FILES+= intro.bib
 
-security-society-seminar.pdf: ethics/security-society-seminar/notes.pdf
+security-society-seminar.pdf: ethics/security-society-seminar/instructions.pdf
 intro.tex: ethics/security-society-seminar/abstract.tex
 intro.bib: ethics/security-society-seminar/security-society-seminar.bib
 
