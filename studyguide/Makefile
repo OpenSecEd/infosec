@@ -82,11 +82,6 @@ BIBS+= 			../modules/accountability/accountability.bib
 
 accountability-abstract.tex: ../modules/accountability/accountability.tex
 
-MODULE_FILES+=	diffpriv-abstract.tex
-BIBS+= 			../modules/privacy/privacy.bib
-
-diffpriv-abstract.tex: ../modules/privacy/privacy.tex
-
 MODULE_FILES+= 	trustcomp-abstract.tex
 BIBS+= 			../modules/trustcomp/trustcomp.bib
 
@@ -114,10 +109,10 @@ studyguide.bib: ${BIBS}
 
 
 studyguide.pdf: ${SRC}
-studyguide.pdf: bibsp.sty assessment.sty
+studyguide.pdf: bibsp.sty bibedu.sty
 
 studyguide-slides.pdf: ${SRC}
-studyguide-slides.pdf: bibsp.sty assessment.sty
+studyguide-slides.pdf: bibsp.sty bibedu.sty
 
 
 .PHONY: clean
