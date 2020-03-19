@@ -38,7 +38,7 @@ required.
 
 
 [zoom]: https://miun-se.zoom.us
-[zoom-room]: https://miun-se.zoom.us/my/dbosk
+[zoom-room]: https://miun-se.zoom.us/j/210270783
 [schedule]: https://portal.miun.se/web/student/schedule
 [studyguide]: https://ver.miun.se/courses/security/infosakc/studyguide.pdf
 [security-news]: https://ver.miun.se/courses/security/infosakc/security-society-seminar.pdf
