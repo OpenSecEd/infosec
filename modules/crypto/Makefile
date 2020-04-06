@@ -6,6 +6,29 @@ PUB_USER?=
 PUB_GROUP?= 	svn
 
 
+SLIDES+=	shannon-entropy.pdf
+SLIDES+=	infotheory-applications.pdf
+SLIDES+=	crypto.pdf
+SLIDES+=	shared-key.pdf
+SLIDES+=	one-way.pdf
+SLIDES+=	pub-key.pdf
+SLIDES+=	zkp-smc.pdf
+SLIDES+=	sidechannels.pdf
+
+shannon-entropy.pdf: infotheory/shannon-entropy/shannon-entropy.pdf
+infotheory-applications.pdf: infotheory/applications/applications.pdf
+
+crypto.pdf: appliedcrypto/intro/intro-slides.pdf
+shared-key.pdf: appliedcrypto/shared-key/shared-key-slides.pdf
+one-way.pdf: appliedcrypto/one-way/one-way-slides.pdf
+pub-key.pdf: appliedcrypto/pub-key/pub-key-slides.pdf
+zkp-smc.pdf: appliedcrypto/zkp-smc/zkp-smc-slides.pdf
+sidechannels.pdf: appliedcrypto/sidechannels/sidechannels-slides.pdf
+
+${SLIDES}:
+	${LN} $< $@
+
+
 .PHONY: all
 all: ${PUB_FILES}
 
@@ -69,28 +92,6 @@ crypto.bib: $(addsuffix /bibliography.bib,${CRYPTO_MODULES})
 crypto.bib:
 	bibtool --preserve.key.case=on --print.deleted.entries=off -s -d -o $@ $^
 
-
-SLIDES+=	shannon-entropy.pdf
-SLIDES+=	infotheory-applications.pdf
-SLIDES+=	crypto.pdf
-SLIDES+=	shared-key.pdf
-SLIDES+=	one-way.pdf
-SLIDES+=	pub-key.pdf
-SLIDES+=	zkp-smc.pdf
-SLIDES+=	sidechannels.pdf
-
-shannon-entropy.pdf: infotheory/shannon-entropy/shannon-entropy.pdf
-infotheory-applications.pdf: infotheory/applications/applications.pdf
-
-crypto.pdf: appliedcrypto/intro/intro-slides.pdf
-shared-key.pdf: appliedcrypto/shared-key/shared-key-slides.pdf
-one-way.pdf: appliedcrypto/one-way/one-way-slides.pdf
-pub-key.pdf: appliedcrypto/pub-key/pub-key-slides.pdf
-zkp-smc.pdf: appliedcrypto/zkp-smc/zkp-smc-slides.pdf
-sidechannels.pdf: appliedcrypto/sidechannels/sidechannels-slides.pdf
-
-${SLIDES}:
-	${LN} $< $@
 
 infotheory/% appliedcrypto/%:
 	${MAKE} -C $(dir $@) $(notdir $@)
